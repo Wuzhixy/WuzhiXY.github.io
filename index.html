@@ -6,23 +6,32 @@
     <title>Wuzhi_SPACE/雾质空间</title>
     <style>
    
-      html {
+      .html {
         margin: 0;
         padding: 0;
         height: 100%;
         font-family: Arial, sans-serif;
       }
-      
-      .menu-container {
-      display: flex;
-      justify-content: flex-end; /* 水平方向将整个容器推到右边 */
-      padding: 10px;
-      position: fixed; /* 固定在页面顶部 */
-      right: 0;
-      top: 0;
-      width: 50%; /* 可选：根据需要设置 */
-      box-sizing: border-box;
+
+      .a {
+        text-decoration: none;
+        color：black;
       }
+      
+     .menu-button {
+       background-color: transparent; /* 背景设为透明 */
+       padding: 10px 20px;
+       text-decoration: none;
+       color: black;
+       border-radius: 0px;
+       border: 1px solid #ccc;
+       font-family: 'Courier New', Courier, monospace; /* 设置字体为 Courier New */
+       text-align: center; /* 水平方向居中对齐 */
+       display: inline-flex; /* 使用 inline-flex 保证按钮与其他按钮水平对齐 */
+       justify-content: center; /* 水平方向居中对齐 */
+       align-items: center; /* 垂直方向居中对齐 */
+       height: 50px; /* 固定按钮高度，确保所有按钮统一 */
+     }
 
       .menu {
       display: flex;
