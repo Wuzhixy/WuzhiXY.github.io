@@ -12,18 +12,43 @@
         height: 100%;
         font-family: Arial, sans-serif;
       }
-      .menu{
-        background-color: #FFD700;
-        height: 50px;
-        justify-content: flex-end; 
-        align-items: right; 
-        padding-right: 20px;
+      
+      .menu-container {
+      display: flex;
+      justify-content: flex-end; /* 水平方向将整个容器推到右边 */
+      background-color: #FFD700;
+      padding: 10px;
+      position: fixed; /* 固定在页面顶部 */
+      right: 0;
+      top: 0;
+      width: 50%; /* 可选：根据需要设置 */
+      box-sizing: border-box;
       }
+
+      .menu {
+      display: flex;
+      flex-direction: row-reverse; /* 按钮从右向左排列 */
+      gap: 10px; /* 按钮之间的间距 */
+      }
+      
       .content {
         min-height: 100vh;
         padding-bottom: 50px;
       }
-
+      
+      .menu-button {
+      background-color: #FFF;
+      border: 1px solid #ccc;
+      padding: 10px 15px;
+      margin-left: 10px; /* 按钮之间的距离 */
+      text-align: center;
+      cursor: pointer;
+      }
+      
+      .menu-button:hover {
+        background-color: #e0e0e0;
+      }
+      
       .footer {
         position: fixed;
         left: 0;
@@ -35,29 +60,6 @@
         padding: 10px 0;
         z-index: 1000;
       }
-      .button {
-        display: inline-block;
-        padding: 10px 20px;
-        font-size: 16px;
-        color: black;
-        background-color: #ffffff;
-        text-decoration: none;
-        border-radius: 5px;
-      }
-
-      .button:hover {
-        background-color: #e0e0e0;
-      }
-      
-       .menu-button {
-      background-color: #FFF;
-      border: 1px solid #ccc;
-      padding: 10px 15px;
-      margin-left: 10px; /* 按钮之间的距离 */
-      text-align: center;
-      cursor: pointer;
-      }
-      
     </style>
   </head>
 
@@ -65,14 +67,17 @@
     <div id="header" style="background-color: #ffa500">
       <h1>WUZHI_SPACE/雾质空间</h1>
     </div>
+
+    <div class="menu-container">
+      <div class="menu">
+        <a href="#" class="menu-button"><a href="./Menu/Diary_Main.html" class="button">Diary</a></a>
+        <a href="#" class="menu-button">Button 2</a>
+        <a href="#" class="menu-button">Button 3</a>
+      </div>
+    </div>
+    
     <div>
       <img src="PIC/001.jpg.jpg" width="200" height="200" ;>
-    </div>
-
-    <div id="menu">
-      
-    <p><div class="menu-button">Button 3</div> <div class="menu-button">Button 2</div> <div class="menu-button"><a href="./Menu/Diary_Main.html" class="button">Diary</a></div></p>
-      
     </div>
 
     <div class="footer">
