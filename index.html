@@ -5,14 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wuzhi_SPACE/雾质空间</title>
     <style>
-      body,
+   
       html {
         margin: 0;
         padding: 0;
         height: 100%;
         font-family: Arial, sans-serif;
       }
-
+      .menu{
+        background-color: #FFD700;
+        height: 50px;
+        display: flex;
+        justify-content: flex-end; 
+        align-items: center; 
+        padding-right: 20px;
+      }
       .content {
         min-height: 100vh;
         padding-bottom: 50px;
@@ -42,6 +49,20 @@
       .button:hover {
         background-color: #e0e0e0;
       }
+      
+       .menu-button {
+      background-color: #FFF;
+      border: 1px solid #ccc;
+      padding: 10px 15px;
+      margin-left: 10px; /* 按钮之间的距离 */
+      text-align: center;
+      cursor: pointer;
+      }
+      
+      #menu {
+      direction: rtl; /* 使子元素从右向左排列 */
+      }
+      
     </style>
   </head>
 
@@ -52,14 +73,13 @@
     <div>
       <img src="PIC/001.jpg.jpg" width="200" height="200" ;>
     </div>
-    
-    <div>
-      <a href="./Menu/Diary_Main.html" class="button">Diary</a>
+
+    <div id="menu">
+    <div class="menu-button">Button 3</div>
+    <div class="menu-button">Button 2</div>
+    <div class="menu-button"><a href="./Menu/Diary_Main.html" class="button">Diary</a></div>
     </div>
-    
-    <div>
-      <a href="./Menu/Diary_Main.html" class="button">ABOUT MYSELF</a>
-    </div>
+
     <div class="footer">
       <p>“悟已往之不谏，知来者之可追”</p>
     </div>
