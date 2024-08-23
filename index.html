@@ -12,18 +12,28 @@
         height: 100%;
         font-family: Arial, sans-serif;
       }
-
+      
+      .content {
+        min-height: 100vh;
+        padding-bottom: 50px;
+      }
+      
       a {
         text-decoration: none !important;
         color：black;
       }
       
-     .menu-button {
+      .menu {
+        display: flex;
+        flex-direction: row-reverse; /* 按钮从右向左排列 */
+        gap: 10px; /* 按钮之间的间距 */
+      }
+      
+      .menu-button {
        background-color: transparent; /* 背景设为透明 */
        padding: 10px 20px;
        text-decoration: none !important;
        color: black;
-       border-radius: 0px;
        border: none;
        font-family: 'Courier New', Courier, monospace; /* 设置字体为 Courier New */
        text-align: center; /* 水平方向居中对齐 */
@@ -31,27 +41,7 @@
        justify-content: center; /* 水平方向居中对齐 */
        align-items: center; /* 垂直方向居中对齐 */
        height: 50px; /* 固定按钮高度，确保所有按钮统一 */
-     }
-
-      .menu {
-      display: flex;
-      flex-direction: row-reverse; /* 按钮从右向左排列 */
-      gap: 10px; /* 按钮之间的间距 */
-      }
-      
-      .content {
-        min-height: 100vh;
-        padding-bottom: 50px;
-      }
-      
-      .menu-button {
-      background-color: #FFF;
-      color:black !important；
-      border: 0px solid #ccc;
-      padding: 10px 15px;
-      margin-left: 10px; /* 按钮之间的距离 */
-      text-align: center;
-      cursor: pointer;
+       border-radius: 5px;
       }
       
       .menu-button:hover {
@@ -69,6 +59,7 @@
         padding: 10px 0;
         z-index: 1000;
       }
+      
     </style>
   </head>
 
