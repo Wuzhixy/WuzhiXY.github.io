@@ -159,7 +159,44 @@
       我也依然想参与制作游戏，我始终坚信我的名字一定会出现在一款真正的属于我们国家的3A游戏的制作人名单里。我写下这段话的意义其实更想提醒我自己，如果之后对生活失去了动力，也请不要忘记年少时的梦想。保持对游戏的热爱继续向前吧。今天就到这吧
         </div>
     </div>
-      
+
+      <div class="modal" id="modal">
+    <div class="modal-content">
+        <span class="close-btn" id="closeBtn">&times;</span>
+        <h2 id="modalTitle">博客标题</h2>
+        <p id="modalContent">博客内容</p>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const blogItems = document.querySelectorAll('.blog-item');
+        const modal = document.getElementById('modal');
+        const closeBtn = document.getElementById('closeBtn');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalContent = document.getElementById('modalContent');
+
+        blogItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const title = this.querySelector('h2').innerText;
+                const fullContent = this.querySelector('.full-content').innerHTML;
+                modalTitle.innerText = title;
+                modalContent.innerHTML = fullContent;
+                modal.style.display = 'flex';
+            });
+        });
+
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        // 排序博客项
+        const container = document.querySelector('.blog-container');
+        const sortedItems = Array.from(blogItems).sort((a, b) => new Date(b.getAttribute('data-date')) - new Date(a.getAttribute('data-date')));
+        sortedItems.forEach(item => container.appendChild(item));
+    });
+</script>
+
 </div>
   </body>
   </html>
