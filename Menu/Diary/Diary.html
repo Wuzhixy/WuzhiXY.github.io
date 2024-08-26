@@ -177,9 +177,13 @@
         const modalContent = document.getElementById('modalContent');
 
         blogItems.forEach(item => {
+            const fullContent = item.querySelector('.full-content').innerHTML;
+            const excerptLength = 100; // 设置摘录长度
+            const excerpt = fullContent.length > excerptLength ? fullContent.slice(0, excerptLength) + '...' : fullContent;
+            item.querySelector('.excerpt').innerHTML = excerpt;
+
             item.addEventListener('click', function() {
                 const title = this.querySelector('h2').innerText;
-                const fullContent = this.querySelector('.full-content').innerHTML;
                 modalTitle.innerText = title;
                 modalContent.innerHTML = fullContent;
                 modal.style.display = 'flex';
