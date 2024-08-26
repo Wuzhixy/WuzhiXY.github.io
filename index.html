@@ -4,62 +4,61 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wuzhi_SPACE/雾质空间</title>
-    <style>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+  }
 
-      .html {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        font-family: Arial, sans-serif;
-      }
+  .content {
+    min-height: 100vh;
+    padding-bottom: 50px;
+  }
 
-      .content {
-        min-height: 100vh;
-        padding-bottom: 50px;
-      }
+  a {
+    text-decoration: none !important;
+    color: black; /* 修改为半角冒号 */
+  }
 
-      a {
-        text-decoration: none !important;
-        color：black;
-      }
+  .menu {
+    display: flex;
+    flex-direction: row-reverse; /* 按钮从右向左排列 */
+    gap: 10px; /* 按钮之间的间距 */
+  }
 
-      .menu {
-        display: flex;
-        flex-direction: row-reverse; /* 按钮从右向左排列 */
-        gap: 10px; /* 按钮之间的间距 */
-      }
+  .menu-button {
+    background-color: transparent; /* 背景设为透明 */
+    padding: 10px 20px;
+    text-decoration: none !important;
+    color: black;
+    border: none;
+    font-family: 'Courier New', Courier, monospace; /* 设置字体为 Courier New */
+    text-align: center; /* 水平方向居中对齐 */
+    display: inline-flex; /* 使用 inline-flex 保证按钮与其他按钮水平对齐 */
+    justify-content: center; /* 水平方向居中对齐 */
+    align-items: center; /* 垂直方向居中对齐 */
+    height: 50px; /* 固定按钮高度，确保所有按钮统一 */
+    border-radius: 30px;
+  }
 
-      .menu-button {
-       background-color: transparent; /* 背景设为透明 */
-       padding: 10px 20px;
-       text-decoration: none !important;
-       color: black;
-       border: none;
-       font-family: 'Courier New', Courier, monospace; /* 设置字体为 Courier New */
-       text-align: center; /* 水平方向居中对齐 */
-       display: inline-flex; /* 使用 inline-flex 保证按钮与其他按钮水平对齐 */
-       justify-content: center; /* 水平方向居中对齐 */
-       align-items: center; /* 垂直方向居中对齐 */
-       height: 50px; /* 固定按钮高度，确保所有按钮统一 */
-       border-radius: 30px;
-      }
+  .menu-button:hover {
+    background-color: #e0e0e0;
+  }
 
-      .menu-button:hover {
-        background-color: #e0e0e0;
-      }
-
-      .footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        background-color: #333;
-        color: white;
-        text-align: center;
-        padding: 10px 0;
-        z-index: 1000;
-      }
-    </style>
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 1000;
+  }
+</style>
   </head>
 
   <body>
