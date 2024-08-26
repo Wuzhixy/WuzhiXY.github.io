@@ -84,6 +84,11 @@
     transform: scale(1.02);
 }
 
+    /* 当弹窗打开时禁用鼠标悬停效果 */
+        .no-hover .blog-item:hover {
+            background-color: initial;
+            transform: none;
+          
 .modal {
     display: none;
     position: fixed;
@@ -123,7 +128,10 @@
         padding: 10px 0;
         z-index: 1000;
       }
+
+  
     </style>
+    
   </head>
 
   <body>
@@ -235,6 +243,7 @@
 
         closeBtn.addEventListener('click', function() {
             modal.style.display = 'none';
+           document.body.classList.remove('no-hover');  // 恢复主页面的悬停效果
         });
 
         // 排序博客项
