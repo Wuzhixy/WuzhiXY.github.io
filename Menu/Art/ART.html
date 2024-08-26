@@ -3,34 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ART</title>
+    <title>横向滚动图片</title>
     <style>
         .scroll-container {
-            width: 100%;
-            height: 500px;
-            margin: 50px auto;
-            overflow: hidden;
-            border: 2px solid #ddd;
-            border-radius: 0px;
+            width: 100%; /* 容器宽度 */
+            height: 500px; /* 容器高度 */
+            margin: 50px auto; /* 居中 */
+            overflow: hidden; /* 隐藏溢出内容 */
+            border-radius: 10px;
+            position: relative;
         }
 
         .scroll-content {
             display: flex;
-            flex-direction: column;
+            flex-wrap: nowrap;
+            width: 100%;
+            height: 100%;
             animation: scroll 30s linear infinite;
-        }
-
-        .row {
-            display: flex;
-            margin-bottom: 0px;
-            flex-shrink: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
 
         .scroll-content img {
             width: 200px;
             height: 150px;
             object-fit: cover;
-            margin-right: 0px;
+            margin-right: 10px;
         }
 
         @keyframes scroll {
@@ -46,53 +45,23 @@
 <body>
 
 <div class="scroll-container">
-    <div class="scroll-content" id="scrollContent"></div>
+    <div class="scroll-content">
+        <!-- 图片内容 -->
+        <img src="./PIC/(1).jpg" alt="Image 1">
+        <img src="https://via.placeholder.com/200x150/33FF57/FFFFFF?text=Image+2" alt="Image 2">
+        <img src="https://via.placeholder.com/200x150/3357FF/FFFFFF?text=Image+3" alt="Image 3">
+        <img src="https://via.placeholder.com/200x150/FF33A1/FFFFFF?text=Image+4" alt="Image 4">
+        <img src="https://via.placeholder.com/200x150/FF5733/FFFFFF?text=Image+5" alt="Image 5">
+        <img src="https://via.placeholder.com/200x150/33FF57/FFFFFF?text=Image+6" alt="Image 6">
+        <!-- 重复图片以创建无缝滚动效果 -->
+        <img src="https://via.placeholder.com/200x150/FF5733/FFFFFF?text=Image+1" alt="Image 1">
+        <img src="https://via.placeholder.com/200x150/33FF57/FFFFFF?text=Image+2" alt="Image 2">
+        <img src="https://via.placeholder.com/200x150/3357FF/FFFFFF?text=Image+3" alt="Image 3">
+        <img src="https://via.placeholder.com/200x150/FF33A1/FFFFFF?text=Image+4" alt="Image 4">
+        <img src="https://via.placeholder.com/200x150/FF5733/FFFFFF?text=Image+5" alt="Image 5">
+        <img src="https://via.placeholder.com/200x150/33FF57/FFFFFF?text=Image+6" alt="Image 6">
+    </div>
 </div>
-
-<script>
-    const scrollContent = document.getElementById('scrollContent');
-
-    // 从服务器获取图片列表并更新DOM
-    async function loadImages() {
-        const response = await fetch('/images');
-        const imageFiles = await response.json();
-        
-        // 清空内容
-        scrollContent.innerHTML = '';
-
-        // 创建图片的三行布局
-        for (let i = 0; i < 3; i++) {
-            const row = document.createElement('div');
-            row.classList.add('row');
-            shuffleArray(imageFiles); // 随机化图片顺序
-
-            // 将随机的图片加入每行
-            imageFiles.slice(0, 6).forEach(image => {
-                const img = document.createElement('img');
-                img.src = `./PIC/${image}`; // 从PIC文件夹加载图片
-                row.appendChild(img);
-            });
-
-            scrollContent.appendChild(row);
-        }
-    }
-
-    // 随机打乱数组顺序
-    function shuffleArray(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
-        }
-    }
-
-    // 初始加载图片
-    loadImages();
-
-    // 每次动画结束后，重新加载图片并随机播放
-    scrollContent.addEventListener('animationiteration', () => {
-        loadImages();
-    });
-</script>
 
 </body>
 </html>
