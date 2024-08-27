@@ -58,6 +58,10 @@
     padding: 10px 0;
     z-index: 1000;
   }
+
+   .private-content {
+            display: none;
+        }
 </style>
   </head>
 
@@ -68,19 +72,32 @@
 
     <div class="menu-container">
       <div class="menu">
+          <div id="privateContent" class="private-content">
         <a href="./Menu/Diary/Diary.html" class="menu-button" ;>Diary</a>
-        <a href="./Menu/About Myself/Myself.html" class="menu-button" ;
-          >ABOUT MYSELF</a
-        >
+          </div>
+       
+        <a href="./Menu/About Myself/Myself.html" class="menu-button" ;>ABOUT MYSELF</a>
         <a href="./Menu/Art/ART.html" class="menu-button" ;>ART</a>
-        <a href="./Menu/Animation/Animation.html" class="menu-button" ;
-          >Animation Demo Reel</a
-        >
+        <a href="./Menu/Animation/Animation.html" class="menu-button" ;>Animation Demo Reel</a>
       </div>
     </div>
 
     <div class="footer">
       <p>“悟已往之不谏，知来者之可追”</p>
     </div>
+
+<button onclick="showPrivateContent()">点击显示私人内容</button>
+    
+     <script>
+        function showPrivateContent() {
+            var password = prompt("请输入密码以查看私人内容:");
+
+            // 假设密码为 "mypassword"
+            if (password === "040610") {
+                document.getElementById("privateContent").style.display = "block"; // 显示私人内容
+            } else {
+                alert("密码错误，请重试！");
+            }
+        }
   </body>
 </html>
