@@ -47,6 +47,77 @@
     background-color: #e0e0e0;
   }
 
+   body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        /* 父容器 */
+.container {
+    width: 100vw;
+    height: 75vh; /* 设置高度为页面的 75% */
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    /* 垂直居中 */
+    align-items: center;
+}
+        /* 每个模块的基础样式 */
+        .module {
+            position: relative;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /* 模块 1 */
+        .module-1 {
+            width: 33.33vw;
+            background-color: #d1e3f5;
+            clip-path: polygon(0 0, 100% 0, calc(100% - 50px) 100%, 0 100%);
+        }
+
+        /* 模块 2 */
+        .module-2 {
+            width: 33.33vw;
+            background-color: #c2e9f2;
+            clip-path: polygon(50px 0, 100% 0, calc(100% - 50px) 100%, 0 100%);
+        }
+
+        /* 模块 3 */
+        .module-3 {
+            width: 33.33vw;
+            background-color: #a3c7e6;
+            clip-path: polygon(50px 0, 100% 0, calc(100% - 50px) 100%, 0 100%);
+        } 
+
+        /* 图片容器滚动效果 */
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            height: 300%;
+            animation: scroll 30s linear infinite;
+        }
+
+        /* 图片样式 */
+        .image-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* 滚动动画 */
+        @keyframes scroll {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-100%);
+            }
+        }
+
+
   .footer {
     position: fixed;
     left: 0;
@@ -77,6 +148,35 @@
     <a href="./Menu/Art/ART.html" class="menu-button">ART</a>
     <a href="./Menu/Animation/Animation.html" class="menu-button">Animation Demo Reel</a>
   </div>
+</div>
+
+<div class="container">
+    <!-- 模块 1 -->
+    <div class="module module-1">
+        <div class="image-container">
+            <img src="https://via.placeholder.com/800x600" alt="Image 1">
+            <img src="https://via.placeholder.com/800x600" alt="Image 2">
+            <img src="https://via.placeholder.com/800x600" alt="Image 3">
+        </div>
+    </div>
+
+    <!-- 模块 2 -->
+    <div class="module module-2">
+        <div class="image-container">
+            <img src="https://via.placeholder.com/800x600" alt="Image 1">
+            <img src="https://via.placeholder.com/800x600" alt="Image 2">
+            <img src="https://via.placeholder.com/800x600" alt="Image 3">
+        </div>
+    </div>
+
+    <!-- 模块 3 -->
+    <div class="module module-3">
+        <div class="image-container">
+            <img src="https://via.placeholder.com/800x600" alt="Image 1">
+            <img src="https://via.placeholder.com/800x600" alt="Image 2">
+            <img src="https://via.placeholder.com/800x600" alt="Image 3">
+        </div>
+    </div>
 </div>
     
     <div class="footer">
