@@ -3,87 +3,96 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ABout_Wuzhi</title>
+    <title>Wuzhi</title>
      <link rel="icon" type="image/png" sizes="32x32" href="./Favicon/moyai_1f5ff.png">
 <style>
- html {
+html, body {
     margin: 0;
     padding: 0;
     height: 100%;
     font-family: 'Courier New', Courier, monospace;
 }
 
-.content {
-    padding-top: 80px; /* 避免内容被页眉遮盖 */
-    min-height: 100vh;
-    padding-bottom: 50px;
-}
-
+/* 页眉样式 */
 .header {
-    width: auto;
-    padding: 50px;
-    color: black;
-    text-align: left;
-    font-size: 24px;
-    position: fixed;
+    width: auto; /* 根据内容自适应宽度 */
+    padding: 50px; /* 内边距 */
+    color: black; /* 字体颜色 */
+    text-align: left; /* 左对齐 */
+    font-size: 24px; /* 字体大小 */
+    position: fixed; /* 固定在顶部 */
     top: 0;
     left: 0;
-    z-index: 1000;
+    z-index: 1000; /* 确保页眉在最前方显示 */
 }
 
-  .adaptive-icon {
-    width: auto;
-    height: 1em; /* 图标的高度与字体高度相同，确保与文字保持一致 */
-    vertical-align: middle; /* 使图标与文字垂直对齐 */
+/* 主内容样式，防止被页眉遮挡 */
+.content {
+    padding-top: 120px; /* 根据页眉高度调整 */
+    min-height: 100vh; /* 使内容至少占满全屏 */
+    padding-bottom: 50px; /* 防止内容被页脚遮挡 */
 }
-  
+
+/* 链接基础样式 */
 a {
-    text-decoration: none !important;
-    color: black;
+    text-decoration: none !important; /* 移除默认下划线 */
+    color: black; /* 链接字体颜色 */
 }
 
+/* 菜单容器样式 */
 .menu {
-    display: flex;
+    display: flex; /* 使用 Flexbox 布局 */
     flex-direction: row-reverse; /* 按钮从右向左排列 */
     gap: 10px; /* 按钮之间的间距 */
-    z-index: 500;
+    position: relative; /* 确保 z-index 属性生效 */
+    z-index: 500; /* 菜单的层级，确保不会被其他内容遮盖 */
 }
 
+/* 菜单按钮样式 */
 .menu-button {
-    background-color: transparent; /* 背景设为透明 */
-    padding: 10px 20px;
-    text-decoration: none !important;
-    color: black;
-    border: none;
-    text-align: center;
-    display: inline-flex; /* 使用 inline-flex 使按钮宽度根据内容自适应 */
-    justify-content: center;
-    align-items: center;
-    height: 50px; /* 固定按钮高度 */
+    background-color: transparent; /* 背景透明 */
+    padding: 10px 20px; /* 按钮内边距 */
+    text-decoration: none !important; /* 移除下划线 */
+    color: black; /* 字体颜色 */
+    border: none; /* 移除默认边框 */
+    text-align: center; /* 文字居中对齐 */
+    display: inline-flex; /* 保持按钮与其他按钮水平对齐 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    height: auto; /* 按钮固定高度 */
     width: auto; /* 自适应宽度 */
-    min-width: 100px; /* 可选：设置最小宽度以确保按钮不会过小 */
+    min-width: 100px; /* 可选：设置最小宽度 */
 }
 
+/* 鼠标悬停效果 */
 .menu-button:hover {
-     border-bottom: 1px solid black;
+    border-bottom: 1px solid black; /* 添加黑色下划线 */
 }
 
+/* 页脚样式 */
 .footer {
-    position: fixed;
+    position: fixed; /* 固定在页面底部 */
     left: 0;
     bottom: 0;
-    width: 100%;
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    z-index: 1000;
+    width: 100%; /* 宽度占满屏幕 */
+    background-color: #333; /* 背景颜色 */
+    color: white; /* 字体颜色 */
+    text-align: center; /* 文字居中 */
+    padding: 10px 0; /* 上下内边距 */
+    z-index: 1000; /* 确保页脚在最前方显示 */
 }
 
+/* 私有内容的默认样式（未显示） */
 .private-content {
     display: none;
 }
 
+/* 自适应图标样式 */
+.adaptive-icon {
+    width: auto; /* 自适应宽度 */
+    height: 1em; /* 与文本字体大小相同 */
+    vertical-align: middle; /* 垂直居中与文本对齐 */
+}
 </style>
     
   </head>
