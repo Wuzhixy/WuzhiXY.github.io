@@ -75,7 +75,7 @@
           <div id="privateContent" class="private-content">
         <a href="./Menu/Diary/Diary.html" class="menu-button" ;>Diary</a>
           </div>
-       <button onclick="showPrivateContent()">Diary</button>
+        <button class="menu-button" onclick="validatePassword()">Diary</button>
         <a href="./Menu/About Myself/Myself.html" class="menu-button" ;>ABOUT MYSELF</a>
         <a href="./Menu/Art/ART.html" class="menu-button" ;>ART</a>
         <a href="./Menu/Animation/Animation.html" class="menu-button" ;>Animation Demo Reel</a>
@@ -88,13 +88,13 @@
 
 
     
-     <script>
-        function showPrivateContent() {
-            var password = prompt("请输入密码以查看私人内容:");
+    <script>
+        function validatePassword() {
+            var password = prompt("请输入密码以进入日记本:");
 
             // 假设密码为 "mypassword"
             if (password === "040610") {
-                document.getElementById("privateContent").style.display = "block"; // 显示私人内容
+                window.location.href = "./Menu/Diary/Diary.html; // 跳转到日记本页面
             } else {
                 alert("密码错误，请重试！");
             }
