@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>斜状滚动模块</title>
+    <title>三个滚动模块</title>
     <style>
         body {
             margin: 0;
@@ -14,49 +14,26 @@
             align-items: center;
             height: 100vh;
             background-color: #f0f0f0;
-            overflow: hidden; /* 确保页面不会有额外的滚动条 */
         }
 
         /* 父容器 */
         .container {
             width: 80vw;
             height: 80vh;
-            position: relative;
             display: flex;
             overflow: hidden;
-            clip-path: inset(0); /* 防止溢出 */
+            position: relative;
         }
 
         /* 通用模块样式 */
         .module {
             width: 33.33%;
             height: 100%;
-            position: absolute;
             overflow: hidden;
+            position: relative;
         }
 
-        /* 左边模块 */
-        .module-left {
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 33.33% 100%);
-            background-color: #d1e3f5;
-            left: 0;
-        }
-
-        /* 中间模块 */
-        .module-center {
-            clip-path: polygon(33.33% 0, 66.66% 0, 66.66% 100%, 33.33% 100%);
-            background-color: #c2e9f2;
-            left: 33.33%;
-        }
-
-        /* 右边模块 */
-        .module-right {
-            clip-path: polygon(66.66% 0, 100% 0, 100% 100%, 66.66% 100%);
-            background-color: #a3c7e6;
-            left: 66.66%;
-        }
-
-        /* 图片容器 */
+        /* 模块内的滚动容器 */
         .image-container {
             display: flex;
             flex-direction: column;
@@ -70,19 +47,6 @@
             height: auto;
         }
 
-        /* 各个模块的滚动动画 */
-        .module-left .image-container {
-            animation-direction: normal; /* 向下滚动 */
-        }
-
-        .module-center .image-container {
-            animation-direction: reverse; /* 向上滚动，反方向 */
-        }
-
-        .module-right .image-container {
-            animation-direction: normal; /* 向下滚动 */
-        }
-
         /* 滚动动画 */
         @keyframes scroll {
             0% {
@@ -92,26 +56,31 @@
                 transform: translateY(-100%);
             }
         }
+
+        /* 单个模块的背景色 */
+        .module-1 { background-color: #d1e3f5; }
+        .module-2 { background-color: #c2e9f2; }
+        .module-3 { background-color: #a3c7e6; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="module module-left">
+    <div class="module module-1">
         <div class="image-container">
             <img src="https://via.placeholder.com/800x600" alt="Image 1">
             <img src="https://via.placeholder.com/800x600" alt="Image 2">
             <img src="https://via.placeholder.com/800x600" alt="Image 3">
         </div>
     </div>
-    <div class="module module-center">
+    <div class="module module-2">
         <div class="image-container">
             <img src="https://via.placeholder.com/800x600" alt="Image 1">
             <img src="https://via.placeholder.com/800x600" alt="Image 2">
             <img src="https://via.placeholder.com/800x600" alt="Image 3">
         </div>
     </div>
-    <div class="module module-right">
+    <div class="module module-3">
         <div class="image-container">
             <img src="https://via.placeholder.com/800x600" alt="Image 1">
             <img src="https://via.placeholder.com/800x600" alt="Image 2">
@@ -122,5 +91,3 @@
 
 </body>
 </html>
-
-
