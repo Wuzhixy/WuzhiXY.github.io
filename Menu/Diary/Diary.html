@@ -10,13 +10,14 @@
         margin: 0;
         padding: 0;
         height: 100%;
-        font-family: Arial, sans-serif;
+        font-family: 'Courier New', Courier, monospace;
       }
 
       .content {
-        min-height: 100vh;
-        padding-bottom: 50px;
-      }
+    padding-top: 80px; /* 避免内容被页眉遮盖 */
+    min-height: 100vh;
+    padding-bottom: 50px;
+}
 
       .header {
     width: auto;
@@ -33,18 +34,6 @@
       a {
         text-decoration: none !important;
         color: black; 
-      }
-
-      .footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        background-color: #333;
-        color: white;
-        text-align: center;
-        padding: 10px 0;
-        z-index: 1000;
       }
 
       .blog-container {
@@ -120,19 +109,6 @@
   <body>
     <div class="header">
       <a href="./index.html">WUZHI</a>
-    </div>
-
-    <div class="menu-container">
-      <div class="menu">
-        <a href="../Diary/Diary.html" class="menu-button" ;>Diary</a>
-        <a href="../About Myself/Myself.html" class="menu-button" ;
-          >ABOUT MYSELF</a
-        >
-        <a href="../Art/ART.html" class="menu-button" ;>ART</a>
-        <a href="../Animation/Animation.html" class="menu-button" ;
-          >Animation Demo Reel</a
-        >
-      </div>
     </div>
 
     <div class="blog-container">
