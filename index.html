@@ -48,14 +48,16 @@ a {
     color: black;
     border: none;
     text-align: center;
-    display: inline-flex;
+    display: inline-flex; /* 使用 inline-flex 使按钮宽度根据内容自适应 */
     justify-content: center;
     align-items: center;
-    height: 50px; /* 固定按钮高度，确保所有按钮统一 */
+    height: 50px; /* 固定按钮高度 */
+    width: auto; /* 自适应宽度 */
+    min-width: 100px; /* 可选：设置最小宽度以确保按钮不会过小 */
 }
 
 .menu-button:hover {
-     border-bottom: 2px solid black;
+     border-bottom: 1px solid black;
 }
 
 .footer {
