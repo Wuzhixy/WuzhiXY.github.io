@@ -16,7 +16,7 @@
         /* 父容器 */
         .container {
             width: 100vw;
-            height: 100vh;
+            height: 75vh;
             display: flex;
             position: relative;
             overflow: hidden;
@@ -47,8 +47,8 @@
         .module-3 {
             width: 33.33vw;
             background-color: #a3c7e6;
-            clip-path: polygon(50px 0, 100% 0, 100% 100%, 0px 100%);
-        }
+            clip-path: polygon(50px 0, 100% 0, calc(100% - 50px) 100%, 0 100%);
+        } 
 
         /* 图片容器滚动效果 */
         .image-container {
