@@ -5,60 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ABout_Wuzhi</title>
 <style>
-  html, body {
+ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: Courier New, sans-serif;
-  }
+    font-family: 'Courier New', Courier, monospace;
+}
 
-  .content {
+.content {
+    padding-top: 80px; /* 避免内容被页眉遮盖 */
     min-height: 100vh;
     padding-bottom: 50px;
-  }
+}
 
-   .header {
-            width: 100%;
-            padding: 20px;
-            color: Black;
-            text-align: Left;
-            font-size: 24px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-   }
+.header {
+    width: 100%;
+    padding: 20px;
+    color: black;
+    text-align: left;
+    font-size: 24px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
 
-  a {
+a {
     text-decoration: none !important;
     color: black;
-  }
+}
 
-  .menu {
+.menu {
     display: flex;
     flex-direction: row-reverse; /* 按钮从右向左排列 */
     gap: 10px; /* 按钮之间的间距 */
-  }
+}
 
-  .menu-button {
+.menu-button {
     background-color: transparent; /* 背景设为透明 */
     padding: 10px 20px;
     text-decoration: none !important;
     color: black;
     border: none;
-    text-align: center; /* 水平方向居中对齐 */
-    display: inline-flex; /* 使用 inline-flex 保证按钮与其他按钮水平对齐 */
-    justify-content: center; /* 水平方向居中对齐 */
-    align-items: center; /* 垂直方向居中对齐 */
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     height: 50px; /* 固定按钮高度，确保所有按钮统一 */
     border-radius: 30px;
-  }
+}
 
-  .menu-button:hover {
+.menu-button:hover {
     background-color: #e0e0e0;
-  }
+}
 
-  .footer {
+.footer {
     position: fixed;
     left: 0;
     bottom: 0;
@@ -68,12 +69,14 @@
     text-align: center;
     padding: 10px 0;
     z-index: 1000;
-  }
+}
 
-   .private-content {
-            display: none;
-        }
+.private-content {
+    display: none;
+}
+
 </style>
+    
   </head>
 
   <body>
