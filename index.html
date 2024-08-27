@@ -4,130 +4,146 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wuzhi</title>
-     <link rel="icon" type="image/png" sizes="32x32" href="./Favicon/moyai_1f5ff.png">
-<style>
-html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: 'Courier New', Courier, monospace;
-}
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./Favicon/moyai_1f5ff.png"
+    />
+    <style>
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: "Courier New", Courier, monospace;
+      }
 
-/* 页眉样式 */
-.header {
-    width: auto; /* 根据内容自适应宽度 */
-    padding: 50px; /* 内边距 */
-    color: black; /* 字体颜色 */
-    text-align: left; /* 左对齐 */
-    font-size: 24px; /* 字体大小 */
-    position: fixed; /* 固定在顶部 */
-    top: 0;
-    left: 0;
-    z-index: 1000; /* 确保页眉在最前方显示 */
-}
+      /* 页眉样式 */
+      .header {
+        width: auto; /* 根据内容自适应宽度 */
+        padding: 50px; /* 内边距 */
+        color: black; /* 字体颜色 */
+        text-align: left; /* 左对齐 */
+        font-size: 24px; /* 字体大小 */
+        position: fixed; /* 固定在顶部 */
+        top: 0;
+        left: 0;
+        z-index: 1000; /* 确保页眉在最前方显示 */
+      }
 
-/* 主内容样式，防止被页眉遮挡 */
-.content {
-    padding-top: 120px; /* 根据页眉高度调整 */
-    min-height: 100vh; /* 使内容至少占满全屏 */
-    padding-bottom: 50px; /* 防止内容被页脚遮挡 */
-}
+      /* 主内容样式，防止被页眉遮挡 */
+      .content {
+        padding-top: 120px; /* 根据页眉高度调整 */
+        min-height: 100vh; /* 使内容至少占满全屏 */
+        padding-bottom: 50px; /* 防止内容被页脚遮挡 */
+      }
 
-/* 链接基础样式 */
-a {
-    text-decoration: none !important; /* 移除默认下划线 */
-    color: black; /* 链接字体颜色 */
-}
+      /* 链接基础样式 */
+      a {
+        text-decoration: none !important; /* 移除默认下划线 */
+        color: black; /* 链接字体颜色 */
+      }
 
-/* 菜单容器样式 */
-.menu {
-    display: flex; /* 使用 Flexbox 布局 */
-    flex-direction: row-reverse; /* 按钮从右向左排列 */
-    gap: 10px; /* 按钮之间的间距 */
-    position: fixed; /* 固定菜单位置 */
-    top: 80px; /* 确保菜单在页眉下方，调整此值以适配实际页眉高度 */
-    right: 0; /* 将菜单容器靠右对齐 */
-    z-index: 500; /* 菜单的层级，确保不会被其他内容遮盖 */
-    width: auto; /* 使菜单容器宽度自适应内容 */
-}
-  
-/* 自适应图标样式 */
-.adaptive-icon {
-    width: auto; /* 自适应宽度 */
-    height: 1em; /* 与文本字体大小相同 */
-    vertical-align: middle; /* 垂直居中与文本对齐 */
-}
-  
-/* 菜单按钮样式 */
-.menu-button {
-    background-color: transparent; /* 背景透明 */
-    padding: 10px 20px; /* 按钮内边距 */
-    text-decoration: none !important; /* 移除下划线 */
-    color: black; /* 字体颜色 */
-    border: none; /* 移除默认边框 */
-    text-align: center; /* 文字居中对齐 */
-    display: inline-flex; /* 保持按钮与其他按钮水平对齐 */
-    justify-content: center; /* 水平居中 */
-    align-items: center; /* 垂直居中 */
-    height: auto; /* 按钮固定高度 */
-    width: auto; /* 自适应宽度 */
-    min-width: 100px; /* 可选：设置最小宽度 */
-}
+      /* 菜单容器样式 */
+      .menu {
+        display: flex; /* 使用 Flexbox 布局 */
+        flex-direction: row-reverse; /* 按钮从右向左排列 */
+        gap: 10px; /* 按钮之间的间距 */
+        position: fixed; /* 固定菜单位置 */
+        top: 80px; /* 确保菜单在页眉下方，调整此值以适配实际页眉高度 */
+        right: 0; /* 将菜单容器靠右对齐 */
+        z-index: 500; /* 菜单的层级，确保不会被其他内容遮盖 */
+        width: auto; /* 使菜单容器宽度自适应内容 */
+      }
 
-/* 鼠标悬停效果 */
-.menu-button:hover {
-    border-bottom: 1px solid black; /* 添加黑色下划线 */
-}
+      /* 自适应图标样式 */
+      .adaptive-icon {
+        width: auto; /* 自适应宽度 */
+        height: 1em; /* 与文本字体大小相同 */
+        vertical-align: middle; /* 垂直居中与文本对齐 */
+      }
 
-/* 页脚样式 */
-.footer {
-    position: fixed; /* 固定在页面底部 */
-    left: 0;
-    bottom: 0;
-    width: 100%; /* 宽度占满屏幕 */
-    background-color: #333; /* 背景颜色 */
-    color: white; /* 字体颜色 */
-    text-align: center; /* 文字居中 */
-    padding: 10px 0; /* 上下内边距 */
-    z-index: 1000; /* 确保页脚在最前方显示 */
-}
+      /* 菜单按钮样式 */
+      .menu-button {
+        background-color: transparent; /* 背景透明 */
+        padding: 10px 20px; /* 按钮内边距 */
+        text-decoration: none !important; /* 移除下划线 */
+        color: black; /* 字体颜色 */
+        border: none; /* 移除默认边框 */
+        text-align: center; /* 文字居中对齐 */
+        display: inline-flex; /* 保持按钮与其他按钮水平对齐 */
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+        height: auto; /* 按钮固定高度 */
+        width: auto; /* 自适应宽度 */
+        min-width: 100px; /* 可选：设置最小宽度 */
+      }
 
-/* 私有内容的默认样式（未显示） */
-.private-content {
-    display: none;
-}
+      /* 鼠标悬停效果 */
+      .menu-button:hover {
+        border-bottom: 1px solid black; /* 添加黑色下划线 */
+      }
 
+      /* 页脚样式 */
+      .footer {
+        position: fixed; /* 固定在页面底部 */
+        left: 0;
+        bottom: 0;
+        width: 100%; /* 宽度占满屏幕 */
+        background-color: #333; /* 背景颜色 */
+        color: white; /* 字体颜色 */
+        text-align: center; /* 文字居中 */
+        padding: 10px 0; /* 上下内边距 */
+        z-index: 1000; /* 确保页脚在最前方显示 */
+      }
 
-</style>
-    
+      /* 私有内容的默认样式（未显示） */
+      .private-content {
+        display: none;
+      }
+    </style>
   </head>
 
   <body>
     <div class="header">
-      <a href="./index.html"><img src="./Favicon/moyai_1f5ff.png" alt="Favicon" class="adaptive-icon">&nbsp;WUZHI</a>
+      <a href="./index.html"
+        ><img
+          src="./Favicon/moyai_1f5ff.png"
+          alt="Favicon"
+          class="adaptive-icon"
+        />&nbsp;WUZHI</a
+      >
     </div>
 
-<div class="menu-container">
-  <div class="menu">
-    <a href="javascript:void(0);" class="menu-button" onclick="validatePassword()">Diary</a>
-    <a href="./Menu/About Myself/Myself.html" class="menu-button">ABOUT MYSELF</a>
-    <a href="./Menu/Art/ART.html" class="menu-button">ART</a>
-    <a href="./Menu/Animation/Animation.html" class="menu-button">Animation Demo Reel</a>
-  </div>
-</div>
+    <div class="menu-container">
+      <div class="menu">
+        <a
+          href="javascript:void(0);"
+          class="menu-button"
+          onclick="validatePassword()"
+          >Diary</a
+        >
+        <a href="./Menu/About Myself/Myself.html" class="menu-button"
+          >ABOUT MYSELF</a
+        >
+        <a href="./Menu/Art/ART.html" class="menu-button">ART</a>
+        <a href="./Menu/Animation/Animation.html" class="menu-button"
+          >Animation Demo Reel</a
+        >
+      </div>
+    </div>
 
-<script>
-    function validatePassword() {
+    <script>
+      function validatePassword() {
         var password = prompt("请输入密码以进入日记本:");
 
         // 假设密码为 "040610"
         if (password === "040610") {
-            window.location.href = "./Menu/Diary/Diary.html"; // 跳转到日记本页面
+          window.location.href = "./Menu/Diary/Diary.html"; // 跳转到日记本页面
         } else {
-            alert("密码错误，请重试！");
+          alert("密码错误，请重试！");
         }
-    }
-</script>
-
+      }
+    </script>
   </body>
 </html>

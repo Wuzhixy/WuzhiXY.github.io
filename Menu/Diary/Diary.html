@@ -4,125 +4,137 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wuzhi_Diary</title>
-     <link rel="icon" type="image/png" sizes="32x32" href="../../../Favicon/moyai_1f5ff.png">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../../Favicon/moyai_1f5ff.png"
+    />
 
     <style>
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: 'Courier New', Courier, monospace;
-}
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: "Courier New", Courier, monospace;
+      }
 
-/* 页眉样式 */
-.header {
-    width: auto; /* 根据内容自适应宽度 */
-    padding: 50px; /* 内边距 */
-    color: black; /* 字体颜色 */
-    text-align: left; /* 左对齐 */
-    font-size: 24px; /* 字体大小 */
-    position: fixed; /* 固定在顶部 */
-    top: 0;
-    left: 0;
-    z-index: 1000; /* 确保页眉在最前方显示 */
-}
+      /* 页眉样式 */
+      .header {
+        width: auto; /* 根据内容自适应宽度 */
+        padding: 50px; /* 内边距 */
+        color: black; /* 字体颜色 */
+        text-align: left; /* 左对齐 */
+        font-size: 24px; /* 字体大小 */
+        position: fixed; /* 固定在顶部 */
+        top: 0;
+        left: 0;
+        z-index: 1000; /* 确保页眉在最前方显示 */
+      }
 
-/* 主内容样式，防止被页眉遮挡 */
-.content {
-    padding-top: 120px; /* 根据页眉高度调整 */
-    min-height: 100vh; /* 使内容至少占满全屏 */
-    padding-bottom: 50px; /* 防止内容被页脚遮挡 */
-}
+      /* 主内容样式，防止被页眉遮挡 */
+      .content {
+        padding-top: 120px; /* 根据页眉高度调整 */
+        min-height: 100vh; /* 使内容至少占满全屏 */
+        padding-bottom: 50px; /* 防止内容被页脚遮挡 */
+      }
 
-/* 链接基础样式 */
-a {
-    text-decoration: none !important; /* 移除默认下划线 */
-    color: black; /* 链接字体颜色 */
-}
+      /* 链接基础样式 */
+      a {
+        text-decoration: none !important; /* 移除默认下划线 */
+        color: black; /* 链接字体颜色 */
+      }
 
-/* 自适应图标样式 */
-.adaptive-icon {
-    width: auto; /* 自适应宽度 */
-    height: 1em; /* 与文本字体大小相同 */
-    vertical-align: middle; /* 垂直居中与文本对齐 */
-}
+      /* 自适应图标样式 */
+      .adaptive-icon {
+        width: auto; /* 自适应宽度 */
+        height: 1em; /* 与文本字体大小相同 */
+        vertical-align: middle; /* 垂直居中与文本对齐 */
+      }
 
-/* 博客容器样式 */
-.blog-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-}
+      /* 博客容器样式 */
+      .blog-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
 
-.blog-container p {
-    text-indent: 2em; /* 首行缩进 2 个字符 */
-    margin-bottom: 10px; /* 段落之间的间距 */
-}
+      .blog-container p {
+        text-indent: 2em; /* 首行缩进 2 个字符 */
+        margin-bottom: 10px; /* 段落之间的间距 */
+      }
 
-/* 博客项样式 */
-.blog-item {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin: 10px;
-    padding: 20px;
-    width: 80%;
-    max-width: 800px;
-    transition: background-color 0.3s, transform 0.3s;
-    cursor: pointer;
-}
+      /* 博客项样式 */
+      .blog-item {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin: 10px;
+        padding: 20px;
+        width: 80%;
+        max-width: 800px;
+        transition: background-color 0.3s, transform 0.3s;
+        cursor: pointer;
+      }
 
-.blog-item:hover {
-    background-color: #f0f0f0;
-    transform: scale(1.02);
-}
+      .blog-item:hover {
+        background-color: #f0f0f0;
+        transform: scale(1.02);
+      }
 
-/* 禁用鼠标悬停效果的样式 */
-.no-hover .blog-item:hover {
-    background-color: initial;
-    transform: none;
-}
+      /* 禁用鼠标悬停效果的样式 */
+      .no-hover .blog-item:hover {
+        background-color: initial;
+        transform: none;
+      }
 
-/* 模态框样式 */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-}
+      /* 模态框样式 */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+      }
 
-.modal-content {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    width: 80%;
-    max-width: 600px;
-    max-height: 80vh; /* 设置最大高度为视窗高度的80% */
-    overflow-y: auto; /* 当内容超出时显示垂直滚动条 */
-    position: relative;
-}
+      .modal-content {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        width: 80%;
+        max-width: 600px;
+        max-height: 80vh; /* 设置最大高度为视窗高度的80% */
+        overflow-y: auto; /* 当内容超出时显示垂直滚动条 */
+        position: relative;
+      }
 
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    cursor: pointer;
-}
+      .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+        cursor: pointer;
+      }
     </style>
   </head>
 
   <body>
-   <div class="header">
-      <a href="../../../index.html"><img src="../../../Favicon/moyai_1f5ff.png" alt="Favicon" class="adaptive-icon">&nbsp;WUZHI</a>
-   </div>
+    <div class="header">
+      <a href="../../../index.html"
+        ><img
+          src="../../../Favicon/moyai_1f5ff.png"
+          alt="Favicon"
+          class="adaptive-icon"
+        />&nbsp;WUZHI</a
+      >
+    </div>
 
     <div class="blog-container">
       <div class="blog-item" data-date="2024-08-05">
@@ -170,8 +182,8 @@ a {
             也是我这一生唯一的一次机会，初中的成绩由于中途转学以及一系列事情迟迟难以稳定，最后以一个算得上很差的成绩吧，报考了当地的一所高职院校，
             在这里度过了我的五年，于今年六月正式以一名20岁的大专生毕业，迈入社会。我大专选择的专业是动漫设计，算是和艺术沾点边吧，当时对未来，对专业，
             对人生的规划和认知都是模糊的，也算是命运指向我走这条路，
-          </P>
-          <P>
+          </p>
+          <p>
             在大专院校学艺术，应该几乎是没有出路的吧，在粗略学完美术基础的两年后，我接触到了maya和max，
             可能大多数人并不知道这两个软件，但如果以后因为我的作品吸引了一部分和我同行业或者相同爱好的人看到这篇文章，那对这两个软件应该不会陌生，当我结束美术基础的学习，
             开始学习3D软件的时候，一开始我的态度是很反对的，原因很简单，因为我不懂，看着复杂的界面和各种无法形容的功能，一直在使我抗拒3D软件知识的灌输，直到2021年的8月20号，
@@ -187,8 +199,8 @@ a {
             很遗憾的是，正是由于自学，我走了很多弯路，浪费了很多时间，在临近实习离校前，手上几乎没有能看的动画作品，我从动画老师的手上打听到他的朋友有正在经营一家游戏动画外包公司，
             于是我便申请去到那边实习，于今年的年后，我通过了那边的测试题，进入了实习岗位，也是我这一生中第一次以这种身份参与这个行业，或许是因为太年轻，没有社会经验，在实习一个月之后，
             那边因为我的问题辞退了我，很难接受吧，当时的我才19岁，被自己所热爱的，向往的行业否定
-          </P>
-          <P>
+          </p>
+          <p>
             当天离开公司赶高铁回家的路上我缓了很久，我对这个行业有了新的认知，抛开眼前的滤镜，
             看到了也想了很多，关于辞退的原因，可能真的是因为我的实力很差吧，回家之后我冷静了一段时间也缓了缓。从看到黑神话宣传片的那时候起，我一直都是一个清楚我想做什么的人，即使被否认，
             我也依然想参与制作游戏，我始终坚信我的名字一定会出现在一款真正的属于我们国家的3A游戏的制作人名单里。我写下这段话的意义其实更想提醒我自己，如果之后对生活失去了动力，也请不要忘记年少时的梦想。保持对游戏的热爱继续向前吧。今天就到这吧
