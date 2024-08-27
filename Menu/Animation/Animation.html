@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>三个滚动模块</title>
+    <title>倾斜分割的滚动模块</title>
     <style>
         body {
             margin: 0;
@@ -18,7 +18,7 @@
 
         /* 父容器 */
         .container {
-            width: 100vw;
+            width: 80vw;
             height: 80vh;
             display: flex;
             overflow: hidden;
@@ -31,14 +31,15 @@
             height: 100%;
             overflow: hidden;
             position: relative;
+            transform-origin: bottom left;
         }
 
         /* 模块内的滚动容器 */
         .image-container {
             display: flex;
             flex-direction: column;
-            height: 1000%; /* 增加高度以确保循环滚动效果 */
-            animation: scroll 30s linear infinite;
+            height: 300%; /* 增加高度以确保循环滚动效果 */
+            animation: scroll 10s linear infinite;
         }
 
         /* 图片样式 */
@@ -58,9 +59,22 @@
         }
 
         /* 单个模块的背景色 */
-        .module-1 { background-color: #d1e3f5; }
-        .module-2 { background-color: #c2e9f2; }
-        .module-3 { background-color: #a3c7e6; }
+        .module-1 { 
+            background-color: #d1e3f5;
+            clip-path: polygon(0 0, 100% 0, calc(100% - 50px) 100%, 0 100%);
+        }
+
+        .module-2 { 
+            background-color: #c2e9f2;
+            clip-path: polygon(50px 0, 100% 0, 100% 100%, -50px 100%);
+            z-index: 1;
+        }
+
+        .module-3 { 
+            background-color: #a3c7e6;
+            clip-path: polygon(50px 0, 100% 0, 100% 100%, 0 100%);
+        }
+
     </style>
 </head>
 <body>
