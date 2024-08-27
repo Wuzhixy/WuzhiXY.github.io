@@ -31,6 +31,12 @@
     z-index: 1000;
 }
 
+  .adaptive-icon {
+    width: auto;
+    height: 1em; /* 图标的高度与字体高度相同，确保与文字保持一致 */
+    vertical-align: middle; /* 使图标与文字垂直对齐 */
+}
+  
 a {
     text-decoration: none !important;
     color: black;
@@ -83,7 +89,7 @@ a {
 
   <body>
     <div class="header">
-      <a href="./index.html"><link rel="icon" type="image/png" sizes="32x32" href="./Favicon/moyai_1f5ff.png">WUZHI</a>
+      <a href="./index.html"><img src="./Favicon/moyai_1f5ff.png" alt="Favicon" class="adaptive-icon">WUZHI</a>
     </div>
 
   <div class="menu">
