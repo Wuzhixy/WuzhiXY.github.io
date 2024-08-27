@@ -104,14 +104,16 @@
         z-index: 1000;
       }
 
-      .modal-content {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        width: 80%;
-        max-width: 600px;
-        position: relative;
-      }
+    .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 600px;
+    max-height: 80vh; /* 设置最大高度为视窗高度的80% */
+    overflow-y: auto; /* 当内容超出时显示垂直滚动条 */
+    position: relative;
+}
 
       .close-btn {
         position: absolute;
