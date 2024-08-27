@@ -47,8 +47,15 @@ a {
     position: relative; /* 确保 z-index 属性生效 */
     z-index: 500; /* 菜单的层级，确保不会被其他内容遮盖 */
     width: auto; /* 使菜单容器宽度自适应内容 */
-    margin: 0; /* 确保没有额外的外边距 */
-
+}
+  
+/* 自适应图标样式 */
+.adaptive-icon {
+    width: auto; /* 自适应宽度 */
+    height: 1em; /* 与文本字体大小相同 */
+    vertical-align: middle; /* 垂直居中与文本对齐 */
+}
+  
 /* 菜单按钮样式 */
 .menu-button {
     background-color: transparent; /* 背景透明 */
@@ -88,12 +95,7 @@ a {
     display: none;
 }
 
-/* 自适应图标样式 */
-.adaptive-icon {
-    width: auto; /* 自适应宽度 */
-    height: 1em; /* 与文本字体大小相同 */
-    vertical-align: middle; /* 垂直居中与文本对齐 */
-}
+
 </style>
     
   </head>
