@@ -3,89 +3,102 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wuzhi_SPACE/Diary</title>
+    <title>Wuzhi</title>
+     <link rel="icon" type="image/png" sizes="32x32" href="./Favicon/moyai_1f5ff.png">
 
     <style>
-      html{
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        font-family: 'Courier New', Courier, monospace;
-      }
-
-      .content {
-    padding-top: 80px; /* 避免内容被页眉遮盖 */
-    min-height: 100vh;
-    padding-bottom: 50px;
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-      .header {
-    width: auto;
-    padding: 50px;
-    color: black;
-    text-align: left;
-    font-size: 24px;
+/* 页眉样式 */
+.header {
+    width: auto; /* 根据内容自适应宽度 */
+    padding: 50px; /* 内边距 */
+    color: black; /* 字体颜色 */
+    text-align: left; /* 左对齐 */
+    font-size: 24px; /* 字体大小 */
+    position: fixed; /* 固定在顶部 */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* 确保页眉在最前方显示 */
+}
+
+/* 主内容样式，防止被页眉遮挡 */
+.content {
+    padding-top: 120px; /* 根据页眉高度调整 */
+    min-height: 100vh; /* 使内容至少占满全屏 */
+    padding-bottom: 50px; /* 防止内容被页脚遮挡 */
+}
+
+/* 链接基础样式 */
+a {
+    text-decoration: none !important; /* 移除默认下划线 */
+    color: black; /* 链接字体颜色 */
+}
+
+/* 自适应图标样式 */
+.adaptive-icon {
+    width: auto; /* 自适应宽度 */
+    height: 1em; /* 与文本字体大小相同 */
+    vertical-align: middle; /* 垂直居中与文本对齐 */
+}
+
+/* 博客容器样式 */
+.blog-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.blog-container p {
+    text-indent: 2em; /* 首行缩进 2 个字符 */
+    margin-bottom: 10px; /* 段落之间的间距 */
+}
+
+/* 博客项样式 */
+.blog-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+
+.blog-item:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.02);
+}
+
+/* 禁用鼠标悬停效果的样式 */
+.no-hover .blog-item:hover {
+    background-color: initial;
+    transform: none;
+}
+
+/* 模态框样式 */
+.modal {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
     z-index: 1000;
 }
-      
-      a {
-        text-decoration: none !important;
-        color: black; 
-      }
 
-      .blog-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-      }
-      
-      .blog-container p {
-        text-indent: 2em; /* 首行缩进 2 个字符 */
-        margin-bottom: 10px; /* 段落之间的间距 */
-      }
-      
-      .blog-item {
-        background-color: #fff;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        margin: 10px;
-        padding: 20px;
-        width: 80%;
-        max-width: 800px;
-        transition: background-color 0.3s, transform 0.3s;
-        cursor: pointer;
-      }
-
-      .blog-item:hover {
-        background-color: #f0f0f0;
-        transform: scale(1.02);
-      }
-      
-     
-      /* 当弹窗打开时禁用鼠标悬停效果 */
-      .no-hover .blog-item:hover {
-        background-color: initial;
-        transform: none;
-      }
-
-      .modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        align-items: center;
-        justify-content: center;
-        z-index: 1000;
-      }
-
-    .modal-content {
+.modal-content {
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
@@ -96,19 +109,19 @@
     position: relative;
 }
 
-      .close-btn {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 24px;
-        cursor: pointer;
-      }
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
     </style>
   </head>
 
   <body>
-    <div class="header">
-      <a href="../../index.html">WUZHI</a>
+  <div class="header">
+      <a href="./index.html"><img src="./Favicon/moyai_1f5ff.png" alt="Favicon" class="adaptive-icon">&nbsp;WUZHI</a>
     </div>
 
     <div class="blog-container">
