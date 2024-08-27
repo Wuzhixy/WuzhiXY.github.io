@@ -1,285 +1,305 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wuzhi_Diary</title>
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="../../../Favicon/moyai_1f5ff.png"
-    />
 
-    <style>
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        font-family: "Courier New", Courier, monospace;
-      }
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wuzhi_Diary</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../Favicon/moyai_1f5ff.png" />
 
-      /* 页眉样式 */
-      .header {
-        width: auto;
-        /* 根据内容自适应宽度 */
-        padding: 50px;
-        /* 内边距 */
-        color: black;
-        /* 字体颜色 */
-        text-align: left;
-        /* 左对齐 */
-        font-size: 24px;
-        /* 字体大小 */
-        position: fixed;
-        /* 固定在顶部 */
-        top: 0;
-        left: 0;
-        z-index: 1000;
-        /* 确保页眉在最前方显示 */
-      }
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: "Courier New", Courier, monospace;
+    }
 
-      /* 主内容样式，防止被页眉遮挡 */
-      .content {
-        padding-top: 120px;
-        /* 根据页眉高度调整 */
-        min-height: 100vh;
-        /* 使内容至少占满全屏 */
-        padding-bottom: 50px;
-        /* 防止内容被页脚遮挡 */
-      }
+    /* 页眉样式 */
+    .header {
+      width: auto;
+      /* 根据内容自适应宽度 */
+      padding: 50px;
+      /* 内边距 */
+      color: black;
+      /* 字体颜色 */
+      text-align: left;
+      /* 左对齐 */
+      font-size: 24px;
+      /* 字体大小 */
+      position: fixed;
+      /* 固定在顶部 */
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      /* 确保页眉在最前方显示 */
+    }
 
-      /* 链接基础样式 */
-      a {
-        text-decoration: none !important;
-        /* 移除默认下划线 */
-        color: black;
-        /* 链接字体颜色 */
-      }
+    /* 主内容样式，防止被页眉遮挡 */
+    .content {
+      padding-top: 120px;
+      /* 根据页眉高度调整 */
+      min-height: 100vh;
+      /* 使内容至少占满全屏 */
+      padding-bottom: 50px;
+      /* 防止内容被页脚遮挡 */
+    }
 
-      /* 自适应图标样式 */
-      .adaptive-icon {
-        width: auto;
-        /* 自适应宽度 */
-        height: 1em;
-        /* 与文本字体大小相同 */
-        vertical-align: middle;
-        /* 垂直居中与文本对齐 */
-      }
+    /* 链接基础样式 */
+    a {
+      text-decoration: none !important;
+      /* 移除默认下划线 */
+      color: black;
+      /* 链接字体颜色 */
+    }
 
-      /* 博客容器样式 */
-      .blog-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-      }
+    /* 自适应图标样式 */
+    .adaptive-icon {
+      width: auto;
+      /* 自适应宽度 */
+      height: 1em;
+      /* 与文本字体大小相同 */
+      vertical-align: middle;
+      /* 垂直居中与文本对齐 */
+    }
 
-      .blog-container p {
-        text-indent: 2em;
-        /* 首行缩进 2 个字符 */
-        margin-bottom: 10px;
-        /* 段落之间的间距 */
-      }
+    /* 博客容器样式 */
+    .blog-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
 
-      /* 博客项样式 */
-      .blog-item {
-        background-color: #fff;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        margin: 10px;
-        padding: 20px;
-        width: 80%;
-        max-width: 800px;
-        transition: background-color 0.3s, transform 0.3s;
-        cursor: pointer;
-      }
+    .blog-container p {
+      text-indent: 2em;
+      /* 首行缩进 2 个字符 */
+      margin-bottom: 10px;
+      /* 段落之间的间距 */
+    }
 
-      .blog-item:hover {
-        background-color: #f0f0f0;
-        transform: scale(1.02);
-      }
+    /* 博客项样式 */
+    .blog-item {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin: 10px;
+      padding: 20px;
+      width: 80%;
+      max-width: 800px;
+      transition: background-color 0.3s, transform 0.3s;
+      cursor: pointer;
+    }
 
-      /* 禁用鼠标悬停效果的样式 */
-      .no-hover .blog-item:hover {
-        background-color: initial;
-        transform: none;
-      }
+    .blog-item:hover {
+      background-color: #f0f0f0;
+      transform: scale(1.02);
+    }
 
-      /* 模态框样式 */
-      .modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        align-items: center;
-        justify-content: center;
-        z-index: 1000;
-      }
+    /* 禁用鼠标悬停效果的样式 */
+    .no-hover .blog-item:hover {
+      background-color: initial;
+      transform: none;
+    }
 
-      .modal-content {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        width: 80%;
-        max-width: 600px;
-        max-height: 80vh;
-        /* 设置最大高度为视窗高度的80% */
-        overflow-y: auto;
-        /* 当内容超出时显示垂直滚动条 */
-        position: relative;
-      }
+    /* 模态框样式 */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
 
-      .close-btn {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 24px;
-        cursor: pointer;
-      }
-    </style>
-  </head>
+    .modal-content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      width: 80%;
+      max-width: 600px;
+      max-height: 80vh;
+      /* 设置最大高度为视窗高度的80% */
+      overflow-y: auto;
+      /* 当内容超出时显示垂直滚动条 */
+      position: relative;
+    }
 
-  <body>
-    <div class="header">
-      <a href="../../../index.html"
-        ><img
-          src="../../../Favicon/moyai_1f5ff.png"
-          alt="Favicon"
-          class="adaptive-icon"
-        />
-        &nbsp;WUZHI</a
-      >
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <a href="../../../index.html"><img src="../../../Favicon/moyai_1f5ff.png" alt="Favicon" class="adaptive-icon" />
+      &nbsp;WUZHI</a>
+  </div>
+
+  <div class="blog-container">
+    <div class="blog-item" data-date="2024-08-05">
+      <h2>2024-08-05</h2>
+      <p class="excerpt">
+        这是博客内容的开头部分。鼠标悬停可以看到特殊效果。
+      </p>
+      <div class="full-content" style="display: none">
+        hi这里是雾质，今天是2024年的8月5号，
+        是这个网站开始制作的日子，记录一下吧，留下我在这个数据世界存在的痕迹，之后会陆续填充一些内容进来，也可能就这样一直当作一个我的日记本
+        如果以后我的作品有幸能够被我公开到这个网站上，被你看见，那么当你看到这段话的时候，我想说，非常欢迎你光临我的小世界。那，今天就这样
+      </div>
     </div>
 
-    <div class="blog-container">
-      <div class="blog-item" data-date="2024-08-05">
-        <h2>2024-08-05</h2>
-        <p class="excerpt">
-          这是博客内容的开头部分。鼠标悬停可以看到特殊效果。
+    <div class="blog-item" data-date="2024-08-16">
+      <h2>2024-08-16</h2>
+      <p class="excerpt">
+        这是另一篇博客内容的开头部分。鼠标悬停可以看到特殊效果。
+      </p>
+      <div class="full-content" style="display: none">
+        hi这里是雾质，今天是2024年的8月16号，为了解决网站服务器的问题，今天把网站搬到了Github上，对于我的个人网站来说，这里应该是最好的地方，
+        从网上找了很多教程，之前也只是偶尔会用到Github，所幸并不算难，但是没什么这种基础的我还是研究了好一会，
+        然后，就是现在这样，网页还很潦草，自我介绍什么的之后再说吧，之后还有很多要学习的东西，这也是我算是从学校出来之后自己用HTMl写网页。
+        网站公开比我想象的要快，不过目前应该也没什么人会看到，由于还在上班，以后再慢慢添东西进来吧。那今天就这样
+      </div>
+    </div>
+
+    <div class="blog-item" data-date="2024-08-19">
+      <h2>2024-08-19</h2>
+      <p class="excerpt">
+        这是更多博客内容的开头部分。鼠标悬停可以看到特殊效果。
+      </p>
+      <div class="full-content" style="display: none">
+        <p>
+          hi这里是雾质，今天是2024年8月19号。今天实现了从Github到Vscode的链接，
+          现在更改我的本地文件会直接同步到我的Github仓库中，算是准备工作的一部分，晚点应该会写一篇文章，
+          虽然网站依然简陋，但我想说些什么的想法是按捺不住的，那，晚点见
         </p>
-        <div class="full-content" style="display: none">
-          hi这里是雾质，今天是2024年的8月5号，
-          是这个网站开始制作的日子，记录一下吧，留下我在这个数据世界存在的痕迹，之后会陆续填充一些内容进来，也可能就这样一直当作一个我的日记本
-          如果以后我的作品有幸能够被我公开到这个网站上，被你看见，那么当你看到这段话的时候，我想说，非常欢迎你光临我的小世界。那，今天就这样
-        </div>
+
+        <p>
+          hi这里是雾质，今天是2024年8月19号，明天是一款游戏发售的日子，这款游戏的名字叫做《黑神话悟空》，
+          在之后的几十年，这款游戏应该会被人常常记起，这和我有什么关系呢，这个网站搭建起来至今，一直没有来得及做自我介绍，我叫雾质，当然不是真名，
+          我于两个月前迈入我的二十岁，我应该算是一个半吊子的艺术生吧，现在我已经在社会上工作，数个月前我刚刚离开校园而这个月刚刚结束我的试用期工作，
+          而明天黑神话的十点发售，我应该还在上班，这个游戏算是影响我至深的。
+        </p>
+        <p>
+          五年前的中考失利使得我在江苏一座二线城市错失了一次经历高中的机会，
+          也是我这一生唯一的一次机会，初中的成绩由于中途转学以及一系列事情迟迟难以稳定，最后以一个算得上很差的成绩吧，报考了当地的一所高职院校，
+          在这里度过了我的五年，于今年六月正式以一名20岁的大专生毕业，迈入社会。我大专选择的专业是动漫设计，算是和艺术沾点边吧，当时对未来，对专业，
+          对人生的规划和认知都是模糊的，也算是命运指向我走这条路，
+        </p>
+        <p>
+          在大专院校学艺术，应该几乎是没有出路的吧，在粗略学完美术基础的两年后，我接触到了maya和max，
+          可能大多数人并不知道这两个软件，但如果以后因为我的作品吸引了一部分和我同行业或者相同爱好的人看到这篇文章，那对这两个软件应该不会陌生，当我结束美术基础的学习，
+          开始学习3D软件的时候，一开始我的态度是很反对的，原因很简单，因为我不懂，看着复杂的界面和各种无法形容的功能，一直在使我抗拒这类3D软件。直到2021年的8月20号，
+          游戏科学在B站发布了一条12分钟的UE5实机测试集锦，在当时的我并不知晓一部游戏作品的制作和我的学业如此接近，我像众多人一样折服于那条视频所表达的画面表现。
+          上面提到的，我的专业是动漫设计，直白来说就是动画，二维动画基础的课程结束之后，我以为我会一直致力于学习和制作二维动画，但那天之后，我几乎每天都在想如何能做出来一款我自己的游戏，
+          我上网去了解了游戏制作的流程，最后发现，如果想制作类似黑神话那样的游戏，只靠我一个人是几乎无法做到的，这条庞大的制作管线形成的工作流程使得每一个岗位都有深奥的知识需要学习，
+          而我，在之后的日子里选择了一项最为喜欢的，就是动画，游戏动画，动画的原理其实二维三维几乎没有天差地别，只不过表现的形式不同，那年还有一款软件在市面上展露头角，到我写下这篇文章的时候，
+          它依然在市场上以及工作流程中以强大的活力和优势在maya和max等老牌软件中争得一席之地，它就是Blender，从建模到渲染，几乎它都可以独自完成，对于当时的游戏和影视工作流程来说，
+          它可能并不够专业，但对于当时的个人独立创作者和小工作室来说，开源的社区环境成为其最大的优势，也成为我当时学习的首选，在确定要专攻动画之前，我用Blender从建模开始，一步一步尝试摸索着，
+          顺着这条深奥的管线向前学习，这些学校是不教的，当时的学校教的软件还是max2013，当时应该是21年，正如我所说，在大专学艺术几乎是不会有出路的，我自学Blender,
+          一开始我在Steam上下载然后学习软件基础，网上找各种教程，steam上统计的时长大概一百个小时之后，我转去官网下载了当时的稳定版，之后便一直用官网，也丢失了对时间的概念，记不清多久了，
+          直到现在我还在用Blender，在毕业前，也用了blender完成了我的个人动画短片毕设，Blender也算是我这个了解行业的启蒙，在自以为差不多了解流程之后，我开始专攻动画，当然依然是自学，
+          学校教的动画几乎没用，后面的3D课程几乎也学不到什么。比较遗憾的是，正是由于自学，我走了很多弯路，浪费了很多时间，在临近实习离校前，手上几乎没有能看的动画作品，我从动画老师的手上打听到他的朋友在外地经营一家游戏动画外包公司，
+          于是我便申请去到那边实习，于今年的年后，我通过了那边的测试题，进入了实习岗位，也是我这一生中第一次以这种身份参与这个行业，或许是因为太年轻，没有社会经验，在实习一个月之后，
+          那边因为我的问题辞退了我，很难接受吧，当时的我才19岁，被自己所热爱的，向往的行业否定
+        </p>
+        <p>
+          当天离开公司赶高铁回家的路上我缓了很久，我对这个行业有了新的认知，抛开眼前的滤镜，
+          看到了也想了很多，关于辞退的原因，可能真的是因为我的实力很差吧，回家之后我冷静了一段时间也缓了缓。从看到黑神话宣传片的那时候起，我一直都是一个清楚我想做什么的人，即使被否认，
+          我也依然想参与制作游戏，我始终坚信我的名字一定会出现在一款真正的属于我们国家的3A游戏的制作人名单里。我写下这段话的意义其实更想提醒我自己，如果之后对生活失去了动力，也请不要忘记年少时的梦想。保持对游戏的热爱继续向前吧。今天就到这吧
+        </p>
+      </div>
+    </div>
+
+    <div class="blog-item" data-date="2024-08-27">
+      <h2>2024-08-27</h2>
+      <p class="excerpt">
+        这是另一篇博客内容的开头部分。鼠标悬停可以看到特殊效果。
+      </p>
+      <div class="full-content" style="display: none">
+        hi这里是雾质，今天是2024年8月27号，黑神话发售的一周以后，正如很多玩家期待的一样，这款游戏是成功的，在发售前三天获得了1000万份的销量。这是一个恐怖的数字，我身边很多不怎么玩游戏的人都尝试了，也有很多公司因为它的发售而停工，
+        甚至是为公司员工赠送这样一款游戏，这在我的见识中是前所未有的。我也是预购玩家，在发售之后深度体验前两回内容，虽然有一些性能或者游戏性设计上的小问题，但不足以碍其成为我们国家现象级的第一款3A游戏，这段时间里，各种官方媒体为黑神话
+        在自媒体平台宣传，报道，自媒体平台的热度也是居高不下。我并没有关注很多内容，因为我不想看见一些我还没玩到的游戏内容，这两天通关的人越来越多，我的同事也很快打完了结局了，冲浪的时候还是看见了一条黑神话的稿件，使我激动不已，那就是黑神话
+        在结局之后列出了每一个参与制作的人名，这是我第一次在这种游戏的结局看见这么多中国人的名字出现在制作人名单上，也是我第一次在国产的游戏上看见制作人名单，游戏科学甚至列举了外包公司的人员名单，这是令我震撼的，虽然这些名字里并没有我，
+        但当我真正看到这样的画面，我更加坚信了我的梦想，我也想让我的名字出现在这样的游戏完结之后，这是我愿意为之奋斗一生的事业，加油吧。
       </div>
 
-      <div class="blog-item" data-date="2024-08-16">
-        <h2>2024-08-16</h2>
+      <div class="blog-item" data-date="2024-08-27">
+        <h2>2024-08-27</h2>
         <p class="excerpt">
           这是另一篇博客内容的开头部分。鼠标悬停可以看到特殊效果。
         </p>
         <div class="full-content" style="display: none">
-          hi这里是雾质，今天是2024年的8月16号，为了解决网站服务器的问题，今天把网站搬到了Github上，对于我的个人网站来说，这里应该是最好的地方，
-          从网上找了很多教程，之前也只是偶尔会用到Github，所幸并不算难，但是没什么这种基础的我还是研究了好一会，
-          然后，就是现在这样，网页还很潦草，自我介绍什么的之后再说吧，之后还有很多要学习的东西，这也是我算是从学校出来之后自己用HTMl写网页。
-          网站公开比我想象的要快，不过目前应该也没什么人会看到，由于还在上班，以后再慢慢添东西进来吧。那今天就这样
-        </div>
-      </div>
-
-      <div class="blog-item" data-date="2024-08-19">
-        <h2>2024-08-19</h2>
-        <p class="excerpt">
-          这是更多博客内容的开头部分。鼠标悬停可以看到特殊效果。
-        </p>
-        <div class="full-content" style="display: none">
           <p>
-            hi这里是雾质，今天是2024年8月19号。今天实现了从Github到Vscode的链接，
-            现在更改我的本地文件会直接同步到我的Github仓库中，算是准备工作的一部分，晚点应该会写一篇文章，
-            虽然网站依然简陋，但我想说些什么的想法是按捺不住的，那，晚点见
-          </p>
-
-          <p>
-            hi这里是雾质，今天是2024年8月19号，对大多数来说，今天是普通的一天，明天是一款游戏发售的日子，这款游戏的名字叫做《黑神话悟空》，
-            在之后的几十年，这款游戏应该会被人常常记起，这和我有什么关系呢，这个网站搭建起来至今，一直没有来得及做自我介绍，我叫雾质，当然不是真名，
-            我于两个月前迈入我的二十岁，我应该算是一个半吊子的艺术生吧，现在我已经在社会上工作，数个月前我刚刚离开校园而这个月刚刚结束我的试用期工作，
-            而明天黑神话的十点发售，我应该还在上班，这个游戏算是影响我至深的。
+            hi这里是雾质，今天是2024年8月27号，关于这个网站，最近两天搭好了框架，开始准备往里面添置内容。原本在熟悉代码阶段添了很多花里胡哨的东西，但是想想在最后还是删掉了，一开始有制作这个网站的想法是看到了一位很喜欢的外国动画艺术家，在寻找他的作品的时候，点进了他主页的一个链接，
+            跳转进入了一个新的世界，那里有他无数被称为神作的上线作品，，也是他个人的插画艺术作品集，他的名字叫alberto
+            mielgo，他参与了《蜘蛛侠：平行宇宙》的分镜导演概念设定，《看门狗：军团》CG动画的导演，《爱，死亡，机器人》中《证人》的导演，这都是我非常喜欢的动画作品。这是他的个人主页https://vimeo.com/user3022902。
           </p>
           <p>
-            五年前的中考失利使得我在江苏一座二线城市错失了一次经历高中的机会，
-            也是我这一生唯一的一次机会，初中的成绩由于中途转学以及一系列事情迟迟难以稳定，最后以一个算得上很差的成绩吧，报考了当地的一所高职院校，
-            在这里度过了我的五年，于今年六月正式以一名20岁的大专生毕业，迈入社会。我大专选择的专业是动漫设计，算是和艺术沾点边吧，当时对未来，对专业，
-            对人生的规划和认知都是模糊的，也算是命运指向我走这条路，
-          </p>
-          <p>
-            在大专院校学艺术，应该几乎是没有出路的吧，在粗略学完美术基础的两年后，我接触到了maya和max，
-            可能大多数人并不知道这两个软件，但如果以后因为我的作品吸引了一部分和我同行业或者相同爱好的人看到这篇文章，那对这两个软件应该不会陌生，当我结束美术基础的学习，
-            开始学习3D软件的时候，一开始我的态度是很反对的，原因很简单，因为我不懂，看着复杂的界面和各种无法形容的功能，一直在使我抗拒这类3D软件。直到2021年的8月20号，
-            游戏科学在B站发布了一条12分钟的UE5实机测试集锦，在当时的我并不知晓一部游戏作品的制作和我的学业如此接近，我像众多人一样折服于那条视频所表达的画面表现。
-            上面提到的，我的专业是动漫设计，直白来说就是动画，二维动画基础的课程结束之后，我以为我会一直致力于学习和制作二维动画，但那天之后，我几乎每天都在想如何能做出来一款我自己的游戏，
-            我上网去了解了游戏制作的流程，最后发现，如果想制作类似黑神话那样的游戏，只靠我一个人是几乎无法做到的，这条庞大的制作管线形成的工作流程使得每一个岗位都有深奥的知识需要学习，
-            而我，在之后的日子里选择了一项最为喜欢的，就是动画，游戏动画，动画的原理其实二维三维几乎没有天差地别，只不过表现的形式不同，那年还有一款软件在市面上展露头角，到我写下这篇文章的时候，
-            它依然在市场上以及工作流程中以强大的活力和优势在maya和max等老牌软件中争得一席之地，它就是Blender，从建模到渲染，几乎它都可以独自完成，对于当时的游戏和影视工作流程来说，
-            它可能并不够专业，但对于当时的个人独立创作者和小工作室来说，开源的社区环境成为其最大的优势，也成为我当时学习的首选，在确定要专攻动画之前，我用Blender从建模开始，一步一步尝试摸索着，
-            顺着这条深奥的管线向前学习，这些学校是不教的，当时的学校教的软件还是max2013，当时应该是21年，正如我所说，在大专学艺术几乎是不会有出路的，我自学Blender,
-            一开始我在Steam上下载然后学习软件基础，网上找各种教程，steam上统计的时长大概一百个小时之后，我转去官网下载了当时的稳定版，之后便一直用官网，也丢失了对时间的概念，记不清多久了，
-            直到现在我还在用Blender，在毕业前，也用了blender完成了我的个人动画短片毕设，Blender也算是我这个了解行业的启蒙，在自以为差不多了解流程之后，我开始专攻动画，当然依然是自学，
-            学校教的动画几乎没用，后面的3D课程几乎也学不到什么。比较遗憾的是，正是由于自学，我走了很多弯路，浪费了很多时间，在临近实习离校前，手上几乎没有能看的动画作品，我从动画老师的手上打听到他的朋友在外地经营一家游戏动画外包公司，
-            于是我便申请去到那边实习，于今年的年后，我通过了那边的测试题，进入了实习岗位，也是我这一生中第一次以这种身份参与这个行业，或许是因为太年轻，没有社会经验，在实习一个月之后，
-            那边因为我的问题辞退了我，很难接受吧，当时的我才19岁，被自己所热爱的，向往的行业否定
-          </p>
-          <p>
-            当天离开公司赶高铁回家的路上我缓了很久，我对这个行业有了新的认知，抛开眼前的滤镜，
-            看到了也想了很多，关于辞退的原因，可能真的是因为我的实力很差吧，回家之后我冷静了一段时间也缓了缓。从看到黑神话宣传片的那时候起，我一直都是一个清楚我想做什么的人，即使被否认，
-            我也依然想参与制作游戏，我始终坚信我的名字一定会出现在一款真正的属于我们国家的3A游戏的制作人名单里。我写下这段话的意义其实更想提醒我自己，如果之后对生活失去了动力，也请不要忘记年少时的梦想。保持对游戏的热爱继续向前吧。今天就到这吧
+            于是在我自己网站初成雏形的时候，我参考了他的网站设计，当然这个网站对我来说不仅是作品的整理，还有另外一个，也算做是我未来自己做独立游戏的门面吧，目前还在上班，所幸工作并不算很忙，我有很多时间做自己的事情，所以同我一起期待吧。那，今天就这样
           </p>
         </div>
-      </div>
 
-      <div class="modal" id="modal">
-        <div class="modal-content">
-          <span class="close-btn" id="closeBtn">&times;</span>
-          <h2 id="modalTitle">博客标题</h2>
-          <p id="modalContent">博客内容</p>
+        <div class="modal" id="modal">
+          <div class="modal-content">
+            <span class="close-btn" id="closeBtn">&times;</span>
+            <h2 id="modalTitle">博客标题</h2>
+            <p id="modalContent">博客内容</p>
+          </div>
         </div>
-      </div>
 
-      <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          const blogItems = document.querySelectorAll(".blog-item");
-          const modal = document.getElementById("modal");
-          const closeBtn = document.getElementById("closeBtn");
-          const modalTitle = document.getElementById("modalTitle");
-          const modalContent = document.getElementById("modalContent");
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const blogItems = document.querySelectorAll(".blog-item");
+            const modal = document.getElementById("modal");
+            const closeBtn = document.getElementById("closeBtn");
+            const modalTitle = document.getElementById("modalTitle");
+            const modalContent = document.getElementById("modalContent");
 
-          blogItems.forEach((item) => {
-            const fullContent = item.querySelector(".full-content").innerHTML;
-            const excerptLength = 100; // 设置摘录长度
-            const excerpt =
-              fullContent.length > excerptLength
-                ? fullContent.slice(0, excerptLength) + "..."
-                : fullContent;
-            item.querySelector(".excerpt").innerHTML = excerpt;
+            blogItems.forEach((item) => {
+              const fullContent = item.querySelector(".full-content").innerHTML;
+              const excerptLength = 100; // 设置摘录长度
+              const excerpt =
+                fullContent.length > excerptLength
+                  ? fullContent.slice(0, excerptLength) + "..."
+                  : fullContent;
+              item.querySelector(".excerpt").innerHTML = excerpt;
 
-            item.addEventListener("click", function () {
-              const title = this.querySelector("h2").innerText;
-              modalTitle.innerText = title;
-              modalContent.innerHTML = fullContent;
-              modal.style.display = "flex";
-              document.body.classList.add("no-hover"); // 禁用主页面的悬停效果
+              item.addEventListener("click", function () {
+                const title = this.querySelector("h2").innerText;
+                modalTitle.innerText = title;
+                modalContent.innerHTML = fullContent;
+                modal.style.display = "flex";
+                document.body.classList.add("no-hover"); // 禁用主页面的悬停效果
+              });
             });
-          });
 
-          closeBtn.addEventListener("click", function () {
-            modal.style.display = "none";
-            document.body.classList.remove("no-hover"); // 恢复主页面的悬停效果
-          });
+            closeBtn.addEventListener("click", function () {
+              modal.style.display = "none";
+              document.body.classList.remove("no-hover"); // 恢复主页面的悬停效果
+            });
 
-          // 排序博客项
-          const container = document.querySelector(".blog-container");
-          const sortedItems = Array.from(blogItems).sort(
-            (a, b) =>
-              new Date(b.getAttribute("data-date")) -
-              new Date(a.getAttribute("data-date"))
-          );
-          sortedItems.forEach((item) => container.appendChild(item));
-        });
-      </script>
-    </div>
-  </body>
+            // 排序博客项
+            const container = document.querySelector(".blog-container");
+            const sortedItems = Array.from(blogItems).sort(
+              (a, b) =>
+                new Date(b.getAttribute("data-date")) -
+                new Date(a.getAttribute("data-date"))
+            );
+            sortedItems.forEach((item) => container.appendChild(item));
+          });
+        </script>
+      </div>
+</body>
+
 </html>
