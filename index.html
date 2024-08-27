@@ -44,7 +44,9 @@ a {
     display: flex; /* 使用 Flexbox 布局 */
     flex-direction: row-reverse; /* 按钮从右向左排列 */
     gap: 10px; /* 按钮之间的间距 */
-    position: relative; /* 确保 z-index 属性生效 */
+    position: fixed; /* 固定菜单位置 */
+    top: 80px; /* 确保菜单在页眉下方，调整此值以适配实际页眉高度 */
+    right: 0; /* 将菜单容器靠右对齐 */
     z-index: 500; /* 菜单的层级，确保不会被其他内容遮盖 */
     width: auto; /* 使菜单容器宽度自适应内容 */
 }
@@ -105,12 +107,14 @@ a {
       <a href="./index.html"><img src="./Favicon/moyai_1f5ff.png" alt="Favicon" class="adaptive-icon">&nbsp;WUZHI</a>
     </div>
 
+<div class="menu-container">
   <div class="menu">
     <a href="javascript:void(0);" class="menu-button" onclick="validatePassword()">Diary</a>
     <a href="./Menu/About Myself/Myself.html" class="menu-button">ABOUT MYSELF</a>
     <a href="./Menu/Art/ART.html" class="menu-button">ART</a>
     <a href="./Menu/Animation/Animation.html" class="menu-button">Animation Demo Reel</a>
   </div>
+</div>
 
 <script>
     function validatePassword() {
