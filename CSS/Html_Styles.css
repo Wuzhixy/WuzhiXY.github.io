@@ -15,27 +15,20 @@ html {
 /* 背景图片样式 */
 body::before {
     content: "";
-    /* 空内容用于插入伪元素 */
     position: fixed;
-    /* 固定在视口 */
     top: -0.625rem;
-    /* 设置顶部位置 */
     left: -0.625rem;
-    /* 设置左侧位置 */
     width: calc(100% + 1.25rem);
-    /* 扩展宽度以覆盖视口 */
     height: calc(100% + 1.25rem);
-    /* 扩展高度以覆盖视口 */
+    background-image: url('./PIC/placeholder.jpg');
+    /* 占位符背景图 */
     background-size: cover;
-    /* 背景图像覆盖整个容器 */
     background-position: center;
-    /* 背景图像居中 */
     background-repeat: no-repeat;
-    /* 背景图像不重复 */
     filter: blur(0.25rem);
-    /* 应用模糊效果 */
     z-index: -1;
-    /* 确保背景在所有内容之后 */
+    transition: background-image 0.5s ease-in-out;
+    /* 背景图像渐变效果 */
 }
 
 /* 页眉样式 */

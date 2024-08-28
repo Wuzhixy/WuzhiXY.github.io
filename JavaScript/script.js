@@ -8,3 +8,6 @@
           alert("密码错误，请重试！");
         }
       }
+window.addEventListener('load', function() {
+    document.body.classList.add('loaded');
+});
