@@ -6,9 +6,10 @@
     <title>Wuzhi</title>
     <link rel="icon" type="image/png" sizes="32x32" href="./Favicon/moyai_1f5ff.png"/>
     <link rel="stylesheet" href="./CSS/Html_Styles.css"> <!-- 引用外置CSS文件 -->
+    <link rel="stylesheet" href="./CSS/Menu_Styles.css"> <!-- 引用外置CSS文件 -->
+   <script src="./JavaScript/script.js"></script> <!-- 引用外置JavaScript文件 -->
   
   <style>
-
 /* 背景图片样式 */
 body::before {
     content: "";
@@ -24,41 +25,8 @@ body::before {
     filter: blur(4px);
     z-index: -1; /* 确保背景在所有内容的后面 */
 }
-    
-/* 菜单样式 */
-.menu {
-    display: flex; /* 使用 Flexbox 布局 */
-    flex-direction: row-reverse; /* 按钮从右向左排列 */
-    gap: 10px; /* 按钮之间的间距 */
-    width: auto; /* 使菜单宽度自适应内容 */
-    margin-right: 70px; /* 在右侧添加 70px 的外边距 */
-}
-
-/* 菜单按钮样式 */
-.menu-button {
-    background-color: transparent; /* 背景透明 */
-    padding: 10px 20px; /* 按钮内边距 */
-    text-decoration: none !important; /* 移除下划线 */
-    color: white; /* 字体颜色 */
-    font-size: 24px;
-    border: none; /* 移除默认边框 */
-    text-align: center; /* 文字居中对齐 */
-    display: inline-flex; /* 保持按钮与其他按钮水平对齐 */
-    justify-content: center; /* 水平居中 */
-    align-items: center; /* 垂直居中 */
-    height: auto; /* 按钮固定高度 */
-    width: auto; /* 自适应宽度 */
-    min-width: 100px; /* 可选：设置最小宽度 */
-}
-
-/* 菜单链接鼠标悬停效果 */
-.menu-button:hover {
-    border-bottom: 1px solid white; /* 添加白色下划线 */
-}
-      
-    </style>
-    
-  </head>
+   </style>
+    </head>
 
   <body>
 <div class="header-container">
@@ -78,18 +46,5 @@ body::before {
         </div>
     </div>
 </div>
-    
-    <script>
-      function validatePassword() {
-        var password = prompt("请输入密码以进入日记本:");
-
-        // 假设密码为 "040610"
-        if (password === "040610") {
-          window.location.href = "./Menu/Diary/Diary.html"; // 跳转到日记本页面
-        } else {
-          alert("密码错误，请重试！");
-        }
-      }
-    </script>
   </body>
 </html>
