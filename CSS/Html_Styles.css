@@ -15,7 +15,8 @@ html {
     position: fixed; /* 固定在页面顶部 */
     top: 0;
     left: 0;
-    padding: 60px 50px; /* 内边距调整 */
+    padding: 20px 50px; /* 调整内边距，使内容不会紧贴边缘 */
+    background-color: #333; /* 添加背景颜色，增强可读性 */
     z-index: 1000; /* 确保页眉在最前方显示 */
 }
 
@@ -24,6 +25,8 @@ html {
     color: white; /* 字体颜色 */
     font-size: 32px; /* 字体大小 */
     margin: 0; /* 清除默认外边距 */
+    display: flex; /* 使用 Flexbox 布局 */
+    align-items: center; /* 垂直居中对齐 */
 }
 
 /* 页眉自适应图标样式 */
@@ -31,6 +34,7 @@ html {
     width: auto; /* 自适应宽度 */
     height: 1em; /* 与文本字体大小相同 */
     vertical-align: middle; /* 垂直居中与文本对齐 */
+    margin-right: 10px; /* 图标与文字之间的间距 */
 }
 
 /* 菜单样式 */
@@ -38,8 +42,7 @@ html {
     display: flex; /* 使用 Flexbox 布局 */
     flex-direction: row-reverse; /* 按钮从右向左排列 */
     gap: 10px; /* 按钮之间的间距 */
-    width: auto; /* 使菜单宽度自适应内容 */
-    margin-right: 70px; /* 在右侧添加 70px 的外边距 */
+    margin: 0; /* 清除默认外边距 */
 }
 
 /* 菜单按钮样式 */
@@ -51,7 +54,7 @@ html {
     font-size: 24px;
     border: none; /* 移除默认边框 */
     text-align: center; /* 文字居中对齐 */
-    display: inline-flex; /* 保持按钮与其他按钮水平对齐 */
+    display: flex; /* 使用 Flexbox 布局 */
     justify-content: center; /* 水平居中 */
     align-items: center; /* 垂直居中 */
     height: auto; /* 按钮固定高度 */
