@@ -29,9 +29,18 @@
         background-size: cover; /* 图片自动调整为覆盖整个背景 */
         background-position: center; /* 图片居中显示 */
         background-repeat: no-repeat; /* 不重复图片 */
-        filter: blur(6px);
+        filter: blur(4px);
         z-index: -1; /* 确保背景在所有内容的后面 */
     }
+
+      .header-container {
+    top: 0;
+    left: 0;
+    display: flex; /* 使用Flexbox布局 */
+    justify-content: space-between; /* 左右对齐，Logo在左，菜单在右 */
+    align-items: center; /* 垂直居中对齐 */
+    z-index: 1000; /* 确保页眉在最前方显示 */
+}
 
       /* 页眉样式 */
       .header {
@@ -43,7 +52,6 @@
         position: fixed; /* 固定在顶部 */
         top: 0;
         left: 0;
-        z-index: 1000; /* 确保页眉在最前方显示 */
       }
 
       /* 主内容样式，防止被页眉遮挡 */
@@ -65,9 +73,7 @@
         flex-direction: row-reverse; /* 按钮从右向左排列 */
         gap: 10px; /* 按钮之间的间距 */
         position: fixed; /* 固定菜单位置 */
-        top: 80px; /* 确保菜单在页眉下方，调整此值以适配实际页眉高度 */
         right: 0; /* 将菜单容器靠右对齐 */
-        z-index: 500; /* 菜单的层级，确保不会被其他内容遮盖 */
         width: auto; /* 使菜单容器宽度自适应内容 */
       }
 
@@ -120,6 +126,7 @@
   </head>
 
   <body>
+  <div class="header-container">
     <div class="header">
       <a href="./index.html"
         ><img
@@ -147,7 +154,7 @@
         >
       </div>
     </div>
-
+ </div>
     <script>
       function validatePassword() {
         var password = prompt("请输入密码以进入日记本:");
