@@ -11,27 +11,29 @@
       href="./Favicon/moyai_1f5ff.png"
     />
     <style>
-      html {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        font-family: "Courier New", Courier, monospace;
-      }
+/* 全局样式 */
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Courier New", Courier, monospace;
+}
 
-      body::before {
-        content: "";
-        position: fixed;
-        top: -10px;
-        left: -10px;
-        width: calc(100% + 20px);
-        height: calc(100% + 20px);
-        background-image: url('./PIC/01.jpg'); /* 替换为你的图片路径 */
-        background-size: cover; /* 图片自动调整为覆盖整个背景 */
-        background-position: center; /* 图片居中显示 */
-        background-repeat: no-repeat; /* 不重复图片 */
-        filter: blur(4px);
-        z-index: -1; /* 确保背景在所有内容的后面 */
-    }
+/* 背景图片样式 */
+body::before {
+    content: "";
+    position: fixed;
+    top: -10px;
+    left: -10px;
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    background-image: url('./PIC/01.jpg'); /* 替换为你的图片路径 */
+    background-size: cover; /* 图片自动调整为覆盖整个背景 */
+    background-position: center; /* 图片居中显示 */
+    background-repeat: no-repeat; /* 不重复图片 */
+    filter: blur(4px);
+    z-index: -1; /* 确保背景在所有内容的后面 */
+}
 
 /* 页眉容器样式 */
 .header-container {
@@ -45,7 +47,7 @@
     padding: 60px 50px; /* 内边距调整 */
     z-index: 1000; /* 确保页眉在最前方显示 */
 }
-      
+
 /* 页眉内容样式 */
 .header {
     color: white; /* 字体颜色 */
@@ -53,18 +55,9 @@
     margin: 0; /* 清除默认外边距 */
 }
 
-      /* 主内容样式，防止被页眉遮挡 */
-      .content {
-        padding-top: 120px; /* 根据页眉高度调整 */
-        min-height: 100vh; /* 使内容至少占满全屏 */
-        padding-bottom: 50px; /* 防止内容被页脚遮挡 */
-      }
-
-      /* 链接基础样式 */
-      a {
-        text-decoration: none !important; /* 移除默认下划线 */
-        color: white; /* 链接字体颜色 */
-      }
+.menu-container {
+    padding-right: 50px; /* 添加右侧内边距 */
+}
 
 /* 菜单样式 */
 .menu {
@@ -74,64 +67,80 @@
     width: auto; /* 使菜单宽度自适应内容 */
     margin-right: 70px; /* 在右侧添加 70px 的外边距 */
 }
-      
-      /* 自适应图标样式 */
-      .adaptive-icon {
-        width: auto; /* 自适应宽度 */
-        height: 1em; /* 与文本字体大小相同 */
-        vertical-align: middle; /* 垂直居中与文本对齐 */
-      }
 
-      /* 菜单按钮样式 */
-      .menu-button {
-        background-color: transparent; /* 背景透明 */
-        padding: 10px 20px; /* 按钮内边距 */
-        text-decoration: none !important; /* 移除下划线 */
-        color: white; /* 字体颜色 */
-        font-size: 32px;
-        border: none; /* 移除默认边框 */
-        text-align: center; /* 文字居中对齐 */
-        display: inline-flex; /* 保持按钮与其他按钮水平对齐 */
-        justify-content: center; /* 水平居中 */
-        align-items: center; /* 垂直居中 */
-        height: auto; /* 按钮固定高度 */
-        width: auto; /* 自适应宽度 */
-        min-width: 100px; /* 可选：设置最小宽度 */
-      }
+/* 菜单按钮样式 */
+.menu-button {
+    background-color: transparent; /* 背景透明 */
+    padding: 10px 20px; /* 按钮内边距 */
+    text-decoration: none !important; /* 移除下划线 */
+    color: white; /* 字体颜色 */
+    font-size: 24px;
+    border: none; /* 移除默认边框 */
+    text-align: center; /* 文字居中对齐 */
+    display: inline-flex; /* 保持按钮与其他按钮水平对齐 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    height: auto; /* 按钮固定高度 */
+    width: auto; /* 自适应宽度 */
+    min-width: 100px; /* 可选：设置最小宽度 */
+}
 
-      /* 鼠标悬停效果 */
-      .menu-button:hover {
-        border-bottom: 1px solid white; /* 添加黑色下划线 */
-      }
+/* 自适应图标样式 */
+.adaptive-icon {
+    width: auto; /* 自适应宽度 */
+    height: 1em; /* 与文本字体大小相同 */
+    vertical-align: middle; /* 垂直居中与文本对齐 */
+}
 
-      /* 页脚样式 */
-      .footer {
-        position: fixed; /* 固定在页面底部 */
-        left: 0;
-        bottom: 0;
-        width: 100%; /* 宽度占满屏幕 */
-        background-color: #333; /* 背景颜色 */
-        color: white; /* 字体颜色 */
-        text-align: center; /* 文字居中 */
-        padding: 10px 0; /* 上下内边距 */
-        z-index: 1000; /* 确保页脚在最前方显示 */
-      }
+/* 链接基础样式 */
+a {
+    text-decoration: none !important; /* 移除默认下划线 */
+    color: white; /* 链接字体颜色 */
+}
 
-      /* 私有内容的默认样式（未显示） */
-      .private-content {
-        display: none;
-      }
+/* 鼠标悬停效果 */
+.menu-button:hover {
+    border-bottom: 1px solid white; /* 添加白色下划线 */
+}
+
+/* 主内容样式，防止被页眉遮挡 */
+.content {
+    padding-top: 120px; /* 根据页眉高度调整 */
+    min-height: 100vh; /* 使内容至少占满全屏 */
+    padding-bottom: 50px; /* 防止内容被页脚遮挡 */
+}
+
+/* 页脚样式 */
+.footer {
+    position: fixed; /* 固定在页面底部 */
+    left: 0;
+    bottom: 0;
+    width: 100%; /* 宽度占满屏幕 */
+    background-color: #333; /* 背景颜色 */
+    color: white; /* 字体颜色 */
+    text-align: center; /* 文字居中 */
+    padding: 10px 0; /* 上下内边距 */
+    z-index: 1000; /* 确保页脚在最前方显示 */
+}
+
+/* 私有内容的默认样式（未显示） */
+.private-content {
+    display: none;
+}
+
     </style>
   </head>
 
   <body>
- <div class="header-container">
-        <div class="header">
-            <a href="./index.html">
-                <img src="./Favicon/moyai_1f5ff.png" alt="Favicon" class="adaptive-icon" />
-                &nbsp;WUZHI
-            </a>
-        </div>
+<div class="header-container">
+    <div class="header">
+        <a href="./index.html">
+            <img src="./Favicon/moyai_1f5ff.png" alt="Favicon" class="adaptive-icon" />
+            &nbsp;WUZHI
+        </a>
+    </div>
+
+    <div class="menu-container">
         <div class="menu">
             <a href="javascript:void(0);" class="menu-button" onclick="validatePassword()">Diary</a>
             <a href="./Menu/About Myself/Myself.html" class="menu-button">ABOUT MYSELF</a>
@@ -139,6 +148,7 @@
             <a href="./Menu/Animation/Animation.html" class="menu-button">Animation Demo Reel</a>
         </div>
     </div>
+</div>
     
     <script>
       function validatePassword() {
