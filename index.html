@@ -18,12 +18,20 @@
         font-family: "Courier New", Courier, monospace;
       }
 
-      body {
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         background-image: url('./PIC/01.jpg'); /* 替换为你的图片路径 */
         background-size: cover; /* 图片自动调整为覆盖整个背景 */
         background-position: center; /* 图片居中显示 */
         background-repeat: no-repeat; /* 不重复图片 */
-      }
+        filter: blur(8px);
+        z-index: -1; /* 确保背景在所有内容的后面 */
+    }
 
       /* 页眉样式 */
       .header {
