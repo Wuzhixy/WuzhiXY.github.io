@@ -10,9 +10,13 @@
   <script src="./JavaScript/script.js"></script> <!-- 引用外置JavaScript文件 -->
 
   <style>
+    :root {
+      --background-image-url: url('./PIC/placeholder.jpg');
+    }
+
     body.loaded::before {
-      background-image: url('./PIC/01.jpg');
-      /* 高分辨率图片 */
+      background-image: var(--background-image-url);
+      /* 使用 CSS 变量 */
     }
   </style>
 </head>
@@ -35,6 +39,14 @@
       </div>
     </div>
   </div>
+  <script>
+    // 在页面加载完成后，添加 loaded 类
+    document.addEventListener("DOMContentLoaded", function () {
+      document.body.classList.add("loaded");
+      // 修改 CSS 变量的值以更新背景图
+      document.documentElement.style.setProperty('--background-image-url', "url('./PIC/01.jpg')");
+    });
+  </script>
 </body>
 
 </html>

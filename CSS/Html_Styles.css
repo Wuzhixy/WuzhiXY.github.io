@@ -12,7 +12,11 @@ html {
     /* 基准字体大小 */
 }
 
-/* 背景图片样式 */
+:root {
+    --background-image-url: url('./PIC/placeholder.jpg');
+    /* 定义 CSS 变量 */
+}
+
 body::before {
     content: "";
     position: fixed;
@@ -20,15 +24,32 @@ body::before {
     left: -0.625rem;
     width: calc(100% + 1.25rem);
     height: calc(100% + 1.25rem);
-    background-image: url('./PIC/placeholder.jpg');
-    /* 占位符背景图 */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     filter: blur(0.25rem);
     z-index: -1;
-    transition: background-image 0.5s ease-in-out;
-    /* 背景图像渐变效果 */
+    background-image: var(--background-image-url);
+    /* 使用 CSS 变量 */
+}
+
+/* 媒体查询中使用 CSS 变量 */
+@media only screen and (min-width: 1200px) {
+    :root {
+        --background-image-url: url('./PIC/large.jpg');
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+    :root {
+        --background-image-url: url('./PIC/medium.jpg');
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    :root {
+        --background-image-url: url('./PIC/small.jpg');
+    }
 }
 
 /* 页眉样式 */
