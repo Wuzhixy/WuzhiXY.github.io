@@ -6,22 +6,6 @@ html {
     font-family: "Courier New", Courier, monospace;
 }
 
-/* 背景图片样式 */
-body::before {
-    content: "";
-    position: fixed;
-    top: -10px;
-    left: -10px;
-    width: calc(100% + 20px);
-    height: calc(100% + 20px);
-    background-image: url('./PIC/01.jpg'); /* 替换为你的图片路径 */
-    background-size: cover; /* 图片自动调整为覆盖整个背景 */
-    background-position: center; /* 图片居中显示 */
-    background-repeat: no-repeat; /* 不重复图片 */
-    filter: blur(4px);
-    z-index: -1; /* 确保背景在所有内容的后面 */
-}
-
 /* 页眉容器样式 */
 .header-container {
     width: 100%; /* 确保容器宽度覆盖整个页面 */
