@@ -27,10 +27,10 @@ body::before {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    filter: blur(0.25rem);
     z-index: -1;
     background-image: var(--background-image-url);
     /* 使用 CSS 变量 */
+
 }
 
 /* 媒体查询中使用 CSS 变量 */
