@@ -33,26 +33,25 @@
         z-index: -1; /* 确保背景在所有内容的后面 */
     }
 
-      .header-container {
-    top: 0;
-    left: 0;
-    display: flex; /* 使用Flexbox布局 */
+/* 页眉容器样式 */
+.header-container {
+    width: 100%; /* 确保容器宽度覆盖整个页面 */
+    display: flex; /* 使用 Flexbox 布局 */
     justify-content: space-between; /* 左右对齐，Logo在左，菜单在右 */
     align-items: center; /* 垂直居中对齐 */
+    position: fixed; /* 固定在页面顶部 */
+    top: 0;
+    left: 0;
+    padding: 20px 30px; /* 内边距调整 */
     z-index: 1000; /* 确保页眉在最前方显示 */
 }
-
-      /* 页眉样式 */
-      .header {
-        width: auto; /* 根据内容自适应宽度 */
-        padding: 50px; /* 内边距 */
-        color: white; /* 字体颜色 */
-        text-align: left; /* 左对齐 */
-        font-size: 24px; /* 字体大小 */
-        position: fixed; /* 固定在顶部 */
-        top: 0;
-        left: 0;
-      }
+      
+/* 页眉内容样式 */
+.header {
+    color: white; /* 字体颜色 */
+    font-size: 24px; /* 字体大小 */
+    margin: 0; /* 清除默认外边距 */
+}
 
       /* 主内容样式，防止被页眉遮挡 */
       .content {
@@ -67,16 +66,14 @@
         color: white; /* 链接字体颜色 */
       }
 
-      /* 菜单容器样式 */
-      .menu {
-        display: flex; /* 使用 Flexbox 布局 */
-        flex-direction: row-reverse; /* 按钮从右向左排列 */
-        gap: 10px; /* 按钮之间的间距 */
-        position: fixed; /* 固定菜单位置 */
-        right: 0; /* 将菜单容器靠右对齐 */
-        width: auto; /* 使菜单容器宽度自适应内容 */
-      }
-
+/* 菜单样式 */
+.menu {
+    display: flex; /* 使用 Flexbox 布局 */
+    flex-direction: row-reverse; /* 按钮从右向左排列 */
+    gap: 10px; /* 按钮之间的间距 */
+    width: auto; /* 使菜单宽度自适应内容 */
+    margin: 0; /* 清除默认外边距 */
+}
       /* 自适应图标样式 */
       .adaptive-icon {
         width: auto; /* 自适应宽度 */
@@ -126,35 +123,21 @@
   </head>
 
   <body>
-  <div class="header-container">
-    <div class="header">
-      <a href="./index.html"
-        ><img
-          src="./Favicon/moyai_1f5ff.png"
-          alt="Favicon"
-          class="adaptive-icon"
-        />&nbsp;WUZHI</a
-      >
+ <div class="header-container">
+        <div class="header">
+            <a href="./index.html">
+                <img src="./Favicon/moyai_1f5ff.png" alt="Favicon" class="adaptive-icon" />
+                &nbsp;WUZHI
+            </a>
+        </div>
+        <div class="menu">
+            <a href="javascript:void(0);" class="menu-button" onclick="validatePassword()">Diary</a>
+            <a href="./Menu/About Myself/Myself.html" class="menu-button">ABOUT MYSELF</a>
+            <a href="./Menu/Art/ART.html" class="menu-button">ART</a>
+            <a href="./Menu/Animation/Animation.html" class="menu-button">Animation Demo Reel</a>
+        </div>
     </div>
-
-    <div class="menu-container">
-      <div class="menu">
-        <a
-          href="javascript:void(0);"
-          class="menu-button"
-          onclick="validatePassword()"
-          >Diary</a
-        >
-        <a href="./Menu/About Myself/Myself.html" class="menu-button"
-          >ABOUT MYSELF</a
-        >
-        <a href="./Menu/Art/ART.html" class="menu-button">ART</a>
-        <a href="./Menu/Animation/Animation.html" class="menu-button"
-          >Animation Demo Reel</a
-        >
-      </div>
-    </div>
- </div>
+    
     <script>
       function validatePassword() {
         var password = prompt("请输入密码以进入日记本:");
