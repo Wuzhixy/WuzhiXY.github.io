@@ -1,0 +1,81 @@
+/* 全局样式 */
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Courier New", Courier, monospace;
+}
+
+/* 背景图片样式 */
+body::before {
+    content: "";
+    position: fixed;
+    top: -10px;
+    left: -10px;
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    background-image: url('./PIC/01.jpg'); /* 替换为你的图片路径 */
+    background-size: cover; /* 图片自动调整为覆盖整个背景 */
+    background-position: center; /* 图片居中显示 */
+    background-repeat: no-repeat; /* 不重复图片 */
+    filter: blur(4px);
+    z-index: -1; /* 确保背景在所有内容的后面 */
+}
+
+/* 页眉容器样式 */
+.header-container {
+    width: 100%; /* 确保容器宽度覆盖整个页面 */
+    display: flex; /* 使用 Flexbox 布局 */
+    justify-content: space-between; /* 左右对齐，Logo在左，菜单在右 */
+    align-items: center; /* 垂直居中对齐 */
+    position: fixed; /* 固定在页面顶部 */
+    top: 0;
+    left: 0;
+    padding: 60px 50px; /* 内边距调整 */
+    z-index: 1000; /* 确保页眉在最前方显示 */
+}
+
+/* 页眉内容样式 */
+.header {
+    color: white; /* 字体颜色 */
+    font-size: 32px; /* 字体大小 */
+    margin: 0; /* 清除默认外边距 */
+}
+
+/* 页眉自适应图标样式 */
+.adaptive-icon {
+    width: auto; /* 自适应宽度 */
+    height: 1em; /* 与文本字体大小相同 */
+    vertical-align: middle; /* 垂直居中与文本对齐 */
+}
+
+/* 链接基础样式 */
+a {
+    text-decoration: none !important; /* 移除默认下划线 */
+    color: white; /* 链接字体颜色 */
+}
+
+/* 主内容样式，防止被页眉遮挡 */
+.content {
+    padding-top: 120px; /* 根据页眉高度调整 */
+    min-height: 100vh; /* 使内容至少占满全屏 */
+    padding-bottom: 50px; /* 防止内容被页脚遮挡 */
+}
+
+/* 页脚样式 */
+.footer {
+    position: fixed; /* 固定在页面底部 */
+    left: 0;
+    bottom: 0;
+    width: 100%; /* 宽度占满屏幕 */
+    background-color: #333; /* 背景颜色 */
+    color: white; /* 字体颜色 */
+    text-align: center; /* 文字居中 */
+    padding: 10px 0; /* 上下内边距 */
+    z-index: 1000; /* 确保页脚在最前方显示 */
+}
+
+/* 私有内容的默认样式（未显示） */
+.private-content {
+    display: none;
+}
