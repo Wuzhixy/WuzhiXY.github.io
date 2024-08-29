@@ -32,11 +32,6 @@ body::before {
     /* 使用 CSS 变量 */
 
 }
-
-body.loaded::before {
-    filter: blur(0.125rem); /* 加载后应用模糊效果 */
-}
-
 /* 媒体查询中使用 CSS 变量 */
 @media only screen and (min-width: 1200px) {
     :root {
