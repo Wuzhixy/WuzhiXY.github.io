@@ -28,10 +28,13 @@ body::before {
     background-position: center;
     background-repeat: no-repeat;
     z-index: -1;
-    filter: blur(0.25rem);
     background-image: var(--background-image-url);
     /* 使用 CSS 变量 */
 
+}
+
+body.loaded::before {
+    filter: blur(0.125rem); /* 加载后应用模糊效果 */
 }
 
 /* 媒体查询中使用 CSS 变量 */
