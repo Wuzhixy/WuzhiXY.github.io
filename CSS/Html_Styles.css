@@ -111,7 +111,7 @@ body::before {
     background-color: transparent;
     padding: 0.5rem 1rem;
     /* 基础内边距 */
-    margin: 0 2vw; /* 使用相对页面宽度的间距 */
+    margin: 0 1vw; /* 使用相对页面宽度的间距 */
     text-decoration: none !important;
     color: white;
     font-size: 1.25rem;
@@ -207,7 +207,7 @@ a {
         /* 去除最小宽度限制 */
         padding: 0.5rem 0.75rem;
         /* 减少内边距以适应小屏幕 */
-         margin: 0 1vw; 
+         margin: 0 0.5vw; 
         /* 缩小按钮间距 */
         font-size: 1rem;
         /* 进一步缩小字体大小 */
