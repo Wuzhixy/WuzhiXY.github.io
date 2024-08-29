@@ -122,7 +122,6 @@ body::before {
     align-items: center;
     height: auto;
     width: auto;
-    min-width: 6.25rem;
 }
 
 .menu-button:hover {
