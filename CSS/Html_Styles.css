@@ -28,7 +28,6 @@ body::before {
     background-position: center;
     background-repeat: no-repeat;
     z-index: -1;
-    filter: blur(0.25rem);
     background-image: var(--background-image-url);
     /* 使用 CSS 变量 */
 
