@@ -106,33 +106,23 @@ body::before {
     /* 在右侧添加外边距 */
 }
 
+/* 菜单按钮样式 */
 .menu-button {
     background-color: transparent;
-    /* 背景透明 */
     padding: 0.5rem 1rem;
-    /* 按钮内边距 */
+    /* 基础内边距 */
+    margin: 0 2vw; /* 使用相对页面宽度的间距 */
     text-decoration: none !important;
-    /* 移除下划线 */
     color: white;
-    /* 字体颜色 */
     font-size: 1.25rem;
-    /* 字体大小 */
     border: none;
-    /* 移除默认边框 */
     text-align: center;
-    /* 文字居中对齐 */
     display: inline-flex;
-    /* 按钮与其他按钮水平对齐 */
     justify-content: center;
-    /* 水平居中 */
     align-items: center;
-    /* 垂直居中 */
     height: auto;
-    /* 高度自适应 */
     width: auto;
-    /* 宽度自适应 */
     min-width: 6.25rem;
-    /* 设置最小宽度 */
 }
 
 .menu-button:hover {
@@ -217,6 +207,8 @@ a {
         /* 去除最小宽度限制 */
         padding: 0.5rem 0.75rem;
         /* 减少内边距以适应小屏幕 */
+         margin: 0 1vw; 
+        /* 缩小按钮间距 */
         font-size: 1rem;
         /* 进一步缩小字体大小 */
     }
