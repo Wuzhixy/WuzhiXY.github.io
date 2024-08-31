@@ -1,0 +1,32 @@
+/* CSS变量和工具类 */
+:root {
+    --background-image-url: url('./PIC/placeholder.jpg');
+    /* 背景图片的初始 URL */
+}
+
+body::before {
+    content: "";
+    /* 伪元素内容为空 */
+    position: fixed;
+    /* 固定位置 */
+    top: -0.625rem;
+    /* 顶部偏移 */
+    left: -0.625rem;
+    /* 左侧偏移 */
+    width: calc(100% + 1.25rem);
+    /* 宽度扩展以覆盖全屏 */
+    height: calc(100% + 1.25rem);
+    /* 高度扩展以覆盖全屏 */
+    background-size: cover;
+    /* 背景图片覆盖整个区域 */
+    background-position: center;
+    /* 背景图片居中对齐 */
+    background-repeat: no-repeat;
+    /* 不重复背景图片 */
+    z-index: -1;
+    /* 确保背景在内容下方 */
+    filter: blur(0.125rem);
+    /* 添加模糊效果 */
+    background-image: var(--background-image-url);
+    /* 使用 CSS 变量 */
+}

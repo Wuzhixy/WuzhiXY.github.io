@@ -1,0 +1,91 @@
+/* 字体和全局文本样式 */
+html {
+    font-family: "Courier New", Courier, monospace;
+    /* 设置全局字体 */
+    font-size: 18px;
+    /* 基准字体大小 */
+}
+
+a {
+    text-decoration: none !important;
+    /* 移除默认下划线 */
+    color: white;
+    /* 链接字体颜色 */
+}
+
+/* 主内容样式 */
+.content {
+    padding-top: 7.5rem;
+    /* 根据页眉高度设置内边距，确保内容不会被页眉遮挡 */
+    min-height: 100vh;
+    /* 确保内容区域至少占满视口的高度 */
+    padding-bottom: 3.125rem;
+    /* 设置底部内边距，以防内容被页脚遮挡 */
+}
+
+/* 页眉样式 */
+.header-container {
+    width: 100%;
+    /* 页眉宽度覆盖整个页面 */
+    display: flex;
+    /* 使用 Flexbox 布局来排列页眉中的内容 */
+    justify-content: space-between;
+    /* 页眉中的内容左右对齐 */
+    align-items: center;
+    /* 垂直居中对齐页眉中的内容 */
+    position: fixed;
+    /* 固定页眉在页面顶部 */
+    top: 0;
+    /* 页眉距离顶部的位置 */
+    left: 0;
+    /* 页眉距离左侧的位置 */
+    padding: 3.75rem 3.125rem;
+    /* 页眉的内边距设置 */
+    z-index: 1000;
+    /* 确保页眉在其他内容之上显示 */
+    display: flex;
+    align-items: center;
+    /* 确保容器内的内容垂直居中 */
+    line-height: 1.25em;
+    /* 确保与图标的高度一致 */
+}
+
+.header {
+    font-size: 2rem;
+    /* 页眉文字的字体大小 */
+    margin: 0;
+    /* 清除默认外边距 */
+    transition: color 0.3s ease;
+    /* 添加文字颜色的过渡效果 */
+}
+
+.adaptive-icon {
+    width: auto;
+    /* 图标宽度自适应 */
+    height: 1.25em;
+    /* 图标高度与字体大小一致 */
+    vertical-align: middle;
+    /* 图标垂直对齐到中间 */
+}
+
+/* 页脚样式 */
+.footer {
+    position: fixed;
+    /* 固定页脚在页面底部 */
+    left: 0;
+    /* 页脚距离左侧的位置 */
+    bottom: 0;
+    /* 页脚距离底部的位置 */
+    width: 100%;
+    /* 页脚宽度覆盖整个屏幕 */
+    background-color: #333;
+    /* 页脚背景颜色 */
+    color: white;
+    /* 页脚文字颜色 */
+    text-align: center;
+    /* 页脚文字居中对齐 */
+    padding: 0.625rem 0;
+    /* 页脚的上下内边距设置 */
+    z-index: 1000;
+    /* 确保页脚在其他内容之上显示 */
+}

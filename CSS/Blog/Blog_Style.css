@@ -1,0 +1,111 @@
+/* 博客容器样式 */
+.blog-container {
+    display: flex;
+    /* 使用 Flexbox 布局 */
+    flex-direction: column;
+    /* 垂直排列博客项 */
+    align-items: center;
+    /* 内容水平居中对齐 */
+    padding: 20px;
+    /* 设置容器内边距 */
+}
+
+.blog-container p {
+    text-indent: 2em;
+    /* 首行缩进 2 个字符 */
+    margin-bottom: 10px;
+    /* 段落之间的间距 */
+}
+
+/* 博客项样式 */
+.blog-item {
+    background-color: #fff;
+    /* 背景颜色为白色 */
+    border: 1px solid #ddd;
+    /* 边框颜色为淡灰色 */
+    border-radius: 5px;
+    /* 边角圆润 */
+    margin: 10px;
+    /* 博客项之间的间距 */
+    padding: 20px;
+    /* 内边距 */
+    width: 80%;
+    /* 宽度为容器宽度的 80% */
+    max-width: 800px;
+    /* 最大宽度为 800px */
+    transition: background-color 0.3s, transform 0.3s;
+    /* 背景颜色和缩放的过渡效果 */
+    cursor: pointer;
+    /* 鼠标悬停时显示为手型 */
+}
+
+.blog-item:hover {
+    background-color: #f0f0f0;
+    /* 鼠标悬停时背景颜色变为浅灰色 */
+    transform: scale(1.02);
+    /* 鼠标悬停时略微放大 */
+}
+
+/* 禁用鼠标悬停效果的样式 */
+.no-hover .blog-item:hover {
+    background-color: initial;
+    /* 禁用背景颜色变化 */
+    transform: none;
+    /* 禁用缩放效果 */
+}
+
+/* 模态框样式 */
+.modal {
+    display: none;
+    /* 默认隐藏模态框 */
+    position: fixed;
+    /* 固定在页面上 */
+    top: 0;
+    /* 顶部位置 */
+    left: 0;
+    /* 左侧位置 */
+    width: 100%;
+    /* 宽度占满整个屏幕 */
+    height: 100%;
+    /* 高度占满整个屏幕 */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 半透明黑色背景 */
+    align-items: center;
+    /* 垂直居中对齐内容 */
+    justify-content: center;
+    /* 水平居中对齐内容 */
+    z-index: 1000;
+    /* 确保模态框在最前方显示 */
+}
+
+.modal-content {
+    background-color: #fff;
+    /* 模态框内容背景颜色为白色 */
+    padding: 20px;
+    /* 内边距 */
+    border-radius: 5px;
+    /* 边角圆润 */
+    width: 80%;
+    /* 宽度为容器宽度的 80% */
+    max-width: 600px;
+    /* 最大宽度为 600px */
+    max-height: 80vh;
+    /* 最大高度为视窗高度的 80% */
+    overflow-y: auto;
+    /* 内容超出时显示垂直滚动条 */
+    position: relative;
+    /* 相对定位，用于定位关闭按钮 */
+}
+
+.close-btn {
+    position: absolute;
+    /* 绝对定位 */
+    top: 10px;
+    /* 距离顶部 10px */
+    right: 10px;
+    /* 距离右侧 10px */
+    font-size: 24px;
+    /* 字体大小 */
+    cursor: pointer;
+    /* 鼠标悬停时显示为手型 */
+}

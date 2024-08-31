@@ -1,0 +1,64 @@
+/* 媒体查询中使用 CSS 变量 */
+@media only screen and (min-width: 1200px) {
+    :root {
+        --background-image-url: url('./PIC/large.jpg');
+        /* 大屏幕背景图片 */
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+    :root {
+        --background-image-url: url('./PIC/medium.jpg');
+        /* 中等屏幕背景图片 */
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    :root {
+        --background-image-url: url('./PIC/small.jpg');
+        /* 小屏幕背景图片 */
+    }
+}
+
+/* 针对小屏幕的媒体查询 */
+@media only screen and (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        /* 切换为纵向排列，适应小屏幕 */
+        align-items: flex-start;
+        /* 左对齐 */
+        padding: 2rem;
+        /* 减少内边距以适应小屏幕 */
+    }
+
+    .menu {
+        flex-direction: column;
+        /* 切换为纵向排列，适应小屏幕 */
+        position: absolute;
+        /* 绝对定位，浮动在页面上 */
+        top: 1rem;
+        /* 设置顶部位置 */
+        right: 1rem;
+        /* 设置右侧位置 */
+        border-radius: 0.5rem;
+        /* 圆角边框 */
+        padding: 1rem;
+        /* 设置内边距 */
+    }
+
+    .menu-button {
+        min-width: auto;
+        /* 去除最小宽度限制 */
+        padding: 0.5rem 0.75rem;
+        /* 减少内边距以适应小屏幕 */
+        margin: 0 0.5vw;
+        /* 缩小按钮间距 */
+        font-size: 1rem;
+        /* 进一步缩小字体大小 */
+    }
+
+    .content {
+        padding-top: 5rem;
+        /* 根据新的页眉高度调整内边距 */
+    }
+}

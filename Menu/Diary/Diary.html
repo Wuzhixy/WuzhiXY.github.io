@@ -6,138 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wuzhi</title>
   <link rel="icon" type="image/png" sizes="32x32" href="./Favicon/moyai_1f5ff.png" />
+  <link rel="stylesheet" href="../../CSS/Base/Typography.css"> <!-- 引用外置CSS文件 -->
+  <link rel="stylesheet" href="../../CSS/Base/Reset.css"> <!-- 引用外置CSS文件 -->
+  <link rel="stylesheet" href="../../CSS/Blog/Blog_Style.css"> <!-- 引用外置CSS文件 -->
+  <script src="../../JavaScript/Blog_document.js"></script> <!-- 引用外置JavaScript文件 -->
 
-  <style>
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: "Courier New", Courier, monospace;
-    }
-
-    /* 页眉样式 */
-    .header {
-      width: auto;
-      /* 根据内容自适应宽度 */
-      padding: 50px;
-      /* 内边距 */
-      color: black;
-      /* 字体颜色 */
-      text-align: left;
-      /* 左对齐 */
-      font-size: 24px;
-      /* 字体大小 */
-      position: fixed;
-      /* 固定在顶部 */
-      top: 0;
-      left: 0;
-      z-index: 1000;
-      /* 确保页眉在最前方显示 */
-    }
-
-    /* 主内容样式，防止被页眉遮挡 */
-    .content {
-      padding-top: 120px;
-      /* 根据页眉高度调整 */
-      min-height: 100vh;
-      /* 使内容至少占满全屏 */
-      padding-bottom: 50px;
-      /* 防止内容被页脚遮挡 */
-    }
-
-    /* 链接基础样式 */
-    a {
-      text-decoration: none !important;
-      /* 移除默认下划线 */
-      color: black;
-      /* 链接字体颜色 */
-    }
-
-    /* 自适应图标样式 */
-    .adaptive-icon {
-      width: auto;
-      /* 自适应宽度 */
-      height: 1em;
-      /* 与文本字体大小相同 */
-      vertical-align: middle;
-      /* 垂直居中与文本对齐 */
-    }
-
-    /* 博客容器样式 */
-    .blog-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-    }
-
-    .blog-container p {
-      text-indent: 2em;
-      /* 首行缩进 2 个字符 */
-      margin-bottom: 10px;
-      /* 段落之间的间距 */
-    }
-
-    /* 博客项样式 */
-    .blog-item {
-      background-color: #fff;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      margin: 10px;
-      padding: 20px;
-      width: 80%;
-      max-width: 800px;
-      transition: background-color 0.3s, transform 0.3s;
-      cursor: pointer;
-    }
-
-    .blog-item:hover {
-      background-color: #f0f0f0;
-      transform: scale(1.02);
-    }
-
-    /* 禁用鼠标悬停效果的样式 */
-    .no-hover .blog-item:hover {
-      background-color: initial;
-      transform: none;
-    }
-
-    /* 模态框样式 */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-    }
-
-    .modal-content {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 5px;
-      width: 80%;
-      max-width: 600px;
-      max-height: 80vh;
-      /* 设置最大高度为视窗高度的80% */
-      overflow-y: auto;
-      /* 当内容超出时显示垂直滚动条 */
-      position: relative;
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 24px;
-      cursor: pointer;
-    }
-  </style>
 </head>
 
 <body>
@@ -255,54 +128,17 @@
     </div>
 
     <div class="modal" id="modal">
+      <!-- 模态框的容器 -->
       <div class="modal-content">
+        <!-- 模态框内容区域 -->
         <span class="close-btn" id="closeBtn">&times;</span>
+        <!-- 关闭按钮，点击时关闭模态框 -->
         <h2 id="modalTitle">博客标题</h2>
+        <!-- 模态框标题 -->
         <p id="modalContent">博客内容</p>
+        <!-- 模态框的主要内容 -->
       </div>
     </div>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const blogItems = document.querySelectorAll(".blog-item");
-        const modal = document.getElementById("modal");
-        const closeBtn = document.getElementById("closeBtn");
-        const modalTitle = document.getElementById("modalTitle");
-        const modalContent = document.getElementById("modalContent");
-
-        blogItems.forEach((item) => {
-          const fullContent = item.querySelector(".full-content").innerHTML;
-          const excerptLength = 100; // 设置摘录长度
-          const excerpt =
-            fullContent.length > excerptLength
-              ? fullContent.slice(0, excerptLength) + "..."
-              : fullContent;
-          item.querySelector(".excerpt").innerHTML = excerpt;
-
-          item.addEventListener("click", function () {
-            const title = this.querySelector("h2").innerText;
-            modalTitle.innerText = title;
-            modalContent.innerHTML = fullContent;
-            modal.style.display = "flex";
-            document.body.classList.add("no-hover"); // 禁用主页面的悬停效果
-          });
-        });
-
-        closeBtn.addEventListener("click", function () {
-          modal.style.display = "none";
-          document.body.classList.remove("no-hover"); // 恢复主页面的悬停效果
-        });
-
-        // 排序博客项
-        const container = document.querySelector(".blog-container");
-        const sortedItems = Array.from(blogItems).sort(
-          (a, b) =>
-            new Date(b.getAttribute("data-date")) -
-            new Date(a.getAttribute("data-date"))
-        );
-        sortedItems.forEach((item) => container.appendChild(item));
-      });
-    </script>
   </div>
 </body>
 

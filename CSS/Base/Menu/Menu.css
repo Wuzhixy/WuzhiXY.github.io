@@ -1,0 +1,48 @@
+/* 菜单样式 */
+.menu {
+    display: flex;
+    /* 使用 Flexbox 布局 */
+    flex-direction: row-reverse;
+    /* 菜单按钮从右向左排列 */
+    gap: 0.625rem;
+    /* 菜单按钮之间的间距 */
+    width: auto;
+    /* 菜单宽度自适应内容 */
+    margin-right: .175rem;
+    /* 在右侧添加外边距 */
+}
+
+/* 菜单按钮样式 */
+.menu-button {
+    background-color: transparent;
+    /* 背景色透明 */
+    padding: 0.5rem 0.75rem;
+    /* 基础内边距 */
+    margin: 0 1vw;
+    /* 使用相对页面宽度的间距 */
+    text-decoration: none !important;
+    /* 移除默认下划线 */
+    color: white;
+    /* 文字颜色 */
+    font-size: 1.25rem;
+    /* 字体大小 */
+    border: none;
+    /* 无边框 */
+    text-align: center;
+    /* 文字居中对齐 */
+    display: inline-flex;
+    /* 内联弹性布局 */
+    justify-content: center;
+    /* 水平居中对齐 */
+    align-items: center;
+    /* 垂直居中对齐 */
+    height: auto;
+    /* 高度自适应内容 */
+    width: auto;
+    /* 宽度自适应内容 */
+}
+
+.menu-button:hover {
+    border-bottom: 1px solid white;
+    /* 鼠标悬停时添加下划线 */
+}

@@ -1,0 +1,19 @@
+/* CSS 重置样式 */
+/* 统一 html 和 body 元素的样式 */
+html,
+body {
+    margin: 0;
+    /* 去除默认外边距 */
+    padding: 0;
+    /* 去除默认内边距 */
+    border: 0;
+    /* 去除默认边框 */
+    box-sizing: border-box;
+    /* 包括边框和内边距在元素的总宽度和高度中 */
+}
+
+/* 使所有元素继承 box-sizing 属性 */
+* {
+    box-sizing: inherit;
+    /* 继承 html 和 body 的 box-sizing 属性 */
+}
