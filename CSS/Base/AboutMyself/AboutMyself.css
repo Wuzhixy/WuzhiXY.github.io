@@ -1,0 +1,45 @@
+ .custom-text {
+     font-size: 36px;
+     /* 设置字体大小 */
+     color: rgb(141, 141, 141);
+     /* 设置文字颜色 */
+     text-align: center;
+     /* 设置文本对齐方式 */
+     line-height: 2;
+     /* 设置行高 */
+     margin: 20px;
+     /* 设置外边距 */
+ }
+
+ .content-container {
+     width: 50%;
+     /* 宽度设为 100% 的容器，占满其父容器的宽度 */
+     max-width: 1200px;
+     /* 最大宽度限制为 1200px */
+     margin: 0 auto;
+     /* 自动水平居中对齐 */
+     padding: 20px;
+     /* 内边距，控制内容与边框之间的距离 */
+     lay: flex;
+     /* 使用 Flexbox 布局 */
+     flex-direction: column;
+     /* 内容方向为纵向排列 */
+     align-items: center;
+     /* 内容在主轴（纵向）方向上居中对齐 */
+     justify-content: center;
+     /* 内容在交叉轴（横向）方向上居中对齐 */
+ }
+ }
+
+ .content-text {
+     font-size: 24px;
+     /* 设置字体大小 */
+     color: rgb(141, 141, 141);
+     /* 设置文字颜色 */
+     text-align: left;
+     /* 设置文本对齐方式 */
+     line-height: 1;
+     /* 设置行高 */
+     margin: 20px;
+     /* 设置外边距 */
+ }

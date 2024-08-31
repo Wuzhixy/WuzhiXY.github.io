@@ -23,6 +23,11 @@ a {
     /* 设置底部内边距，以防内容被页脚遮挡 */
 }
 
+p {
+    text-indent: 2em;
+    /* 首行缩进 2 个字符的宽度 */
+}
+
 /* 页眉样式 */
 .header-container {
     width: 100%;
@@ -66,6 +71,40 @@ a {
     /* 图标高度与字体大小一致 */
     vertical-align: middle;
     /* 图标垂直对齐到中间 */
+}
+
+.MaxText-container {
+    display: flex;
+    /* 使用 Flexbox 布局 */
+    align-items: center;
+    /* 垂直居中 */
+    justify-content: center;
+    /* 水平居中 */
+    width: 80%;
+    /* 宽度设置为页面的 80% */
+    max-width: 600px;
+    /* 最大宽度 600px */
+    height: 20%;
+    /* 高度设置为页面的 60% */
+    max-height: 400px;
+    /* 最大高度 400px */
+}
+
+.MaxText {
+    font-size: 4rem;
+    /* 字体大小 1.5rem */
+    font-weight: bold;
+    /* 字体加粗 */
+    color: #8a8a8a;
+    /* 文字颜色 */
+    line-height: 1.6;
+    /* 行高 */
+    margin: 0;
+    /* 去除默认外边距 */
+    padding: 0;
+    /* 去除默认内边距 */
+    text-align: center;
+    /* 文字居中对齐 */
 }
 
 /* 页脚样式 */
