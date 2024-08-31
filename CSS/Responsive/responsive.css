@@ -24,11 +24,15 @@
 @media only screen and (max-width: 768px) {
     .header-container {
         flex-direction: column;
-        /* 切换为纵向排列，适应小屏幕 */
+        /* 切换为纵向排列 */
         align-items: flex-start;
         /* 左对齐 */
         padding: 2rem;
         /* 减少内边距以适应小屏幕 */
+        height: 5rem;
+        /* 设置页眉的高度 */
+        box-sizing: border-box;
+        /* 包含内边距和边框的高度 */
     }
 
     .menu {
@@ -59,6 +63,6 @@
 
     .content {
         padding-top: 5rem;
-        /* 根据新的页眉高度调整内边距 */
+        /* 根据实际的页眉高度调整 */
     }
 }
