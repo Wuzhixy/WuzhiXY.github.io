@@ -36,7 +36,7 @@
     /* 容器宽度占满整个页面 */
     height: 100vh;
     /* 容器高度占满整个视口高度 */
-    text-align: center;
+    text-align: ;
     /* 文字左对齐 */
     overflow: hidden;
     /* 隐藏超出容器的内容 */
@@ -51,7 +51,7 @@
     /* 字体大小随着屏幕宽度变化 */
     font-weight: bold;
     /* 字体加粗 */
-    color: #a1a1a1;
+    color: #a3a3a3;
     /* 设置文字颜色为灰色 */
     letter-spacing: calc(1px + 1vw);
     /* 字间距随着屏幕宽度变化 */

@@ -40,7 +40,7 @@
         /* 切换为纵向排列，适应小屏幕 */
         position: absolute;
         /* 绝对定位，浮动在页面上 */
-        top: 1rem;
+        top: 3rem;
         /* 设置顶部位置 */
         right: 1rem;
         /* 设置右侧位置 */
