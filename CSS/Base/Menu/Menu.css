@@ -46,3 +46,8 @@
     border-bottom: 1px solid white;
     /* 鼠标悬停时添加下划线 */
 }
+
+.menu-button:hover {
+    border-bottom: 1px solid white;
+    /* 鼠标悬停时添加下划线 */
+}

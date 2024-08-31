@@ -27,47 +27,32 @@
 /* 打字效果容器 */
 .typing-container {
     display: flex;
-    /* 使用 Flexbox 布局，使内容可以灵活对齐 */
     justify-content: center;
-    /* 水平居中对齐容器内的内容 */
     align-items: center;
-    /* 垂直居中对齐容器内的内容 */
     width: 100%;
-    /* 容器宽度占满整个页面 */
+    min-width: 300px;
+    /* 添加最小宽度 */
     height: 100vh;
-    /* 容器高度占满整个视口高度 */
-    text-align: ;
-    /* 文字左对齐 */
+    text-align: center;
     overflow: hidden;
-    /* 隐藏超出容器的内容 */
     position: relative;
 }
 
 /* 打字效果文本 */
 .typing-text {
-    display: inline-block;
-    /* 使文本块行内显示 */
-    font-size: calc(10px + 6vw);
-    /* 字体大小随着屏幕宽度变化 */
+    font-size: calc(12px + 5vw);
+    /* 调整字体大小以适应小屏幕 */
     font-weight: bold;
-    /* 字体加粗 */
-    color: #a3a3a3;
-    /* 设置文字颜色为灰色 */
-    letter-spacing: calc(1px + 1vw);
-    /* 字间距随着屏幕宽度变化 */
+    color: #a1a1a1;
+    letter-spacing: calc(0.5px + 1vw);
     white-space: nowrap;
-    /* 防止文字换行 */
     overflow: hidden;
-    /* 隐藏超出容器的内容 */
     position: relative;
-    width: 100%;
-    /* 宽度设置为 100% 以确保可以展示完整文本 */
+    width: auto;
+    /* 确保文本宽度自适应 */
     border-right: 2px solid #a1a1a1;
-    /* 光标的颜色和文本一致 */
     animation: typing 5s steps(30, end) 1 normal both;
-    /* 文字逐字显示动画，持续 5s */
     font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
-    /* 设置字体为微软雅黑 */
 }
 
 /* 光标效果 */
