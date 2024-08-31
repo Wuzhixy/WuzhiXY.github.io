@@ -25,8 +25,6 @@ body::before {
     /* 不重复背景图片 */
     z-index: -1;
     /* 确保背景在内容下方 */
-    filter: blur(0.25rem);
-    /* 添加模糊效果 */
     background-image: var(--background-image-url);
     /* 使用 CSS 变量 */
 }
