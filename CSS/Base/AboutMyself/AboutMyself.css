@@ -7,7 +7,7 @@
      /* 自动水平居中对齐 */
      padding: 20px;
      /* 内边距，控制内容与边框之间的距离 */
-     lay: flex;
+     display: flex;
      /* 使用 Flexbox 布局 */
      flex-direction: column;
      /* 内容方向为纵向排列 */
@@ -35,18 +35,18 @@
      /* 去除默认外边距 */
      padding: 0;
      /* 去除默认内边距 */
+ }
 
 
-
-     .content-text {
-         font-size: 24px;
-         /* 设置字体大小 */
-         color: rgb(141, 141, 141);
-         /* 设置文字颜色 */
-         text-align: left;
-         /* 设置文本对齐方式 */
-         line-height: 1;
-         /* 设置行高 */
-         margin: 20px;
-         /* 设置外边距 */
-     }
+ .content-text {
+     font-size: 24px;
+     /* 设置字体大小 */
+     color: rgb(141, 141, 141);
+     /* 设置文字颜色 */
+     text-align: left;
+     /* 设置文本对齐方式 */
+     line-height: 1;
+     /* 设置行高 */
+     margin: 20px;
+     /* 设置外边距 */
+ }
