@@ -33,6 +33,7 @@
         /* 设置页眉的高度 */
         box-sizing: border-box;
         /* 包含内边距和边框的高度 */
+        background-color: white;
     }
 
     .menu {
