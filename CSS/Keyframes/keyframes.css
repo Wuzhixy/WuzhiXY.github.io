@@ -1,0 +1,94 @@
+/* 打字动画 */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+/* 光标闪烁动画 */
+@keyframes cursor {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* 打字效果容器 */
+.typing-container {
+    display: flex;
+    /* 使用 Flexbox 布局，使内容可以灵活对齐 */
+    justify-content: center;
+    /* 水平居中对齐容器内的内容 */
+    align-items: center;
+    /* 垂直居中对齐容器内的内容 */
+    width: 100%;
+    /* 容器宽度占满整个页面 */
+    height: 100vh;
+    /* 容器高度占满整个视口高度 */
+    text-align: center;
+    /* 文字居中对齐 */
+    overflow: hidden;
+    /* 隐藏超出容器的内容 */
+    position: relative;
+}
+
+/* 打字效果文本 */
+.typing-text {
+    display: inline-block;
+    /* 使文本块行内显示 */
+    font-size: calc(10px + 6vw);
+    /* 字体大小随着屏幕宽度变化 */
+    font-weight: bold;
+    /* 字体加粗 */
+    color: #a1a1a1;
+    /* 设置文字颜色为灰色 */
+    letter-spacing: calc(1px + 1vw);
+    /* 字间距随着屏幕宽度变化 */
+    white-space: nowrap;
+    /* 防止文字换行 */
+    overflow: hidden;
+    /* 隐藏超出容器的内容 */
+    position: relative;
+    width: 100%;
+    /* 宽度设置为 100% 以确保可以展示完整文本 */
+    border-right: 2px solid #a1a1a1;
+    /* 光标的颜色和文本一致 */
+    /* 创建光标 */
+    animation: typing 5s steps(30, end) 1 normal both;
+    /* 文字逐字显示动画，持续 4s */
+    font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
+    /* 设置字体为微软雅黑 */
+}
+
+/* 光标效果 */
+.typing-text::after {
+    content: '';
+    /* 清除之前的光标字符 */
+    position: absolute;
+    /* 绝对定位 */
+    right: 0;
+    /* 光标位置在文本右侧 */
+    bottom: 0;
+    width: 2px;
+    /* 设置光标宽度 */
+    height: 100%;
+    background-color: #a1a1a1;
+    /* 光标颜色与文本一致 */
+    animation: cursor 0.7s steps(1) infinite;
+    /* 光标闪烁动画 */
+    animation-delay: 4s;
+    /* 延迟使光标在打字结束后消失 */
+    animation-fill-mode: forwards;
+    /* 保持最后状态 */
+}

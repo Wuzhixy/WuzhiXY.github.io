@@ -1,16 +1,3 @@
- .title-text {
-     font-size: 36px;
-     /* 设置字体大小 */
-     color: rgb(141, 141, 141);
-     /* 设置文字颜色 */
-     text-align: center;
-     /* 设置文本对齐方式 */
-     line-height: 2;
-     /* 设置行高 */
-     margin: 20px;
-     /* 设置外边距 */
- }
-
  .content-container {
      width: 50%;
      /* 宽度设为 100% 的容器，占满其父容器的宽度 */
@@ -28,18 +15,38 @@
      /* 内容在主轴（纵向）方向上居中对齐 */
      justify-content: center;
      /* 内容在交叉轴（横向）方向上居中对齐 */
- }
+     white-space: nowrap;
+     /* 防止文字换行 */
+
  }
 
- .content-text {
-     font-size: 24px;
-     /* 设置字体大小 */
-     color: rgb(141, 141, 141);
-     /* 设置文字颜色 */
-     text-align: left;
-     /* 设置文本对齐方式 */
-     line-height: 1;
-     /* 设置行高 */
-     margin: 20px;
-     /* 设置外边距 */
- }
+ .title-text {
+     width: 100%;
+     /* 使 .MaxText 的宽度占满整个容器 */
+     font-size: calc(10px + 3vw);
+     /* 字体大小随着屏幕宽度变化 */
+     font-weight: bold;
+     /* 字体加粗 */
+     color: #a1a1a1;
+     /* 设置文字颜色为灰色 */
+     letter-spacing: calc(1px + 1vw);
+     /* 字间距随着屏幕宽度变化 */
+     margin: 0;
+     /* 去除默认外边距 */
+     padding: 0;
+     /* 去除默认内边距 */
+
+
+
+     .content-text {
+         font-size: 24px;
+         /* 设置字体大小 */
+         color: rgb(141, 141, 141);
+         /* 设置文字颜色 */
+         text-align: left;
+         /* 设置文本对齐方式 */
+         line-height: 1;
+         /* 设置行高 */
+         margin: 20px;
+         /* 设置外边距 */
+     }
