@@ -47,7 +47,38 @@
     /* 鼠标悬停时添加下划线 */
 }
 
-.menu-button:hover {
-    border-bottom: 1px solid white;
-    /* 鼠标悬停时添加下划线 */
+/* 拓展菜单样式 */
+.menu-item {
+    position: relative;
+    /* 使拓展菜单相对于菜单按钮定位 */
+}
+
+.dropdown {
+    display: none;
+    /* 默认隐藏拓展菜单 */
+    position: absolute;
+    /* 绝对定位 */
+    top: 100%;
+    /* 拓展菜单显示在主菜单按钮下方 */
+    left: 0;
+    background-color: transparent;
+    /* 拓展菜单背景颜色 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* 添加阴影效果 */
+    z-index: 1;
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    background-color: transparent;
+    /* 拓展菜单项背景颜色 */
+    white-space: nowrap;
+}
+
+.menu-item:hover .dropdown {
+    display: block;
+    /* 鼠标悬停时显示拓展菜单 */
 }

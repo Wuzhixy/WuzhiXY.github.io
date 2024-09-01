@@ -24,6 +24,7 @@
 @media only screen and (max-width: 768px) {
     .header-container {
         display: flex;
+        /* 使用 Flexbox 布局 */
         flex-direction: row;
         /* 横向排列页眉内容 */
         justify-content: space-between;
@@ -37,7 +38,6 @@
     }
 
     .header-icon {
-        /* 页眉左侧的图标 */
         margin-right: auto;
         /* 图标与文字之间的间距 */
     }
@@ -74,6 +74,50 @@
         /* 进一步缩小字体大小 */
         text-align: right;
         /* 确保文本右对齐 */
+    }
+
+    .menu-item {
+        position: relative;
+        /* 使拓展菜单相对于菜单按钮定位 */
+    }
+
+    .dropdown {
+        display: none;
+        /* 默认隐藏拓展菜单 */
+        position: absolute;
+        /* 绝对定位 */
+        top: 0;
+        /* 菜单展开在按钮上方 */
+        right: 100%;
+        /* 向左侧展开 */
+        left: auto;
+        /* 取消左对齐 */
+        background-color: transparent;
+        /* 胶卷菜单背景颜色 */
+        box-shadow: -8px 0 16px rgba(0, 0, 0, 0.2);
+        /* 阴影从左侧投影 */
+        z-index: 1;
+        /* 确保拓展菜单在其他内容之上 */
+    }
+
+    .dropdown a {
+        display: block;
+        /* 显示为块级元素 */
+        padding: 10px;
+        /* 内边距 */
+        text-decoration: none;
+        /* 移除下划线 */
+        color: white;
+        /* 文字颜色 */
+        background-color: transparent;
+        /* 拓展菜单项背景颜色 */
+        white-space: nowrap;
+        /* 避免文本换行 */
+    }
+
+    .menu-item:hover .dropdown {
+        display: block;
+        /* 鼠标悬停时显示拓展菜单 */
     }
 
     .content {
