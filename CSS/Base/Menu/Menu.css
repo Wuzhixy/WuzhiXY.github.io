@@ -73,6 +73,8 @@
     padding: 10px;
     text-decoration: none;
     color: white;
+    text-align: center;
+    /* 文字居中对齐 */
     background-color: transparent;
     /* 拓展菜单项背景颜色 */
     white-space: nowrap;

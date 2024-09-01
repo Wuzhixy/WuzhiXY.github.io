@@ -96,3 +96,32 @@ p {
     z-index: 1000;
     /* 确保页脚在其他内容之上显示 */
 }
+
+/* 针对小屏幕的媒体查询 */
+@media only screen and (max-width: 768px) {
+    .header-container {
+        display: flex;
+        /* 使用 Flexbox 布局 */
+        flex-direction: row;
+        /* 横向排列页眉内容 */
+        justify-content: space-between;
+        /* 页眉内容两端对齐 */
+        align-items: center;
+        /* 垂直居中对齐 */
+        padding: 1rem;
+        /* 调整内边距以适应小屏幕 */
+        box-sizing: border-box;
+        /* 包含内边距和边框的高度 */
+    }
+
+    .header-icon {
+        margin-right: auto;
+        /* 图标与文字之间的间距 */
+    }
+
+
+    .content {
+        padding-top: 5rem;
+        /* 根据实际的页眉高度调整 */
+    }
+}
