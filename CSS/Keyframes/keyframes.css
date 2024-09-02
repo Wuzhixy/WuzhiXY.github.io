@@ -2,77 +2,114 @@
 @keyframes typing {
     from {
         width: 0;
+        /* 动画开始时，文本宽度为0 */
     }
 
     to {
         width: 100%;
+        /* 动画结束时，文本宽度为100% */
     }
 }
 
 /* 光标闪烁动画 */
 @keyframes cursor {
-    0% {
+
+    0%,
+    100% {
         opacity: 1;
+        /* 光标完全可见 */
     }
 
     50% {
+        opacity: 0;
+        /* 光标在中间位置时不可见 */
+    }
+}
+
+/* 光标隐藏动画 */
+@keyframes cursor-hide {
+    from {
         opacity: 1;
+        /* 动画开始时光标完全可见 */
     }
 
-    100% {
+    to {
         opacity: 0;
+        /* 动画结束时光标不可见 */
     }
 }
 
 /* 打字效果容器 */
 .typing-container {
     display: flex;
+    flex-direction: column;
+    /* 垂直排列文字 */
     justify-content: center;
     align-items: center;
     width: 100%;
     min-width: 300px;
-    /* 添加最小宽度 */
+    /* 最小宽度为300px */
     height: 100vh;
+    /* 高度为视口高度 */
     text-align: center;
+    /* 文本居中对齐 */
     overflow: hidden;
+    /* 隐藏溢出内容 */
     position: relative;
+    /* 设置相对定位，以便子元素绝对定位 */
 }
 
 /* 打字效果文本 */
 .typing-text {
-    font-size: calc(12px + 5vw);
-    /* 调整字体大小以适应小屏幕 */
+    font-size: calc(16px + 5vw);
+    /* 字体大小根据视口宽度调整 */
     font-weight: bold;
     color: #a1a1a1;
-    letter-spacing: calc(0.5px + 1vw);
     white-space: nowrap;
+    /* 防止文本换行 */
     overflow: hidden;
+    /* 隐藏溢出的文本 */
     position: relative;
-    width: auto;
-    /* 确保文本宽度自适应 */
-    border-right: 2px solid #a1a1a1;
-    animation: typing 5s steps(30, end) 1 normal both;
+    /* 设置相对定位，以便光标绝对定位 */
     font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
+    display: inline-block;
+    /* 使文本保持在一行 */
+    visibility: visible;
+    /* 文本可见 */
+    letter-spacing: 5px;
+    /* 调整字间距 */
+}
+
+/* 打字效果状态下的文本样式 */
+.typing-text.typing {
+    animation: typing 4s steps(30, end) 1 normal both;
+    /* 4秒完成打字动画，分30步执行 */
+    animation-fill-mode: forwards;
+    /* 保持动画的最终状态 */
 }
 
 /* 光标效果 */
 .typing-text::after {
     content: '';
-    /* 清除之前的光标字符 */
-
+    /* 插入空内容 */
+    position: absolute;
     right: 0;
-    /* 光标位置在文本右侧 */
     bottom: 0;
     width: 1px;
-    /* 设置光标宽度 */
     height: 1em;
-    /* 使用 em 确保光标与字体高度一致 */
+    /* 光标高度与文本高度一致 */
     background-color: #a1a1a1;
-    /* 光标颜色与文本一致 */
+    /* 光标颜色 */
     animation: cursor 0.7s steps(1) infinite;
-    /* 光标闪烁动画 */
-    animation-delay: 1s;
-    /* 延迟使光标在打字结束后消失 */
-    animation-fill-mode: forwards;
-    /* 保持最后状态 */
+    /* 0.7秒闪烁一次 */
+}
+
+/* 光标隐藏动画同步打字效果结束 */
+.typing-text.typing::after {
+    animation: cursor 0.7s steps(1) infinite, cursor-hide 0s steps(1) 1 forwards 1ms;
+    /* 光标闪烁动画持续，光标隐藏动画在打字动画结束4秒后触发 */
+    content: '';
+    /* 确保光标内容为空 */
+    border-right: none;
+    /* 去除光标边框 */
 }

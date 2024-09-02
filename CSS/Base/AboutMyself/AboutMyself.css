@@ -27,7 +27,7 @@
      /* 字体大小随着屏幕宽度变化 */
      font-weight: bold;
      /* 字体加粗 */
-     color: #a1a1a1;
+     color: #000000;
      /* 设置文字颜色为灰色 */
      letter-spacing: calc(1px + 1vw);
      /* 字间距随着屏幕宽度变化 */
