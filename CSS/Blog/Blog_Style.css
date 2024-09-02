@@ -10,12 +10,6 @@
     /* 设置容器内边距 */
 }
 
-.blog-container p {
-    text-indent: 2em;
-    /* 首行缩进 2 个字符 */
-    margin-bottom: 10px;
-    /* 段落之间的间距 */
-}
 
 /* 博客项样式 */
 .blog-item {
