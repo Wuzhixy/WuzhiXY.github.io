@@ -64,7 +64,7 @@
     font-size: calc(16px + 5vw);
     /* 字体大小根据视口宽度调整 */
     font-weight: bold;
-    color: #a1a1a1;
+    color: #ffffff;
     white-space: nowrap;
     /* 防止文本换行 */
     overflow: hidden;
