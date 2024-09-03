@@ -9,7 +9,7 @@ html {
 a {
     text-decoration: none !important;
     /* 移除默认下划线 */
-    color: white;
+    color: rgb(255, 255, 255);
     /* 链接字体颜色 */
 }
 
@@ -59,6 +59,8 @@ a {
     /* 清除默认外边距 */
     transition: color 0.3s ease;
     /* 添加文字颜色的过渡效果 */
+    font-family: 'Bauhaus 93';
+    src: url('path/to/Bauhaus.ttf') format('truetype');
 }
 
 .adaptive-icon {
