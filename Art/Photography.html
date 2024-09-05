@@ -49,25 +49,53 @@
                     <a href="../Animation/Pose practice/Pose practice.html">Pose练习</a>
                 </div>
             </div>
+
         </div>
     </div>
 
     <div class="content">
+
         <div class="photograph-title-container">
             <p class="Photograph-title-text">
                 south of south/南城以南
             </p>
-
-            <div class="photo-gallery">
-                <div class="photo-item" onclick="openModal('photo1')">
-                    <img src="../Art/Pic of photograhy/south of south/(1).jpg" alt="Photo 1">
-                </div>
-                <div class="photo-item" onclick="openModal('photo2')">
-                    <img src="../Art/Pic of photograhy/south of south/(2).jpg" alt="Photo 2">
-                </div>
+        </div>
+        <button class="scroll-button prev" onclick="scrollGallery(-1)">&#10094;</button>
+        <div class="photo-gallery">
+            <div class="photo-item" onclick="openModal('photo1')">
+                <img src="../Art/Pic of photograhy/south of south/(1).jpg" alt="Photo 1">
+            </div>
+            <div class="photo-item" onclick="openModal('photo2')">
+                <img src="../Art/Pic of photograhy/south of south/(2).jpg" alt="Photo 2">
+            </div>
+            <div class="photo-item" onclick="openModal('photo3')">
+                <img src="../Art/Pic of photograhy/south of south/(3).jpg" alt="Photo 3">
+            </div>
+            <div class="photo-item" onclick="openModal('photo4')">
+                <img src="../Art/Pic of photograhy/south of south/(4).jpg" alt="Photo 4">
+            </div>
+            <div class="photo-item" onclick="openModal('photo5')">
+                <img src="../Art/Pic of photograhy/south of south/(5).jpg" alt="Photo 5">
+            </div>
+            <div class="photo-item" onclick="openModal('photo6')">
+                <img src="../Art/Pic of photograhy/south of south/(6).jpg" alt="Photo 6">
             </div>
         </div>
+
     </div>
+    <button class="scroll-button next" onclick="scrollGallery(1)">&#10095;</button>
+    </div>
+
+    <script>
+        function scrollGallery(direction) {
+            const gallery = document.querySelector('.photo-gallery');
+            const scrollAmount = 300; // 调整滚动量
+            gallery.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    </script>
 </body>
 
 </html>
