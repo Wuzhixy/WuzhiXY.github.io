@@ -10,6 +10,10 @@
     /* 菜单宽度自适应内容 */
     margin-right: .175rem;
     /* 在右侧添加外边距 */
+    font-family: "Courier New", Courier, monospace;
+    /* 设置全局字体 */
+    font-size: 18px;
+    /* 基准字体大小 */
 }
 
 /* 菜单按钮样式 */
