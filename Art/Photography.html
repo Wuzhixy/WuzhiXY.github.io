@@ -51,6 +51,7 @@
             </div>
         </div>
     </div>
+
     <div class="content">
         <div class="photograph-title-container">
             <p class="Photograph-title-text">
@@ -73,30 +74,8 @@
             <div class="photo-item" onclick="openModal('photo5')">
                 <img src="../Art/Pic of photograhy/south of south/(5).jpg" alt="Photo 5">
             </div>
-            <!-- 更多照片 -->
         </div>
     </div>
-
-    <!-- 模态框结构 -->
-    <div id="modal" style="display: none;">
-        <span onclick="closeModal()" style="cursor: pointer;">&times;</span>
-        <img id="modal-img" src="" alt="Modal Image">
-    </div>
-
-    // 打开模态框
-    function openModal(photoId) {
-    var modal = document.getElementById('modal');
-    var modalImg = document.getElementById('modal-img');
-    modal.style.display = 'block';
-    modalImg.src = '../Art/Pic of photograhy/south of south/' + photoId + '.jpg';
-    }
-
-    // 关闭模态框
-    function closeModal() {
-    var modal = document.getElementById('modal');
-    modal.style.display = 'none';
-    }
-
 </body>
 
 </html>

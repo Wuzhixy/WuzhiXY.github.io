@@ -7,23 +7,13 @@
     /* 隐藏超出容器的内容 */
 }
 
-/* 容器内部用于固定比例 */
-.photo-gallery-wrapper {
-    position: relative;
-    width: 100%;
-    height: 180px;
-    /* 固定高度 */
-}
-
+/* 实际内容区域 */
 .photo-gallery {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     display: flex;
     overflow-x: auto;
     /* 允许横向滚动 */
+    overflow-y: hidden;
+    /* 禁用竖向滚动 */
     scroll-snap-type: x mandatory;
     /* 强制横向滚动对齐 */
     white-space: nowrap;
