@@ -1,8 +1,8 @@
 /* 相册容器 */
 .photo-gallery-container {
     position: relative;
-    width: 2000px;
-    height: px;
+    width: auto;
+    height: 400px;
     /* 固定高度与照片项一致 */
     display: flex;
     align-items: center;
@@ -53,6 +53,18 @@
     /* 文字颜色设置为白色 */
     text-transform: uppercase;
     /* 将文本转换为大写 */
+}
+
+.photo-gallery-wrapper {
+    width: 100%;
+    height: 400px;
+    /* 根据需要调整高度 */
+    overflow-x: auto;
+    /* 启用横向滚动 */
+    overflow-y: hidden;
+    /* 禁用竖向滚动 */
+    white-space: nowrap;
+    /* 防止换行 */
 }
 
 /* 照片项 */
