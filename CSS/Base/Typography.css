@@ -59,16 +59,16 @@ a {
     /* 设置字体为 'Bauhaus 93'，如果该字体不可用则回退到 sans-serif */
 }
 
-/* 主内容样式 */
 .content {
-    padding-top: 120px;
-    /* 页眉高度 */
+    padding-top: calc(120px + 60px);
+    /* 页眉高度 + 上下 padding */
     padding-bottom: 50px;
     /* 页脚高度 */
-    height: calc(100vh - 170px);
-    /* 固定内容区域的高度，减去页眉和页脚的总高度 */
+    height: calc(100vh - 120px - 60px - 50px);
+    /* 100vh - 页眉高度 - 页眉 padding - 页脚高度 */
     width: 100%;
-    /* 宽度100% */
+    box-sizing: border-box;
+    /* 确保内边距和边框在高度和宽度计算中 */
 }
 
 /* 页脚样式 */
