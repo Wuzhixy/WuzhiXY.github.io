@@ -2,7 +2,7 @@
 .photo-gallery-container {
     position: relative;
     width: 2000px;
-    height: 180px;
+    height: px;
     /* 固定高度与照片项一致 */
     display: flex;
     align-items: center;
@@ -26,25 +26,6 @@
     /* 禁用竖向滚动 */
 }
 
-.scroll-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 10;
-}
-
-.prev {
-    left: 0;
-}
-
-.next {
-    right: 0;
-}
 
 /* 相册名称容器，靠近页眉下方，左侧对齐 */
 .Photograph-title-container {
@@ -79,7 +60,7 @@
     display: inline-block;
     width: auto;
     /* 照片容器宽度固定 */
-    height: 180px;
+    height: 400px;
     /* 照片容器高度固定，保持18:9比例 */
     margin: 0 10px;
     /* 照片项左右间距 */
