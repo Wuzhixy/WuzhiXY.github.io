@@ -11,8 +11,6 @@ html {
     /* 包括边框和内边距在元素的总宽度和高度中 */
 }
 
-
-
 /* 链接样式 */
 a {
     text-decoration: none !important;
@@ -23,7 +21,8 @@ a {
 
 /* 页眉样式 */
 .header-container {
-    height: 7.5rem;
+    height: 120px;
+    /* 页眉高度固定为120px */
     display: flex;
     /* 使用 Flexbox 布局来排列页眉中的内容 */
     justify-content: space-between;
@@ -38,20 +37,19 @@ a {
     /* 页眉距离左侧的位置 */
     right: 0;
     /* 页眉距离右侧的位置 */
-    padding: 3.75rem 3.125rem;
-    /* 页眉的内边距设置 */
+    padding: 60px 50px;
+    /* 页眉的内边距设置，固定为60px 上下和50px 左右 */
     z-index: 1000;
     /* 确保页眉在其他内容之上显示 */
-    line-height: 1.25em;
-    /* 确保与图标的高度一致 */
+    line-height: 20px;
+    /* 固定行高为20px，确保与图标的高度一致 */
     white-space: nowrap;
     /* 防止文字换行 */
 }
 
-
 .header {
-    font-size: 2rem;
-    /* 页眉文字的字体大小 */
+    font-size: 32px;
+    /* 页眉文字的字体大小固定为32px */
     margin: 0;
     /* 清除默认外边距 */
     transition: color 0.3s ease;
@@ -64,21 +62,22 @@ a {
 .adaptive-icon {
     width: auto;
     /* 图标宽度自适应 */
-    height: 1.25em;
-    /* 图标高度与字体大小一致 */
+    height: 20px;
+    /* 图标高度固定为20px */
     vertical-align: middle;
     /* 图标垂直对齐到中间 */
 }
 
 /* 主内容样式 */
 .content {
-    padding-top: 12.5rem;
-    /* 页眉容器高度 5rem + 页眉高度 7.5rem */
-    padding-bottom: 3.125rem;
+    padding-top: 120px;
+    /* 页眉高度 */
+    padding-bottom: 50px;
     /* 页脚高度 */
-    min-height: calc(100vh - 15.625rem);
-    /* 确保内容区域至少占满视口的高度减去所有固定高度 */
+    height: calc(100vh - 170px);
+    /* 固定内容区域的高度，减去页眉和页脚的总高度 */
     width: 100%;
+    /* 宽度100% */
 }
 
 /* 页脚样式 */
@@ -97,8 +96,8 @@ a {
     /* 页脚文字颜色 */
     text-align: center;
     /* 页脚文字居中对齐 */
-    padding: 0.625rem 0;
-    /* 页脚的上下内边距设置 */
+    padding: 10px 0;
+    /* 页脚的上下内边距设置，固定为10px */
     z-index: 1000;
     /* 确保页脚在其他内容之上显示 */
 }
