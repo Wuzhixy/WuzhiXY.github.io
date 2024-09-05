@@ -19,7 +19,7 @@ a {
     /* 链接字体颜色 */
 }
 
-/* 页眉样式 */
+/* 页眉容器样式 */
 .header-container {
     height: 120px;
     /* 页眉高度固定为120px */
@@ -47,6 +47,7 @@ a {
     /* 防止文字换行 */
 }
 
+/* 页眉样式 */
 .header {
     font-size: 32px;
     /* 页眉文字的字体大小固定为32px */
@@ -56,16 +57,6 @@ a {
     /* 添加文字颜色的过渡效果 */
     font-family: 'Bauhaus 93', sans-serif;
     /* 设置字体为 'Bauhaus 93'，如果该字体不可用则回退到 sans-serif */
-}
-
-/* 自适应图标 */
-.adaptive-icon {
-    width: auto;
-    /* 图标宽度自适应 */
-    height: 20px;
-    /* 图标高度固定为20px */
-    vertical-align: middle;
-    /* 图标垂直对齐到中间 */
 }
 
 /* 主内容样式 */
