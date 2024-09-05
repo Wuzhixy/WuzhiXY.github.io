@@ -17,6 +17,8 @@ html {
     /* 根据页眉高度设置内边距，确保内容不会被页眉遮挡 */
     min-height: 100vh;
     /* 确保内容区域至少占满视口的高度 */
+    width: 95%;
+    /* 页眉宽度覆盖整个页面 */
     padding-bottom: 3.125rem;
     /* 设置底部内边距，以防内容被页脚遮挡 */
 }
@@ -31,8 +33,8 @@ a {
 
 /* 页眉样式 */
 .header-container {
-    width: 100%;
-    /* 页眉宽度覆盖整个页面 */
+    height: 7.5rem;
+
     display: flex;
     /* 使用 Flexbox 布局来排列页眉中的内容 */
     justify-content: space-between;
@@ -45,17 +47,22 @@ a {
     /* 页眉距离顶部的位置 */
     left: 0;
     /* 页眉距离左侧的位置 */
+    right: 0;
+    /* 页眉距离右侧的位置 */
     padding: 3.75rem 3.125rem;
     /* 页眉的内边距设置 */
     z-index: 1000;
     /* 确保页眉在其他内容之上显示 */
-    display: flex;
-    align-items: center;
-    /* 确保容器内的内容垂直居中 */
     line-height: 1.25em;
     /* 确保与图标的高度一致 */
     white-space: nowrap;
     /* 防止文字换行 */
+}
+
+/* 页眉字体设置 */
+@font-face {
+    font-family: 'Bauhaus 93';
+    src: url('path/to/Bauhaus.ttf') format('truetype');
 }
 
 .header {
@@ -65,10 +72,11 @@ a {
     /* 清除默认外边距 */
     transition: color 0.3s ease;
     /* 添加文字颜色的过渡效果 */
-    font-family: 'Bauhaus 93';
-    src: url('path/to/Bauhaus.ttf') format('truetype');
+    font-family: 'Bauhaus 93', sans-serif;
+    /* 设置字体为 'Bauhaus 93'，如果该字体不可用则回退到 sans-serif */
 }
 
+/* 自适应图标 */
 .adaptive-icon {
     width: auto;
     /* 图标宽度自适应 */
@@ -82,7 +90,7 @@ a {
 .footer {
     position: fixed;
     /* 固定页脚在页面底部 */
-    left: 0;
+    hight：3.125re left: 0;
     /* 页脚距离左侧的位置 */
     bottom: 0;
     /* 页脚距离底部的位置 */
@@ -98,33 +106,4 @@ a {
     /* 页脚的上下内边距设置 */
     z-index: 1000;
     /* 确保页脚在其他内容之上显示 */
-}
-
-/* 针对小屏幕的媒体查询 */
-@media only screen and (max-width: 768px) {
-    .header-container {
-        display: flex;
-        /* 使用 Flexbox 布局 */
-        flex-direction: row;
-        /* 横向排列页眉内容 */
-        justify-content: space-between;
-        /* 页眉内容两端对齐 */
-        align-items: center;
-        /* 垂直居中对齐 */
-        padding: 1rem;
-        /* 调整内边距以适应小屏幕 */
-        box-sizing: border-box;
-        /* 包含内边距和边框的高度 */
-    }
-
-    .header-icon {
-        margin-right: auto;
-        /* 图标与文字之间的间距 */
-    }
-
-
-    .content {
-        padding-top: 5rem;
-        /* 根据实际的页眉高度调整 */
-    }
 }

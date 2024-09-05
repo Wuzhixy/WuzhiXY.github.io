@@ -49,7 +49,7 @@
     width: 100%;
     min-width: 300px;
     /* 最小宽度为300px */
-    height: 100vh;
+    height: 95vh;
     /* 高度为视口高度 */
     text-align: center;
     /* 文本居中对齐 */
@@ -76,7 +76,7 @@
     /* 使文本保持在一行 */
     visibility: visible;
     /* 文本可见 */
-    letter-spacing: 5px;
+    letter-spacing: 7px;
     /* 调整字间距 */
 }
 
