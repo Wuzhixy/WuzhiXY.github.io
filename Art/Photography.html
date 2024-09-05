@@ -10,10 +10,11 @@
     <link rel="stylesheet" href="../CSS/Base/Typography.css"> <!-- 引用外置CSS文件 -->
     <link rel="stylesheet" href="../CSS/Base/Menu/Menu.css"> <!-- 引用外置CSS文件 -->
     <link rel="stylesheet" href="../CSS/Photograhy/photograhy.css"> <!-- 引用外置CSS文件 -->
+    <link rel="stylesheet" href="../CSS/Photograhy/photo-gallery.css"> <!-- 引用外置CSS文件 -->
 
     <style>
         body {
-            background-color: #858585;
+            background-color: #000000;
         }
     </style>
 </head>
@@ -52,10 +53,39 @@
     </div>
     <div class="content">
         <div class="photograph-title-container">
-            <p class="photograph-title-text">
-                southofsouth/南城以南
+            <p class="Photograph-title-text">
+                south of south/南城以南
             </p>
         </div>
+        <div class="photo-gallery">
+            <div class="photo-item" onclick="openModal('photo1')">
+                <img src="../Art/Pic of photograhy/south of south/(1).jpg" alt="Photo 1">
+            </div>
+            <div class="photo-item" onclick="openModal('photo2')">
+                <img src="../Art/Pic of photograhy/south of south/(2).jpg" alt="Photo 2">
+            </div>
+            <div class="photo-item" onclick="openModal('photo3')">
+                <img src="../Art/Pic of photograhy/south of south/(3).jpg" alt="Photo 3">
+            </div>
+            <div class="photo-item" onclick="openModal('photo4')">
+                <img src="../Art/Pic of photograhy/south of south/(4).jpg" alt="Photo 4">
+            </div>
+            <div class="photo-item" onclick="openModal('photo5')">
+                <img src="../Art/Pic of photograhy/south of south/(5).jpg" alt="Photo 5">
+            </div>
+            <!-- 更多照片 -->
+        </div>
     </div>
+    <javascipt>
+        function scrollGallery(direction) {
+        const gallery = document.querySelector('.photo-gallery');
+        const scrollAmount = 300; // 每次滚动的像素值
+        gallery.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
+        });
+        }
+    </javascipt>
+</body>
 
 </html>

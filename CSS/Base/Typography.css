@@ -48,11 +48,6 @@ a {
     /* 防止文字换行 */
 }
 
-/* 页眉字体设置 */
-@font-face {
-    font-family: 'Bauhaus 93';
-    src: url('path/to/Bauhaus.ttf') format('truetype');
-}
 
 .header {
     font-size: 2rem;
@@ -77,12 +72,12 @@ a {
 
 /* 主内容样式 */
 .content {
-    padding-top: 7.5rem;
-    /* 页眉高度 */
+    padding-top: 12.5rem;
+    /* 页眉容器高度 5rem + 页眉高度 7.5rem */
     padding-bottom: 3.125rem;
     /* 页脚高度 */
-    min-height: calc(100vh - 7.5rem - 3.125rem);
-    /* 确保主内容区域高度至少为视口高度减去页眉和页脚的高度 */
+    min-height: calc(100vh - 15.625rem);
+    /* 确保内容区域至少占满视口的高度减去所有固定高度 */
     width: 100%;
 }
 

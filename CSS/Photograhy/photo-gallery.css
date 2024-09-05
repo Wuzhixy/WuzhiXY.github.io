@@ -1,0 +1,157 @@
+/* 相册容器 */
+.photo-gallery {
+    display: flex;
+    /* 使用 Flexbox 布局来排列照片项 */
+    overflow-x: auto;
+    /* 允许横向滚动 */
+    padding: 20px;
+    /* 添加内边距 */
+    gap: 10px;
+    /* 照片之间的间隔 */
+    scroll-snap-type: x mandatory;
+    /* 强制横向滚动对齐 */
+    white-space: nowrap;
+    /* 防止子元素换行 */
+}
+
+/* 照片项 */
+.photo-item {
+    position: relative;
+    /* 设定相对定位 */
+    width: 300px;
+    /* 你可以根据需要调整宽度 */
+    /* 设置固定宽度 */
+    height: 225px;
+    /* 高度与宽度成4:3比例 */
+    /* 设置固定高度 */
+    overflow: hidden;
+    /* 隐藏超出容器边界的内容 */
+    transition: transform 0.3s ease;
+    /* 为照片项的变换添加过渡效果 */
+    scroll-snap-align: start;
+    /* 对齐滚动到开始位置 */
+}
+
+.photo-item img {
+    width: 100%;
+    /* 确保照片占满整个照片项容器的宽度 */
+    height: 100%;
+    /* 确保照片占满整个照片项容器的高度 */
+    object-fit: cover;
+    /* 确保照片以覆盖模式填充容器，保持宽高比 */
+}
+
+.photo-item:hover {
+    transform: scale(1.05);
+    /* 鼠标悬停时，轻微放大照片项 */
+}
+
+/* 滚动按钮样式 */
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    /* 垂直居中按钮 */
+    transform: translateY(-50%);
+    /* 垂直居中按钮 */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 背景颜色为半透明黑色 */
+    color: white;
+    /* 文字颜色为白色 */
+    border: none;
+    /* 去掉边框 */
+    padding: 10px;
+    /* 添加内边距 */
+    cursor: pointer;
+    /* 鼠标悬停时显示手型 */
+    z-index: 1000;
+    /* 确保按钮在其他内容之上显示 */
+    font-size: 20px;
+    /* 设置字体大小 */
+}
+
+.scroll-button.left {
+    left: 10px;
+    /* 距离左侧10像素 */
+}
+
+.scroll-button.right {
+    right: 10px;
+    /* 距离右侧10像素 */
+}
+
+/* 弹窗样式 */
+.modal {
+    display: none;
+    /* 默认隐藏弹窗 */
+    position: fixed;
+    /* 固定在页面上 */
+    z-index: 1000;
+    /* 确保弹窗在其他内容之上显示 */
+    left: 0;
+    /* 距离页面左侧 */
+    top: 0;
+    /* 距离页面顶部 */
+    width: 100%;
+    /* 宽度覆盖整个视口 */
+    height: 100%;
+    /* 高度覆盖整个视口 */
+    overflow: auto;
+    /* 允许内容溢出时滚动 */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* 背景颜色设置为半透明黑色 */
+}
+
+.modal-content {
+    margin: auto;
+    /* 图片居中显示 */
+    display: block;
+    /* 图片显示为块级元素 */
+    max-width: 90%;
+    /* 图片最大宽度为视口宽度的90% */
+    max-height: 80%;
+    /* 图片最大高度为视口高度的80% */
+}
+
+.close {
+    position: absolute;
+    /* 绝对定位到弹窗内 */
+    top: 10px;
+    /* 距离弹窗顶部10像素 */
+    right: 25px;
+    /* 距离弹窗右侧25像素 */
+    color: white;
+    /* 关闭按钮文字颜色为白色 */
+    font-size: 35px;
+    /* 设置关闭按钮字体大小 */
+    font-weight: bold;
+    /* 关闭按钮文字加粗 */
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    /* 鼠标悬停或获得焦点时改变颜色为浅灰色 */
+    text-decoration: none;
+    /* 去除默认文本装饰 */
+    cursor: pointer;
+    /* 鼠标悬停时显示为手型 */
+}
+
+.caption {
+    position: fixed;
+    /* 固定在页面上 */
+    bottom: 10px;
+    /* 距离页面底部10像素 */
+    left: 10px;
+    /* 距离页面左侧10像素 */
+    color: white;
+    /* 文字颜色设置为白色 */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 背景颜色设置为半透明黑色 */
+    padding: 10px;
+    /* 添加内边距 */
+    max-width: 90%;
+    /* 最大宽度为视口宽度的90% */
+    box-sizing: border-box;
+    /* 计算宽度时包含内边距 */
+}

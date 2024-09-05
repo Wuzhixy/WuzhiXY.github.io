@@ -14,16 +14,14 @@
   /* 子元素水平靠左对齐 */
 }
 
+
 /* 文字设置，左对齐，字体缩小 */
 .Photograph-title-text {
-  font-size: 20vw;
-  /* 字体大小为视口宽度的10%，随屏幕宽度变化而变化 */
+  font-size: 18px;
   font-weight: bold;
   /* 字体加粗 */
-  color: white;
+  color: rgb(255, 255, 255);
   /* 文字颜色设置为白色 */
   text-transform: uppercase;
   /* 将文本转换为大写 */
-  font-family: 'Bauhaus 93', 'Microsoft YaHei', '微软雅黑', sans-serif;
-  /* 英文使用 Bauhaus，中文使用微软雅黑 */
 }
