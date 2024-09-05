@@ -21,8 +21,6 @@ body::before {
     /* 背景图片覆盖整个区域 */
     background-position: center;
     /* 背景图片居中对齐 */
-    background-repeat: no-repeat;
-    /* 不重复背景图片 */
     z-index: -1;
     /* 确保背景在内容下方 */
     background-image: var(--background-image-url);

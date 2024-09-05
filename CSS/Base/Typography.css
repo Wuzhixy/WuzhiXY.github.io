@@ -11,17 +11,7 @@ html {
     /* 包括边框和内边距在元素的总宽度和高度中 */
 }
 
-/* 主内容样式 */
-.content {
-    padding-top: 7.5rem;
-    /* 根据页眉高度设置内边距，确保内容不会被页眉遮挡 */
-    min-height: 100vh;
-    /* 确保内容区域至少占满视口的高度 */
-    width: 95%;
-    /* 页眉宽度覆盖整个页面 */
-    padding-bottom: 3.125rem;
-    /* 设置底部内边距，以防内容被页脚遮挡 */
-}
+
 
 /* 链接样式 */
 a {
@@ -34,7 +24,6 @@ a {
 /* 页眉样式 */
 .header-container {
     height: 7.5rem;
-
     display: flex;
     /* 使用 Flexbox 布局来排列页眉中的内容 */
     justify-content: space-between;
@@ -86,11 +75,22 @@ a {
     /* 图标垂直对齐到中间 */
 }
 
+/* 主内容样式 */
+.content {
+    padding-top: 7.5rem;
+    /* 页眉高度 */
+    padding-bottom: 3.125rem;
+    /* 页脚高度 */
+    min-height: calc(100vh - 7.5rem - 3.125rem);
+    /* 确保主内容区域高度至少为视口高度减去页眉和页脚的高度 */
+    width: 100%;
+}
+
 /* 页脚样式 */
 .footer {
     position: fixed;
     /* 固定页脚在页面底部 */
-    hight：3.125re left: 0;
+    left: 0;
     /* 页脚距离左侧的位置 */
     bottom: 0;
     /* 页脚距离底部的位置 */

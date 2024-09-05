@@ -11,46 +11,17 @@
     }
 }
 
-/* 光标闪烁动画 */
-@keyframes cursor {
-
-    0%,
-    100% {
-        opacity: 1;
-        /* 光标完全可见 */
-    }
-
-    50% {
-        opacity: 0;
-        /* 光标在中间位置时不可见 */
-    }
-}
-
-/* 光标隐藏动画 */
-@keyframes cursor-hide {
-    from {
-        opacity: 1;
-        /* 动画开始时光标完全可见 */
-    }
-
-    to {
-        opacity: 0;
-        /* 动画结束时光标不可见 */
-    }
-}
-
 /* 打字效果容器 */
 .typing-container {
     display: flex;
-    flex-direction: column;
-    /* 垂直排列文字 */
     justify-content: center;
     align-items: center;
     width: 100%;
     min-width: 300px;
     /* 最小宽度为300px */
+    align-items: center;
     height: 95vh;
-    /* 高度为视口高度 */
+    /* 确保父容器有足够的高度 */
     text-align: center;
     /* 文本居中对齐 */
     overflow: hidden;
@@ -86,30 +57,4 @@
     /* 4秒完成打字动画，分30步执行 */
     animation-fill-mode: forwards;
     /* 保持动画的最终状态 */
-}
-
-/* 光标效果 */
-.typing-text::after {
-    content: '';
-    /* 插入空内容 */
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 1px;
-    height: 1em;
-    /* 光标高度与文本高度一致 */
-    background-color: #a1a1a1;
-    /* 光标颜色 */
-    animation: cursor 0.7s steps(1) infinite;
-    /* 0.7秒闪烁一次 */
-}
-
-/* 光标隐藏动画同步打字效果结束 */
-.typing-text.typing::after {
-    animation: cursor 0.7s steps(1) infinite, cursor-hide 0s steps(1) 1 forwards 1ms;
-    /* 光标闪烁动画持续，光标隐藏动画在打字动画结束4秒后触发 */
-    content: '';
-    /* 确保光标内容为空 */
-    border-right: none;
-    /* 去除光标边框 */
 }
