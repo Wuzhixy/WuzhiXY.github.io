@@ -67,6 +67,7 @@ a {
     height: calc(100vh - 120px - 60px - 50px);
     /* 100vh - 页眉高度 - 页眉 padding - 页脚高度 */
     width: auto;
+    top: 180px;
     box-sizing: border-box;
     /* 确保内边距和边框在高度和宽度计算中 */
 }

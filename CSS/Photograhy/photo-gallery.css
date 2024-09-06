@@ -1,8 +1,8 @@
 /* 相册容器 */
 .photo-gallery-container {
     position: relative;
-    weight: 1000px;
-    height: 400px;
+    width: 1000px;
+    height: 700px;
     /* 固定高度与照片项一致 */
     display: flex;
     align-items: center;
@@ -27,23 +27,31 @@
 
 /* 滚动按钮 */
 .scroll-button {
-    position: absolute;
+    position: fixed;
+    /* 固定定位，始终在视窗的左右两侧 */
     top: 50%;
     transform: translateY(-50%);
+    /* 垂直居中 */
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
     padding: 10px;
     cursor: pointer;
     z-index: 10;
+    font-size: 18px;
+    /* 按钮大小和样式 */
 }
 
+/* 左侧按钮 */
 .scroll-button.prev {
-    left: 0;
+    left: 10px;
+    /* 靠近视窗左侧 */
 }
 
+/* 右侧按钮 */
 .scroll-button.next {
-    right: 0;
+    right: 10px;
+    /* 靠近视窗右侧 */
 }
 
 
@@ -78,11 +86,7 @@
 /* 照片项 */
 .photo-item {
     display: inline-block;
-    width: 600px;
-    /* 固定宽度 */
-    height: 400px;
-    /* 固定高度 */
-    margin: 0 10px;
+    margin: 0 7px;
     /* 左右间距 */
     overflow: hidden;
     transition: transform 0.3s ease;
