@@ -1,54 +1,93 @@
 /* CSS 重置样式 */
+
 /* 统一 html 和 body 元素的样式 */
 body {
     display: flex;
+    /* 使用 Flexbox 布局 */
     flex-direction: column;
+    /* 设置主轴方向为纵向 */
     min-height: 100vh;
+    /* 确保页面至少占满视口高度 */
     margin: 0;
+    /* 移除默认外边距 */
 }
 
 /* 链接样式 */
 a {
-    text-decoration: none !important;
+    text-decoration: none;
     /* 移除默认下划线 */
-    color: rgb(255, 255, 255);
-    /* 链接字体颜色 */
+    color: #ffffff;
+    /* 链接字体颜色为白色 */
 }
 
 /* 页眉容器样式 */
 .header-container {
     height: 120px;
+    /* 页眉高度 */
     display: flex;
+    /* 使用 Flexbox 布局 */
     justify-content: space-between;
+    /* 子元素水平分布 */
     align-items: center;
+    /* 子元素垂直居中 */
     position: fixed;
+    /* 固定定位，始终在视口顶部 */
     top: 0;
+    /* 距离顶部 0 像素 */
     left: 0;
+    /* 距离左侧 0 像素 */
     right: 0;
+    /* 距离右侧 0 像素 */
     padding: 60px 50px;
+    /* 内边距：上下 60 像素，左右 50 像素 */
     z-index: 1000;
+    /* 确保页眉位于其他内容之上 */
     line-height: 20px;
+    /* 行高 */
     white-space: nowrap;
+    /* 防止内容换行 */
 }
 
 /* 页眉样式 */
 .header {
     font-size: 32px;
+    /* 字体大小 */
     margin: 0;
+    /* 移除默认外边距 */
     transition: color 0.3s ease;
+    /* 颜色变化过渡效果 */
     font-family: 'Bauhaus 93', sans-serif;
+    /* 字体设置 */
 }
 
+/* 主内容区域 */
+.main-content {
+    padding: 20px;
+    /* 内边距：为内容区域四周添加 20 像素的内边距 */
+    max-width: 1200px;
+    /* 最大宽度：限制内容区域的最大宽度为 1200 像素 */
+    margin: 80px auto;
+    /* 外边距：上下 80 像素（留出页眉和页脚的高度），左右自动对齐，水平居中 */
+}
 
 /* 页脚样式 */
 .footer {
     position: fixed;
+    /* 固定定位，始终在视口底部 */
     left: 0;
+    /* 距离左侧 0 像素 */
     bottom: 0;
+    /* 距离底部 0 像素 */
     width: 100%;
-    background-color: #333;
-    color: white;
+    /* 宽度 100% */
+    background-color: #333333;
+    /* 背景色：深灰色 */
+    color: #ffffff;
+    /* 文字颜色：白色 */
     text-align: center;
+    /* 文字居中对齐 */
     padding: 10px 0;
+    /* 内边距：上下 10 像素 */
     z-index: 1000;
+    /* 确保页脚位于其他内容之上 */
 }
