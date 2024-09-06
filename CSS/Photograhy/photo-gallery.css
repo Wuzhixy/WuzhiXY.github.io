@@ -6,18 +6,18 @@
     /* 水平靠左，竖直居中 */
     transform: translateY(-50%);
     /* 竖直居中 */
-    width: 2000px;
-    height: 700px;
+    width: 100%;
+    height: 400px;
     /* 固定高度 */
     display: flex;
     align-items: center;
     /* 竖直方向居中内容 */
     justify-content: flex-start;
     /* 水平方向左对齐内容 */
-    overflow-x: auto;
-    /* 启用横向滚动 */
     white-space: nowrap;
     /* 防止照片容器换行 */
+    overflow: hidden;
+    /* 隐藏超出内容 */
 }
 
 /* 实际内容区域 */
@@ -52,13 +52,13 @@
 /* 左侧按钮 */
 .scroll-button.prev {
     left: 10px;
-    /* 靠近视窗左侧 */
+    /* 靠近容器左侧 */
 }
 
 /* 右侧按钮 */
 .scroll-button.next {
     right: 10px;
-    /* 靠近视窗右侧 */
+    /* 靠近容器右侧 */
 }
 
 
@@ -90,8 +90,21 @@
     /* 将文本转换为大写 */
 }
 
+/* 照片容器 */
+.photo-container {
+    display: flex;
+    width: auto;
+    height: 70%;
+    /* 高度占据相册容器的 100% */
+    flex: 0 0 auto;
+    /* 防止照片容器缩放 */
+}
+
 /* 照片项 */
 .photo-item {
+    width: auto;
+    height: 75%;
+    /* 保持 4:3 比例的高度 */
     display: inline-block;
     margin: 0 7px;
     /* 左右间距 */

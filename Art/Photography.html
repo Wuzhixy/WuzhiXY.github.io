@@ -54,7 +54,7 @@
     </div>
     <div class="photo-gallery-container">
         <button class="scroll-button prev" onclick="scrollGallery(-1)">&#10094;</button>
-        <div class="photo-gallery">
+        <div class="photo-container">
             <div class="photo-item" onclick="openModal('photo1')">
                 <img src="../Art/Pic of photograhy/south of south/(1).jpg" alt="Photo 1">
             </div>
@@ -81,17 +81,12 @@
 
     <script>
         function scrollGallery(direction) {
-            const gallery = document.querySelector('.photo-gallery');
+            const container = document.querySelector('.photo-container');
             const scrollAmount = 300; // 每次滚动的距离
-            gallery.scrollBy({
+            container.scrollBy({
                 left: direction * scrollAmount,
                 behavior: 'smooth'
             });
-        }
-
-        function openModal(photoId) {
-            // 实现打开模态框的逻辑
-            console.log('Opening modal for:', photoId);
         }
 
     </script>
