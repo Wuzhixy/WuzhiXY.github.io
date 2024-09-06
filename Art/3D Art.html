@@ -9,15 +9,12 @@
     <link rel="stylesheet" href="../CSS/Base/Reset.css"> <!-- 引用外置CSS文件 -->
     <link rel="stylesheet" href="../CSS/Base/Typography.css"> <!-- 引用外置CSS文件 -->
     <link rel="stylesheet" href="../CSS/Base/Menu/Menu.css"> <!-- 引用外置CSS文件 -->
-    <link rel="stylesheet" href="../CSS/Components/private-content.css"> <!-- 引用外置CSS文件 -->
-    <link rel="stylesheet" href="../CSS/Responsive/responsive.css"> <!-- 引用外置CSS文件 -->
-    <link rel="stylesheet" href="../CSS/Keyframes/keyframes.css"> <!-- 引用外置CSS文件 -->
-
+    <link rel="stylesheet" href="../CSS/Photograhy/photograhy.css"> <!-- 引用外置CSS文件 -->
+    <link rel="stylesheet" href="../CSS/photo-gallery/photo-gallery.css"> <!-- 引用外置CSS文件 -->
 
     <style>
         body {
-            background-color: #65305a;
-            /* 设置背景颜色为浅灰色 */
+            background-color: #000000;
         }
     </style>
 </head>
@@ -43,7 +40,6 @@
                     <a href="../Art/Photography.html">相册硬盘</a>
                     <a href="../Art/3D Art.html">3D艺术</a>
                     <a href="../Art/Basis Art.html">美术基础</a>
-
                 </div>
             </div>
             <div class="menu-item">
@@ -53,9 +49,64 @@
                     <a href="../Animation/Pose practice/Pose practice.html">Pose练习</a>
                 </div>
             </div>
-        </div>
 
+        </div>
     </div>
+    <div class="photo-gallery-container">
+
+        <div class="photo-container">
+            <div class="photo-item" onclick="openModal('photo1')">
+                <img src="../Art/Pic of photograhy/south of south/(1).jpg" alt="Photo 1">
+            </div>
+        </div>
+        <div class="photo-container">
+            <div class="photo-item" onclick="openModal('photo2')">
+                <img src="../Art/Pic of photograhy/south of south/(2).jpg" alt="Photo 2">
+            </div>
+        </div>
+        <div class="photo-container">
+            <div class="photo-item" onclick="openModal('photo3')">
+                <img src="../Art/Pic of photograhy/south of south/(3).jpg" alt="Photo 3">
+            </div>
+        </div>
+        <div class="photo-container">
+            <div class="photo-item" onclick="openModal('photo3')">
+                <img src="../Art/Pic of photograhy/south of south/(4).jpg" alt="Photo 4">
+            </div>
+        </div>
+        <div class="photo-container">
+            <div class="photo-item" onclick="openModal('photo3')">
+                <img src="../Art/Pic of photograhy/south of south/(5).jpg" alt="Photo 5">
+            </div>
+        </div>
+        <div class="photo-container">
+
+            <div class="photo-item" onclick="openModal('photo3')">
+                <img src="../Art/Pic of photograhy/south of south/(6).jpg" alt="Photo 6">
+            </div>
+        </div>
+        <!-- 更多照片项 -->
+    </div>
+    <button class="scroll-button prev" onclick="scrollGallery(-1)">&#10094;</button>
+    <button class="scroll-button next" onclick="scrollGallery(1)">&#10095;</button>
+    </div>
+
+
+    <script>
+        function scrollGallery(direction) {
+            const container = document.querySelector('.photo-gallery-container');
+            const scrollAmount = 700; // 每次滚动的距离，单位像素
+            container.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+
+        // 为按钮添加事件监听器
+        document.querySelector('.scroll-button.prev').addEventListener('click', () => scrollGallery(-1));
+        document.querySelector('.scroll-button.next').addEventListener('click', () => scrollGallery(1));
+
+    </script>
 </body>
 
 </html>
