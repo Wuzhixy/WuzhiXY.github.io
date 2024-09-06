@@ -14,26 +14,24 @@
 /* 打字效果容器 */
 .typing-container {
     display: flex;
+    /* 使用 Flexbox 布局 */
     justify-content: center;
+    /* 水平居中对齐子元素 */
     align-items: center;
+    /* 垂直居中对齐子元素 */
     width: 100%;
-    min-width: 300px;
-    /* 最小宽度为300px */
-    align-items: center;
-    height: 95vh;
-    /* 确保父容器有足够的高度 */
+    /* 宽度设置为父容器的 100% */
+    height: auto;
+    /* 高度根据内容自动调整 */
     text-align: center;
-    /* 文本居中对齐 */
+    /* 文本水平居中对齐 */
     overflow: hidden;
-    /* 隐藏溢出内容 */
-    position: relative;
-    /* 设置相对定位，以便子元素绝对定位 */
+    /* 隐藏超出容器的内容 */
 }
 
 /* 打字效果文本 */
 .typing-text {
-    font-size: calc(16px + 5vw);
-    /* 字体大小根据视口宽度调整 */
+    font-size: 70px;
     font-weight: bold;
     color: #ffffff;
     white-space: nowrap;
