@@ -7,23 +7,43 @@
     display: flex;
     align-items: center;
     /* 竖直方向居中内容 */
+    overflow-x: auto;
+    /* 启用横向滚动 */
+    white-space: nowrap;
+    /* 防止照片容器换行 */
 }
 
 /* 实际内容区域 */
 .photo-gallery {
     display: flex;
-    scroll-snap-type: x mandatory;
-    /* 强制横向滚动对齐 */
-    white-space: nowrap;
-    /* 防止换行 */
     height: 100%;
-    /* 确保高度与容器一致 */
-    width: 100%;
-    /* 留出按钮空间 */
+    /* 保持相册容器的高度 */
+    white-space: nowrap;
     overflow-x: auto;
-    /* 允许横向滚动 */
     overflow-y: hidden;
     /* 禁用竖向滚动 */
+    scroll-snap-type: x mandatory;
+}
+
+/* 滚动按钮 */
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.scroll-button.prev {
+    left: 0;
+}
+
+.scroll-button.next {
+    right: 0;
 }
 
 
@@ -55,40 +75,26 @@
     /* 将文本转换为大写 */
 }
 
-.photo-gallery-wrapper {
-    width: 100%;
-    height: 400px;
-    /* 根据需要调整高度 */
-    overflow-x: auto;
-    /* 启用横向滚动 */
-    overflow-y: hidden;
-    /* 禁用竖向滚动 */
-    white-space: nowrap;
-    /* 防止换行 */
-}
-
 /* 照片项 */
 .photo-item {
     display: inline-block;
-    width: auto;
-    /* 照片容器宽度固定 */
+    width: 300px;
+    /* 固定宽度 */
     height: 400px;
-    /* 照片容器高度固定，保持18:9比例 */
+    /* 固定高度 */
     margin: 0 10px;
-    /* 照片项左右间距 */
+    /* 左右间距 */
     overflow: hidden;
     transition: transform 0.3s ease;
-    /* 平滑的放大效果 */
+    /* 平滑放大效果 */
     scroll-snap-align: start;
     /* 滚动对齐到开始位置 */
 }
 
+/* 确保照片完整展示 */
 .photo-item img {
-    width: auto;
+    width: 100%;
     height: 100%;
-}
-
-.photo-item:hover {
-    transform: scale(1.05);
-    /* 鼠标悬停时放大 */
+    object-fit: contain;
+    /* 确保照片完整显示并保持比例，空白区域会显示背景色 */
 }
