@@ -27,11 +27,19 @@
     /* 文本水平居中对齐 */
     overflow: hidden;
     /* 隐藏超出容器的内容 */
+    position: absolute;
+    /* 如果需要定位 */
+    top: 50%;
+    /* 垂直居中 */
+    left: 50%;
+    /* 水平居中 */
+    transform: translate(-50%, -50%);
+    /* 精确居中对齐 */
 }
 
 /* 打字效果文本 */
 .typing-text {
-    font-size: 70px;
+    font-size: 77px;
     font-weight: bold;
     color: #ffffff;
     white-space: nowrap;
