@@ -1,12 +1,19 @@
 /* 相册容器 */
 .photo-gallery-container {
-    position: relative;
-    width: 1000px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    /* 水平靠左，竖直居中 */
+    transform: translateY(-50%);
+    /* 竖直居中 */
+    width: 2000px;
     height: 700px;
-    /* 固定高度与照片项一致 */
+    /* 固定高度 */
     display: flex;
-    align-items: left;
+    align-items: center;
     /* 竖直方向居中内容 */
+    justify-content: flex-start;
+    /* 水平方向左对齐内容 */
     overflow-x: auto;
     /* 启用横向滚动 */
     white-space: nowrap;

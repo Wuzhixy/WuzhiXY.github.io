@@ -1,14 +1,10 @@
 /* CSS 重置样式 */
 /* 统一 html 和 body 元素的样式 */
-html {
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     margin: 0;
-    /* 去除默认外边距 */
-    padding: 0;
-    /* 去除默认内边距 */
-    border: 0;
-    /* 去除默认边框 */
-    box-sizing: border-box;
-    /* 包括边框和内边距在元素的总宽度和高度中 */
 }
 
 /* 链接样式 */
@@ -22,70 +18,37 @@ a {
 /* 页眉容器样式 */
 .header-container {
     height: 120px;
-    /* 页眉高度固定为120px */
     display: flex;
-    /* 使用 Flexbox 布局来排列页眉中的内容 */
     justify-content: space-between;
-    /* 页眉中的内容左右对齐 */
     align-items: center;
-    /* 垂直居中对齐页眉中的内容 */
     position: fixed;
-    /* 固定页眉在页面顶部 */
     top: 0;
-    /* 页眉距离顶部的位置 */
     left: 0;
-    /* 页眉距离左侧的位置 */
     right: 0;
-    /* 页眉距离右侧的位置 */
     padding: 60px 50px;
-    /* 页眉的内边距设置，固定为60px 上下和50px 左右 */
     z-index: 1000;
-    /* 确保页眉在其他内容之上显示 */
     line-height: 20px;
-    /* 固定行高为20px，确保与图标的高度一致 */
     white-space: nowrap;
-    /* 防止文字换行 */
 }
 
 /* 页眉样式 */
 .header {
     font-size: 32px;
-    /* 页眉文字的字体大小固定为32px */
     margin: 0;
-    /* 清除默认外边距 */
     transition: color 0.3s ease;
-    /* 添加文字颜色的过渡效果 */
     font-family: 'Bauhaus 93', sans-serif;
-    /* 设置字体为 'Bauhaus 93'，如果该字体不可用则回退到 sans-serif */
 }
 
-/* 内容区域样式 */
-.content {
-    flex: 1;
-    /* 自动填充剩余的空间 */
-    padding: 60px 50px;
-    /* 内容区域的内边距可以根据需要调整 */
-    box-sizing: border-box;
-}
 
 /* 页脚样式 */
 .footer {
     position: fixed;
-    /* 固定页脚在页面底部 */
     left: 0;
-    /* 页脚距离左侧的位置 */
     bottom: 0;
-    /* 页脚距离底部的位置 */
     width: 100%;
-    /* 页脚宽度覆盖整个屏幕 */
     background-color: #333;
-    /* 页脚背景颜色 */
     color: white;
-    /* 页脚文字颜色 */
     text-align: center;
-    /* 页脚文字居中对齐 */
     padding: 10px 0;
-    /* 页脚的上下内边距设置，固定为10px */
     z-index: 1000;
-    /* 确保页脚在其他内容之上显示 */
 }
