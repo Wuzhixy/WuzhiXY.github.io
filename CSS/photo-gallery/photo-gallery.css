@@ -14,8 +14,6 @@
     /* 竖直方向居中内容 */
     justify-content: flex-start;
     /* 水平方向左对齐内容 */
-    white-space: nowrap;
-    /* 防止照片容器换行 */
     overflow: hidden;
     /* 隐藏超出内容 */
     padding: 10% 0;
@@ -64,20 +62,16 @@
 }
 
 
-/* 相册名称容器，靠近页眉下方，左侧对齐 */
+/* 相册名称容器 */
 .Photograph-title-container {
-    position: relative;
-    /* 设定相对定位，使内部绝对定位的元素相对于这个容器定位 */
     width: 100%;
-    /* 容器宽度为整个视口的宽度 */
+    height: 60px;
+    /* 设置相册名称容器的高度 */
     padding: 20px;
-    /* 容器内部四周添加20像素的内边距 */
-    margin-top: 100px;
-    /* 容器顶部外边距设置为100像素，使其距离页眉100像素 */
     display: flex;
-    /* 使用 Flexbox 布局模式来排版容器内的子元素 */
     justify-content: flex-start;
-    /* 子元素水平靠左对齐 */
+    align-items: center;
+    /* 垂直居中 */
 }
 
 
@@ -96,8 +90,8 @@
 .photo-container {
     display: flex;
     width: auto;
-    height: 100%;
-    /* 高度占据相册容器的 100% */
+    height: calc(100% - 40px);
+    /* 留出相册名称容器的高度 */
     flex: 0 0 auto;
     /* 防止照片容器缩放 */
     align-items: center;
