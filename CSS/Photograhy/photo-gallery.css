@@ -18,6 +18,8 @@
     /* 防止照片容器换行 */
     overflow: hidden;
     /* 隐藏超出内容 */
+    padding: 10% 0;
+    /* 上下内边距为 10% */
 }
 
 /* 实际内容区域 */
@@ -94,16 +96,20 @@
 .photo-container {
     display: flex;
     width: auto;
-    height: 70%;
+    height: 100%;
     /* 高度占据相册容器的 100% */
     flex: 0 0 auto;
     /* 防止照片容器缩放 */
+    align-items: center;
+    /* 竖直方向居中内容 */
+    padding: 10% 0;
+    /* 上下内边距为 10% */
 }
 
 /* 照片项 */
 .photo-item {
     width: auto;
-    height: 75%;
+    height: 100%;
     /* 保持 4:3 比例的高度 */
     display: inline-block;
     margin: 0 7px;
@@ -113,6 +119,15 @@
     /* 平滑放大效果 */
     scroll-snap-align: start;
     /* 滚动对齐到开始位置 */
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+    /* 平滑放大效果 */
+}
+
+/* 鼠标悬停在照片项上的效果 */
+.photo-item:hover {
+    transform: scale(1.05);
+    /* 放大效果，1.05 表示放大 5% */
 }
 
 /* 确保照片完整展示 */
