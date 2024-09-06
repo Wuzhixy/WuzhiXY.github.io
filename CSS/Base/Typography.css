@@ -1,28 +1,23 @@
-/* CSS 重置样式 */
-
-/* 统一 html 和 body 元素的样式 */
-body {
-    display: flex;
-    /* 使用 Flexbox 布局 */
-    flex-direction: column;
-    /* 设置主轴方向为纵向 */
-    min-height: 100vh;
-    /* 确保页面至少占满视口高度 */
+/* 重置一些默认样式 */
+body,
+html {
     margin: 0;
-    /* 移除默认外边距 */
+    padding: 0;
+    height: 100%;
+    font-family: "Courier New", Courier, monospace;
+    /* 设置全局字体 */
 }
 
-/* 链接样式 */
-a {
-    text-decoration: none;
-    /* 移除默认下划线 */
-    color: #ffffff;
-    /* 链接字体颜色为白色 */
+/* 使用 Flexbox 布局 */
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 /* 页眉容器样式 */
 .header-container {
-    height: 120px;
+    height: 200px;
     /* 页眉高度 */
     display: flex;
     /* 使用 Flexbox 布局 */
@@ -46,6 +41,8 @@ a {
     /* 行高 */
     white-space: nowrap;
     /* 防止内容换行 */
+    box-sizing: border-box;
+    /* 包含内边距和边框在高度中 */
 }
 
 /* 页眉样式 */
@@ -60,24 +57,33 @@ a {
     /* 字体设置 */
 }
 
+/* 主内容区域样式 */
+.main-content {
+    flex: 1;
+    padding: calc(200px + 10px) 10px calc(50px + 10px) 10px;
+    /* 使用 calc 动态计算 padding */
+    box-sizing: border-box;
+    /* 包含内边距和边框在高度中 */
+}
+
 /* 页脚样式 */
 .footer {
     position: fixed;
     /* 固定定位，始终在视口底部 */
     left: 0;
-    /* 距离左侧 0 像素 */
     bottom: 0;
-    /* 距离底部 0 像素 */
     width: 100%;
-    /* 宽度 100% */
-    background-color: #333333;
-    /* 背景色：深灰色 */
     color: #ffffff;
-    /* 文字颜色：白色 */
     text-align: center;
-    /* 文字居中对齐 */
     padding: 10px 0;
-    /* 内边距：上下 10 像素 */
     z-index: 1000;
-    /* 确保页脚位于其他内容之上 */
+    box-sizing: border-box;
+}
+
+/* 链接样式 */
+a {
+    text-decoration: none;
+    /* 移除默认下划线 */
+    color: #ffffff;
+    /* 链接字体颜色为白色 */
 }

@@ -1,43 +1,25 @@
 /* 相册容器 */
 .photo-gallery-container {
-    position: absolute;
-    /* 绝对定位，使容器相对于最近的定位祖先定位 */
-    top: 50%;
-    /* 垂直居中 */
+    top: 200px;
+    /* 顶部对齐 */
     left: 0;
-    /* 水平靠左 */
-    transform: translateY(-50%);
-    /* 竖直居中对齐 */
-    width: 100%;
-    /* 宽度为视口的 100% */
+    /* 左侧对齐 */
+    width: calc(100% - 40px);
+    /* 宽度为 100% 减去左右 margin 的值 */
     height: 400px;
     /* 固定高度 */
+    margin: 20px;
+    /* 上下左右都留出 20px 的外边距 */
     display: flex;
     /* 使用弹性盒布局 */
-    align-items: center;
-    /* 竖直方向居中内容 */
+    align-items: flex-start;
+    /* 竖直方向靠上对齐内容 */
     justify-content: flex-start;
     /* 水平方向左对齐内容 */
     overflow: hidden;
     /* 隐藏超出容器的内容 */
-    padding: 10% 0;
-    /* 上下内边距为 10% */
-}
-
-/* 实际内容区域 */
-.photo-gallery {
-    display: flex;
-    /* 使用弹性盒布局 */
-    height: 100%;
-    /* 高度为父容器的 100% */
-    white-space: nowrap;
-    /* 防止文本换行，保持内容在一行 */
-    overflow-x: auto;
-    /* 启用横向滚动 */
-    overflow-y: hidden;
-    /* 禁用竖向滚动 */
-    scroll-snap-type: x mandatory;
-    /* 强制横向滚动对齐到每个子元素的开始位置 */
+    background-color: #161616;
+    /* 示例背景色 */
 }
 
 /* 滚动按钮 */
@@ -110,34 +92,30 @@
     /* 使用弹性盒布局 */
     width: auto;
     /* 宽度自适应 */
-    height: calc(100% - 60px);
-    /* 高度为父容器高度减去相册名称容器的高度 */
+    height: 400px;
+    /* 固定高度 */
     flex: 0 0 auto;
     /* 防止容器缩放 */
     align-items: center;
     /* 竖直方向居中内容 */
-    padding: 10% 0;
-    /* 上下内边距为 10% */
+    padding: 1% 7px;
+    /* 上下内边距为 1%，左右内边距为 20px */
 }
 
 /* 照片项 */
 .photo-item {
     width: auto;
     /* 宽度自适应 */
-    height: 100%;
+    height: 400px;
     /* 高度为父容器的 100% */
     display: inline-block;
     /* 以内联块级元素显示 */
-    margin: 0 7px;
-    /* 左右间距为 7px */
     overflow: hidden;
     /* 隐藏超出容器的内容 */
     transition: transform 0.3s ease;
     /* 平滑过渡效果 */
     scroll-snap-align: start;
     /* 滚动对齐到开始位置 */
-    box-sizing: border-box;
-    /* 包括边框和内边距在宽高计算中 */
 }
 
 /* 鼠标悬停在照片项上的效果 */
@@ -154,4 +132,10 @@
     /* 高度为父容器的 100% */
     object-fit: contain;
     /* 确保照片完整显示并保持比例，空白区域会显示背景色 */
+}
+
+.photo-caption {
+    font-size: 14px;
+    /* 字体大小为 18px */
+    color: #929292;
 }
