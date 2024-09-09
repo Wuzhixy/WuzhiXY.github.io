@@ -49,7 +49,7 @@
 }
 
 /* 模态框样式 */
-.modal {
+.blog-modal {
     display: none;
     /* 默认隐藏模态框 */
     position: fixed;
@@ -72,7 +72,7 @@
     /* 确保模态框在最前方显示 */
 }
 
-.modal-content {
+.blog-modal-content {
     background-color: #fff;
     /* 模态框内容背景颜色为白色 */
     padding: 20px;
@@ -91,7 +91,7 @@
     /* 相对定位，用于定位关闭按钮 */
 }
 
-.close-btn {
+.blog-close-btn {
     position: absolute;
     /* 绝对定位 */
     top: 10px;

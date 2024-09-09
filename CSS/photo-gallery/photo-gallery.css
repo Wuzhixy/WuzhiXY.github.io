@@ -100,13 +100,15 @@
     /* 竖直方向居中内容 */
     padding: 1% 7px;
     /* 上下内边距为 1%，左右内边距为 20px */
+    box-sizing: border-box;
+    /* 确保 padding 包含在总高度内 */
 }
 
 /* 照片项 */
 .photo-item {
     width: auto;
     /* 宽度自适应 */
-    height: 400px;
+    height: 100%;
     /* 高度为父容器的 100% */
     display: inline-block;
     /* 以内联块级元素显示 */
@@ -138,4 +140,58 @@
     font-size: 14px;
     /* 字体大小为 18px */
     color: #929292;
+    width: 400px;
+}
+
+/* 模态框样式 */
+.Photo-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    /* 确保模态框在最前方 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* 半透明黑色背景 */
+    justify-content: center;
+    align-items: center;
+}
+
+/* 模态框内容 */
+.Photo-modal-content {
+    background-color: #ffffff31;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* 相对定位，用于定位关闭按钮 */
+    max-width: 80%;
+    /* 最大宽度限制 */
+    max-height: 80%;
+    /* 最大高度限制 */
+    box-sizing: border-box;
+    /* 包括内边距和边框在宽高计算中 */
+}
+
+/* 模态框中的图片 */
+.Photo-modal-content img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    /* 确保图片完整显示且保持纵横比 */
+}
+
+/* 关闭按钮样式 */
+.Photo-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #000;
+    cursor: pointer;
+    display: none;
 }

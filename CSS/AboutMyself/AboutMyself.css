@@ -24,4 +24,6 @@
     line-height: 2;
     /* 设置行高 */
     width: auto;
+    margin: 0 100px;
+    /* 自动水平居中对齐 */
 }
