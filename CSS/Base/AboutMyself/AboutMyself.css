@@ -3,9 +3,9 @@
     display: flex;
     align-items: center;
     /* 在纵向方向上居中对齐内容 */
-    max-width: 1200px;
+    max-width: 1800px;
     /* 最大宽度限制 */
-    margin: 0 auto;
+    margin: 0 100px;
     /* 自动水平居中对齐 */
 }
 
@@ -17,11 +17,11 @@
 
 /* 文字样式 */
 .content-text {
-    font-size: 24px;
+    font-size: 18px;
     /* 设置字体大小 */
     color: rgb(255, 255, 255);
     /* 设置文字颜色 */
-    line-height: 1.5;
+    line-height: 2;
     /* 设置行高 */
     width: auto;
 }
