@@ -14,9 +14,13 @@
   <script src="./JavaScript/ValidatePassword.js"></script> <!-- 引用外置JavaScript文件 -->
   <link rel="icon" type="image/png" sizes="32x32" href="./Favicon/moyai_1f5ff.png" />
   <style>
-    body.loaded::before {
-      background-image: var(--background-image-url);
-      /* 使用 CSS 变量 */
+    body {
+      margin: 0;
+      padding: 0;
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      width: 100vw;
     }
   </style>
 </head>
@@ -66,13 +70,22 @@
   <div class="footer">
     <p>“悟以往之不谏，知来者之可追”</p>
   </div>
+
+
   <script>
-    // 在页面加载完成后，添加 loaded 类
-    document.addEventListener("DOMContentLoaded", function () {
-      document.body.classList.add("loaded");
-      // 修改 CSS 变量的值以更新背景图
-      document.documentElement.style.setProperty('--background-image-url', "url('./PIC/01.jpg')");
-    });
+    // 定义背景图片的数组
+    const backgrounds = [
+      'PIC/01.jpg',
+      'PIC/02.jpg',
+      'PIC/03.jpg'
+    ];
+
+    // 随机选择一张图片
+    const randomIndex = Math.floor(Math.random() * backgrounds.length);
+    const selectedBackground = backgrounds[randomIndex];
+
+    // 将背景图片设置为页面的背景
+    document.body.style.backgroundImage = `url(${selectedBackground})`;
   </script>
 </body>
 

@@ -192,10 +192,17 @@
 /* 关闭按钮样式 */
 .Photo-close-btn {
     position: absolute;
+    /* 绝对定位，按钮相对于父容器定位 */
     top: 10px;
+    /* 距离容器顶部 10 像素 */
     right: 10px;
+    /* 距离容器右侧 10 像素 */
     font-size: 24px;
+    /* 字体大小设为 24 像素 */
     color: #000;
+    /* 按钮颜色设为黑色 */
     cursor: pointer;
+    /* 鼠标悬停在按钮上时，显示为指针形状 */
     display: none;
+    /* 默认隐藏按钮 */
 }
