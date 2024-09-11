@@ -7,11 +7,10 @@
     <title>Wuzhi</title>
     <link rel="icon" type="image/png" sizes="32x32" href="../../Favicon/moyai_1f5ff.png" />
     <link rel="stylesheet" href="../../CSS/Base/Reset.css"> <!-- 引用外置CSS文件 -->
-    <link rel="stylesheet" href="../..//CSS/Base/Typography.css"> <!-- 引用外置CSS文件 -->
+    <link rel="stylesheet" href="../../CSS/Base/Typography.css"> <!-- 引用外置CSS文件 -->
     <link rel="stylesheet" href="../../CSS/Menu/Menu.css"> <!-- 引用外置CSS文件 -->
-    <link rel="stylesheet" href="../../CSS/Components/private-content.css"> <!-- 引用外置CSS文件 -->
-    <link rel="stylesheet" href="../../CSS/Responsive/responsive.css"> <!-- 引用外置CSS文件 -->
-    <link rel="stylesheet" href="../../CSS/Keyframes/keyframes.css"> <!-- 引用外置CSS文件 -->
+    <link rel="stylesheet" href="../../CSS/photo-gallery/photo-gallery.css"> <!-- 引用外置CSS文件 -->
+    <script src="../../JavaScript/PhotoModal.js"></script> <!-- 引用外置JavaScript文件 -->
 
 
     <style>
@@ -43,7 +42,6 @@
                     <a href="../../Art/Photography/Photography.html">摄影相册</a>
                     <a href="../../Art/3D Art/3D Art.html">3D艺术</a>
                     <a href="../../Art/Basis Art/Basis Art.html">美术基础</a>
-
                 </div>
             </div>
             <div class="menu-item">
@@ -53,9 +51,113 @@
                     <a href="../Pose practice/Pose practice.html">Pose练习</a>
                 </div>
             </div>
-        </div>
 
+        </div>
     </div>
+    <main class="main-content">
+        <div class="photo-gallery-container">
+            <div class="Photograph-title-container">
+                <p class="Photograph-title-text">Pose练习</p>
+            </div>
+
+            <div class="photo-container">
+                <div class="photo-item">
+                    <img src="../Pose practice/Pic of Pose practice/14.png" alt="Photo 1" onclick="openModal(event)">
+                </div>
+            </div>
+            <div class="photo-container">
+                <div class="photo-item" onclick="openModa1('photo2')">
+                    <img src="../Pose practice/Pic of Pose practice/13.png" alt="Photo 2" onclick="openModal(event)">
+                </div>
+            </div>
+            <div class="photo-container">
+                <div class="photo-item" onclick="openModal('photo3')">
+                    <img src="../Pose practice/Pic of Pose practice/12.png" alt="Photo 3" onclick="openModal(event)">
+                </div>
+            </div>
+            <div class="photo-container">
+                <div class="photo-item" onclick="openModal('photo3')">
+                    <img src="../Pose practice/Pic of Pose practice/11.png" alt="Photo 4" onclick="openModal(event)">
+                </div>
+            </div>
+            <div class="photo-container">
+                <div class="photo-item" onclick="openModal('photo3')">
+                    <img src="../Pose practice/Pic of Pose practice/10.png" alt="Photo 5" onclick="openModal(event)">
+                </div>
+            </div>
+            <div class="photo-container">
+                <div class="photo-item" onclick="openModal('photo3')">
+                    <img src="../Pose practice/Pic of Pose practice/09.png" alt="Photo 6" onclick="openModal(event)">
+                </div>
+            </div>
+            <div class="photo-container">
+                <div class="photo-item" onclick="openModal('photo3')">
+                    <img src="../Pose practice/Pic of Pose practice/08.png" alt="Photo 7" onclick="openModal(event)">
+                </div>
+            </div>
+            <div class="photo-container">
+                <div class="photo-item" onclick="openModal('photo3')">
+                    <img src="../Pose practice/Pic of Pose practice/07.png" alt="Photo 7" onclick="openModal(event)">
+                </div>
+            </div>
+            <div class="photo-container">
+                <div class="photo-item" onclick="openModal('photo3')">
+                    <img src="../Pose practice/Pic of Pose practice/06.png" alt="Photo 7" onclick="openModal(event)">
+                </div>
+            </div>
+            <div class="photo-container">
+                <div class="photo-item" onclick="openModal('photo3')">
+                    <img src="../Pose practice/Pic of Pose practice/05.png" alt="Photo 7" onclick="openModal(event)">
+                </div>
+            </div>
+            <div class="photo-container">
+                <div class="photo-item" onclick="openModal('photo3')">
+                    <img src="../Pose practice/Pic of Pose practice/04.png" alt="Photo 7" onclick="openModal(event)">
+                </div>
+            </div>
+            <div class="photo-container">
+                <div class="photo-item" onclick="openModal('photo3')">
+                    <img src="../Pose practice/Pic of Pose practice/03.png" alt="Photo 7" onclick="openModal(event)">
+                </div>
+            </div>
+            <div class="photo-container">
+                <div class="photo-item" onclick="openModal('photo3')">
+                    <img src="../Pose practice/Pic of Pose practice/02.png" alt="Photo 7" onclick="openModal(event)">
+                </div>
+            </div>
+            <div class="photo-container">
+                <div class="photo-item" onclick="openModal('photo3')">
+                    <img src="../Pose practice/Pic of Pose practice/01.png" alt="Photo 7" onclick="openModal(event)">
+                </div>
+            </div>
+
+        </div>
+        <div class="photo-caption">
+            <p>##关于"Pose练习"</p>
+        </div>
+    </main>
+    <button class="scroll-button prev" onclick="scrollGallery(-1)">&#10094;</button>
+    <button class="scroll-button next" onclick="scrollGallery(1)">&#10095;</button>
+
+
+    <script src="/JavaScript/PhotoModal.js"></script>
+    <script>
+        function scrollGallery(direction) {
+            const container = document.querySelector('.photo-gallery-container');
+            const scrollAmount = 700; // 每次滚动的距离，单位像素
+            container.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+
+        // 为按钮添加事件监听器
+        document.querySelector('.scroll-button.prev').addEventListener('click', () => scrollGallery(-1));
+        document.querySelector('.scroll-button.next').addEventListener('click', () => scrollGallery(1));
+
+    </script>
+
+
 </body>
 
 </html>

@@ -141,11 +141,20 @@
 }
 
 .photo-caption {
+    display: block;
+    /* 使元素成为块级元素 */
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    /* 左右外边距自动对齐 */
+    width: 800px;
+    /* 固定宽度 */
     font-size: 14px;
-    /* 字体大小为 18px */
     color: #929292;
-    width: 400px;
+    text-align: center;
+    /* 文本居中对齐 */
 }
+
 
 /* 模态框样式 */
 .Photo-modal {
