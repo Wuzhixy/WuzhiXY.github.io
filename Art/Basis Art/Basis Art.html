@@ -59,64 +59,68 @@
             </div>
 
             <div class="photo-container">
-                <div class="photo-item">
-                    <img src="../Basis Art/Pic of basis art/(1).jpg" alt="Photo 1" ">
+                <div class="photo-item" onclick="openModal('photo3')">
+                    <img src="../Basis Art/Pic of basis art/(1).jpg" alt="Photo 1" onclick="openModal(event)">
                 </div>
             </div>
             <div class=" photo-container">
-                    <div class="photo-item">
-                        <img src="../Basis Art/Pic of basis art/(6).jpg" alt="Photo 6" ">
-                </div>
-            </div>
-
-            <div class=" photo-container">
-                        <div class="photo-item">
-                            <img src="../Basis Art/Pic of basis art/(7).jpg" alt="Photo 7" ">
+                <div class="photo-item" onclick="openModal('photo3')">
+                    <img src="../Basis Art/Pic of basis art/(6).jpg" alt="Photo 6" onclick="openModal(event)">
                 </div>
             </div>
 
             <div class=" photo-container">
-                            <div class="photo-item">
-                                <img src="../Basis Art/Pic of basis art/(8).jpg" alt="Photo 8" ">
+                <div class="photo-item" onclick="openModal('photo3')">
+                    <img src="../Basis Art/Pic of basis art/(7).jpg" alt="Photo 7" onclick="openModal(event)">
                 </div>
             </div>
 
             <div class=" photo-container">
-                                <div class="photo-item">
-                                    <img src="../Basis Art/Pic of basis art/(2).jpg" alt="Photo 2" ">
+                <div class="photo-item" onclick="openModal('photo3')">
+                    <img src="../Basis Art/Pic of basis art/(8).jpg" alt="Photo 8" onclick="openModal(event)">
+                </div>
+            </div>
+
+            <div class=" photo-container">
+                <div class="photo-item" onclick="openModal('photo3')">
+                    <img src="../Basis Art/Pic of basis art/(2).jpg" alt="Photo 2" onclick="openModal(event)">
                 </div>
             </div>
             <div class=" photo-container">
-                                    <div class="photo-item">
-                                        <img src="../Basis Art/Pic of basis art/(3).jpg" alt="Photo 3" ">
+                <div class="photo-item" onclick="openModal('photo3')">
+                    <img src="../Basis Art/Pic of basis art/(3).jpg" alt="Photo 3" onclick="openModal(event)">
                 </div>
             </div>
             <div class=" photo-container">
-                                        <div class="photo-item">
-                                            <img src="../Basis Art/Pic of basis art/(4).jpg" alt="Photo 4" ">
+                <div class="photo-item" onclick="openModal('photo3')">
+                    <img src="../Basis Art/Pic of basis art/(4).jpg" alt="Photo 4" onclick="openModal(event)">
                 </div>
             </div>
             <div class=" photo-container">
-                                            <div class="photo-item">
-                                                <img src="../Basis Art/Pic of basis art/(5).jpg" alt="Photo 5" ">
+                <div class="photo-item" onclick="openModal('photo3')">
+                    <img src="../Basis Art/Pic of basis art/(5).jpg" alt="Photo 5" onclick="openModal(event)">
                 </div>
             </div>
         </div>
 
         <div class=" photo-caption">
-                                                <p>##关于"半吊子美术"</p>
-                                                <p>在最开始接触美术的两年，我并不算有什么美术天赋，学校安排了素描色彩等等美术基础的课程，虽然没有正规美术院校那样的艺术氛围和师资，大多数还是靠自己，但是我很感谢我的一位朋友，她的美术基础比我优秀很多，也教了我很多关于色彩，关于美术，虽然之后我依然画的很烂，再之后她去了正经的艺术院校继续深造，祝她越来越好。
-                                                </p>
-                                                <p>它们并不完美，感谢驻足</p>
-                                            </div>
+            <p>##关于"半吊子美术"</p>
+            <p>在最开始接触美术的两年，我并不算有什么美术天赋，学校安排了素描色彩等等美术基础的课程，虽然没有正规美术院校那样的艺术氛围和师资，大多数还是靠自己，但是我很感谢我的一位朋友，她的美术基础比我优秀很多，也教了我很多关于色彩，关于美术，虽然之后我依然画的很烂，再之后她去了正经的艺术院校继续深造，祝她越来越好。
+            </p>
+            <p>它们并不完美，均有临摹参考，感谢驻足</p>
+        </div>
     </main>
     <button class="scroll-button prev" onclick="scrollGallery(-1)">&#10094;</button>
     <button class="scroll-button next" onclick="scrollGallery(1)">&#10095;</button>
 
-    <div class="footer">
+
+    <!-- 模态框 -->
+    <div id="photoModal" class="Photo-modal">
+        <div class="Photo-modal-content">
+            <span class="Photo-close-btn" id="closeBtn">&times;</span>
+            <img id="modalImage" src="" alt="放大的图片">
+        </div>
     </div>
-
-
 
 
 
