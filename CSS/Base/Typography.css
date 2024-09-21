@@ -23,7 +23,7 @@ body {
 
 
 /* 页眉容器样式 */
-.header-container {
+.headertext-container {
     height: 200px;
     /* 页眉高度 */
     display: flex;
@@ -53,7 +53,7 @@ body {
 }
 
 /* 页眉样式 */
-.header {
+.headertext {
     font-size: 32px;
     /* 字体大小 */
     margin: 0;
