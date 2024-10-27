@@ -108,6 +108,7 @@
     /* 确保 padding 包含在总高度内 */
 }
 
+
 /* 照片项 */
 .photo-item {
     width: auto;
@@ -206,4 +207,23 @@
     /* 鼠标悬停在按钮上时，显示为指针形状 */
     display: none;
     /* 默认隐藏按钮 */
+}
+
+/* 水印文字样式 */
+.Photo-watermark {
+    position: absolute;
+    bottom: 10px;
+    /* 距离模态框底部 10px */
+    right: 10px;
+    /* 距离模态框右侧 10px */
+    font-size: 24px;
+    /* 字体大小 */
+    color: rgb(138, 138, 138);
+    /* 半透明白色 */
+    font-family: 'Bauhaus 93', sans-serif;
+    /* 使用 Bauhaus 93 字体 */
+    pointer-events: none;
+    /* 禁止水印响应点击事件 */
+    z-index: 1001;
+    /* 设置比模态框内容更高的层级 */
 }

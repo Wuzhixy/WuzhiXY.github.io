@@ -140,23 +140,30 @@
     <button class="scroll-button prev" onclick="scrollGallery(-1)">&#10094;</button>
     <button class="scroll-button next" onclick="scrollGallery(1)">&#10095;</button>
 
+    <!-- 模态框 -->
+    <div id="photoModal" class="Photo-modal">
+        <div class="Photo-modal-content">
+            <span class="Photo-close-btn" id="closeBtn">&times;</span>
+            <img id="modalImage" src="" alt="放大的图片">
+            <div class="Photo-watermark">WUZHI</div> <!-- 添加水印 -->
+        </div>
 
-    <script src="/JavaScript/PhotoModal.js"></script>
-    <script>
-        function scrollGallery(direction) {
-            const container = document.querySelector('.photo-gallery-container');
-            const scrollAmount = 700; // 每次滚动的距离，单位像素
-            container.scrollBy({
-                left: direction * scrollAmount,
-                behavior: 'smooth'
-            });
-        }
+        <script src="/JavaScript/PhotoModal.js"></script>
+        <script>
+            function scrollGallery(direction) {
+                const container = document.querySelector('.photo-gallery-container');
+                const scrollAmount = 700; // 每次滚动的距离，单位像素
+                container.scrollBy({
+                    left: direction * scrollAmount,
+                    behavior: 'smooth'
+                });
+            }
 
-        // 为按钮添加事件监听器
-        document.querySelector('.scroll-button.prev').addEventListener('click', () => scrollGallery(-1));
-        document.querySelector('.scroll-button.next').addEventListener('click', () => scrollGallery(1));
+            // 为按钮添加事件监听器
+            document.querySelector('.scroll-button.prev').addEventListener('click', () => scrollGallery(-1));
+            document.querySelector('.scroll-button.next').addEventListener('click', () => scrollGallery(1));
 
-    </script>
+        </script>
 
 
 </body>

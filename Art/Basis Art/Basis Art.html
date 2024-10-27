@@ -107,7 +107,7 @@
             <p>##关于"半吊子美术"</p>
             <p>在最开始接触美术的两年，我并不算有什么美术天赋，学校安排了素描色彩等等美术基础的课程，虽然没有正规美术院校那样的艺术氛围和师资，大多数还是靠自己，但是我很感谢我的一位朋友，她的美术基础比我优秀很多，也教了我很多关于色彩，关于美术，虽然之后我依然画的很烂，再之后她去了正经的艺术院校继续深造，祝她越来越好。
             </p>
-            <p>它们并不完美，均有临摹参考，感谢驻足</p>
+            <p>它们并不完美，感谢驻足</p>
         </div>
     </main>
     <button class="scroll-button prev" onclick="scrollGallery(-1)">&#10094;</button>
@@ -119,27 +119,27 @@
         <div class="Photo-modal-content">
             <span class="Photo-close-btn" id="closeBtn">&times;</span>
             <img id="modalImage" src="" alt="放大的图片">
+            <div class="Photo-watermark">WUZHI</div> <!-- 添加水印 -->
         </div>
-    </div>
 
 
 
-    <script src="/JavaScript/PhotoModal.js"></script>
-    <script>
-        function scrollGallery(direction) {
-            const container = document.querySelector('.photo-gallery-container');
-            const scrollAmount = 700; // 每次滚动的距离，单位像素
-            container.scrollBy({
-                left: direction * scrollAmount,
-                behavior: 'smooth'
-            });
-        }
+        <script src="/JavaScript/PhotoModal.js"></script>
+        <script>
+            function scrollGallery(direction) {
+                const container = document.querySelector('.photo-gallery-container');
+                const scrollAmount = 700; // 每次滚动的距离，单位像素
+                container.scrollBy({
+                    left: direction * scrollAmount,
+                    behavior: 'smooth'
+                });
+            }
 
-        // 为按钮添加事件监听器
-        document.querySelector('.scroll-button.prev').addEventListener('click', () => scrollGallery(-1));
-        document.querySelector('.scroll-button.next').addEventListener('click', () => scrollGallery(1));
+            // 为按钮添加事件监听器
+            document.querySelector('.scroll-button.prev').addEventListener('click', () => scrollGallery(-1));
+            document.querySelector('.scroll-button.next').addEventListener('click', () => scrollGallery(1));
 
-    </script>
+        </script>
 
 </body>
 
