@@ -60,12 +60,13 @@
     /* 绝对定位 */
     top: 100%;
     /* 拓展菜单显示在主菜单按钮下方 */
-    left: 0;
+    left: auto;
     background-color: transparent;
     /* 拓展菜单背景颜色 */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     /* 添加阴影效果 */
     z-index: 1;
+
 }
 
 .dropdown a {
@@ -78,6 +79,11 @@
     background-color: transparent;
     /* 拓展菜单项背景颜色 */
     white-space: nowrap;
+}
+
+.dropdown a:hover {
+    border-bottom: 1px solid white;
+    /* 鼠标悬停时添加下划线 */
 }
 
 .menu-item:hover .dropdown {
