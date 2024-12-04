@@ -1,55 +1,37 @@
 /* 博客容器样式 */
-.blog-container {
+.Diary-container {
     display: flex;
-    /* 使用 Flexbox 布局 */
     flex-direction: column;
-    /* 垂直排列博客项 */
     align-items: center;
-    /* 内容水平居中对齐 */
     padding: 20px;
-    /* 设置容器内边距 */
 }
-
 
 /* 博客项样式 */
-.blog-item {
+.Diary-item {
     background-color: #fff;
-    /* 背景颜色为白色 */
     border: 1px solid #ddd;
-    /* 边框颜色为淡灰色 */
     border-radius: 5px;
-    /* 边角圆润 */
     margin: 10px;
-    /* 博客项之间的间距 */
     padding: 20px;
-    /* 内边距 */
     width: 80%;
-    /* 宽度为容器宽度的 80% */
     max-width: 800px;
-    /* 最大宽度为 800px */
     transition: background-color 0.3s, transform 0.3s;
-    /* 背景颜色和缩放的过渡效果 */
     cursor: pointer;
-    /* 鼠标悬停时显示为手型 */
 }
 
-.blog-item:hover {
+.Diary-item:hover {
     background-color: #f0f0f0;
-    /* 鼠标悬停时背景颜色变为浅灰色 */
     transform: scale(1.02);
-    /* 鼠标悬停时略微放大 */
 }
 
 /* 禁用鼠标悬停效果的样式 */
-.no-hover .blog-item:hover {
+.no-hover .Diary-item:hover {
     background-color: initial;
-    /* 禁用背景颜色变化 */
     transform: none;
-    /* 禁用缩放效果 */
 }
 
 /* 模态框样式 */
-.blog-modal {
+.Diary-modal {
     display: none;
     position: fixed;
     top: 0;
@@ -62,7 +44,7 @@
     z-index: 1000;
 }
 
-.blog-modal-content {
+.Diary-modal-content {
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
@@ -71,23 +53,19 @@
     max-height: 80vh;
     overflow-y: auto;
     position: relative;
-    /* 关键：相对定位父容器 */
 }
 
-.blog-picture {
+.Diary-picture {
     display: flex;
-    /* 使用 Flexbox 布局 */
     width: 100%;
     height: 100%;
 }
 
 /* 关闭按钮样式 */
-.blogclose-btn {
+.Diaryclose-btn {
     position: absolute;
     top: 10px;
-    /* 距离容器顶部 10px */
     right: 10px;
-    /* 距离容器右侧 10px */
     font-size: 24px;
     color: #000;
     cursor: pointer;

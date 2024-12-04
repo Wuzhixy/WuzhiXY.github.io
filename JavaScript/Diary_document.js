@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const blogItems = document.querySelectorAll(".blog-item"); // 选择所有博客项
+    const DiaryItems = document.querySelectorAll(".Diary-item"); // 选择所有博客项
     const modal = document.getElementById("modal"); // 选择模态框元素
     const closeBtn = document.getElementById("closeBtn"); // 选择关闭按钮
     const modalTitle = document.getElementById("modalTitle"); // 选择模态框标题
     const modalContent = document.getElementById("modalContent"); // 选择模态框内容
 
-    blogItems.forEach((item) => {
+    DiaryItems.forEach((item) => {
         const fullContent = item.querySelector(".full-content").innerHTML; // 获取博客项的完整内容
         const excerptLength = 100; // 设置摘录长度为100个字符
         const excerpt =
@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // 排序博客项
-    const container = document.querySelector(".blog-container"); // 获取博客容器
-    const sortedItems = Array.from(blogItems).sort(
+    const container = document.querySelector(".Diary-container"); // 获取博客容器
+    const sortedItems = Array.from(DiaryItems).sort(
         (a, b) =>
             new Date(b.getAttribute("data-date")) - // 根据data-date属性比较两个博客项的日期
             new Date(a.getAttribute("data-date"))
